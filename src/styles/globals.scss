@@ -22,11 +22,11 @@ html {
 }
 
 a {
-  color: #1bbd36;
+  color: var(--black-color);
 }
 
 a:hover {
-  color: #2ae149;
+  color: var(--black-color);
   text-decoration: none;
 }
 
@@ -47,6 +47,7 @@ h6 {
   --black-color: #000;
   --secondary-100: #d9d9d9;
   --secondary-200: #c0c0c0;
+  --secondary-400: #8e8e8e;
 }
 
 
@@ -75,70 +76,5 @@ section {
       color: var(--black-color);
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
-  }
-}
-
-
-/*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 15px 0;
-  background: var(--theme);
-  min-height: 40px;
-  margin-top: 72px;
-}
-
-.breadcrumbs h2 {
-  font-size: 26px;
-  font-weight: 300;
-  color: #fff;
-}
-
-.breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  color: #fff;
-}
-
-.breadcrumbs ol a {
-  color: #040404;
-  text-decoration: none;
-  transition: 0.3s ease-in-out;
-}
-
-.breadcrumbs ol a:hover {
-  color: white;
-}
-
-.breadcrumbs ol li+li {
-  padding-left: 10px;
-}
-
-.breadcrumbs ol li+li::before {
-  display: inline-block;
-  padding-right: 10px;
-  color: #fff;
-  content: "/";
-}
-
-@media (max-width: 991px) {
-  .breadcrumbs {
-    margin-top: 58px;
-  }
-
-  .breadcrumbs .d-flex {
-    display: block !important;
-  }
-
-  .breadcrumbs ol {
-    display: block;
-  }
-
-  .breadcrumbs ol li {
-    display: inline-block;
   }
 }

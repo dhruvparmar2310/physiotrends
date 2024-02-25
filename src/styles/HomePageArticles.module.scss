@@ -1,0 +1,43 @@
+.magazine {
+    display: flex;
+    justify-content: center;
+
+    .magazineCard {
+        display: block;
+        width: 300px;
+        height: 400px;
+        background: #002e33;
+        background: linear-gradient(45deg, #002e33 0%, var(--primary-dark) 50%, var(--primary-color) 100%);
+        margin-top: 50px;
+        box-shadow: 0 0 15px 1px #000;
+        overflow: hidden;
+        transition: 0.5s;
+
+        .magazineImg {
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 360px;
+                transition: 0.5s;
+            }
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+
+            img {
+                transform: scale(1.03);
+            }
+        }
+
+        .cardTitle {
+            padding: 5px 10px;
+            text-align: center;
+            color: var(--white-color);
+            // z-index: 20 !important;
+            font-weight: 600;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    }
+}

@@ -41,9 +41,9 @@ function Header () {
                                 <Link href={`#articles`} title='Advertize | PhysioTrends'>Articles</Link>
                             </li>
                             <li className={`${styles.drop_down}`}>
-                                <Link href={`#about-us`} title='Advertize | PhysioTrends'>Advertize </Link>
+                                <Link href='/advertize' title='Advertize | PhysioTrends'>Advertize </Link>
                             </li>
-                            <li><Link href={'/about/adhyay'} title='Editorial Members | PhysioTrends'>Editorial Members</Link></li>
+                            <li><Link href={'/editorialMember'} title='Editorial Members | PhysioTrends'>Editorial Members</Link></li>
                             <li><Link href={'/contact'} title='Contact | PhysioTrends'>Contact</Link></li>
                         </ul>
                     </nav>

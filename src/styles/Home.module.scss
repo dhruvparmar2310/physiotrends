@@ -58,4 +58,16 @@ main {
   .articles {
     background: var(--primary-light);
   }
+
+  .plans {
+    .planCards {
+      .planCard {
+        box-sizing: border-box;
+        width: 200px;
+        height: 200px;
+        background: var(--primary-color);
+        padding: 20px;
+      }
+    }
+  }
 }

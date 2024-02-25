@@ -4,10 +4,13 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
 import Hero from "@/components/Hero";
 import HomePageArticles from "@/components/HomePageArticles";
+import { articles } from "@/data/articles";
+import articleImg from '../../public/assets/img/magazines/vol1_issue1.jpg'
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  console.log('articles :>> ', articles);
   return (
     <>
       <Head>
@@ -16,7 +19,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name='keywords' content='PhysioTrends, Physiotherapy, Physio Magazine, Physio Article, ThePhysioBrothers' />
         <meta name="description" content="PHYSIOTRENDS is India’s fastest growing E-Magazine for Physical Therapist, your ultimate resource for all things related to physical therapy and rehabilitation. Explore expert articles, in-depth interviews with leading professionals, latest research findings, innovative techniques, and practical tips to enhance your understanding and practice in the field of physiotherapy. Whether you're a seasoned practitioner or just starting your journey, our E-Magazine is your go-to destination for staying updated, informed, and inspired in the world of physiotherapy." />
-        <link rel="icon" href="../../public/assets/img/favicon.jpg" />
+        <link rel="icon" href="assets/img/favicon.jpg" />
       </Head>
       <main>
         <Hero />

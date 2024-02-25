@@ -1,34 +1,35 @@
 import { articles } from '@/data/articles';
 import Image from 'next/image';
 import React, { useEffect } from 'react'
+import articleImg from '../../../public/assets/img/magazines/vol1_issue1.jpg'
+import styles from '../../styles/HomePageArticles.module.scss'
 
 const HomePageArticles = ({ allArticles }) => {
-    const articles = [
-        {
-            _id: 'one',
-            title: 'Volume - 1 | Issue - 1',
-            img: '../../../public/assets/img/magazines/vol1_issue1.jpg',
-        }
-    ]
-    console.log('articles :>> ', articles);
     return (
         <>
-            {articles?.map(article => {
-                <tr key={article?._id}>
-                    <div>
-                        <Image src={article?.img} alt={article?.title} width={100} height={100} quality={100} />
-                    </div>
-                </tr>
-            })}
+            <div className={`${styles?.magazine}`}>
+                {articles?.map(article => {
+                    return (<>
+                        <React.Fragment key={article?._id}>
+                            <div className={`${styles?.magazineCard}`}>
+                                <div className={`${styles?.magazineImg}`}>
+                                    <Image src={articleImg?.src} alt={article?.title} width={100} height={100} />
+                                </div>
+                                <p className={`${styles?.cardTitle}`}>{article?.title}</p>
+                            </div>
+                        </React.Fragment>
+                    </>)
+                })}
+            </div>
         </>
     )
 }
 
 export default HomePageArticles
 
-// export const getServerSideProps = async () => {
-//     const res = await fetch(`http://localhost:3000/api/articles`)
-//     console.log('res :>> ', res);
-//     const allArticles = await res.json()
-//     return { props: { allArticles } }
-// }
+export const getServerSideProps = async () => {
+    const res = await fetch(`https://physiotrends.vercel.app/api/articles`)
+    console.log('res :>> ', res);
+    const allArticles = await res.json()
+    return { props: { allArticles } }
+}
