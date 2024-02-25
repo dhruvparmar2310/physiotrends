@@ -71,3 +71,16 @@ main {
     }
   }
 }
+
+// small (mobile or Tablet)
+@media (min-width: 576px) and (max-width: 768px) {
+  .about {
+    .innerContent {
+      .desc {
+        font-size: 17px !important;
+        line-height: 1.5rem !important;
+        word-spacing: 5px !important;
+      }
+    }
+  }
+}

@@ -16,7 +16,7 @@ function Hero () {
                     <div className={`${styles?.adsContent}`}>
                         <h1 data-heading='ISSN Number'>PhysioTrends</h1>
 
-                        <p className={`${styles?.desc} mt-5`}>
+                        <p className={`${styles?.desc} mt-lg-5 mt-3`}>
                             PHYSIOTRENDS is India’s fastest growing E-Magazine for Physical Therapist
                         </p>
                         <p className={`${styles?.desc} mt-3`}>

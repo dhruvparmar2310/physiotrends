@@ -104,93 +104,93 @@
 }
 
 // very large display
-@media (min-width: 1400px) and (max-width: 1950px) {
-    .hero {
-        padding: 50px 0;
+// @media (min-width: 1400px) and (max-width: 1950px) {
+//     .hero {
+//         padding: 50px 0;
 
-        .hero-content {
-            padding-top: 5.5rem;
+//         .heroContent {
+//             padding-top: 5.5rem;
 
-            .ads-content {
-                .subtitle {
-                    font-size: 1.8rem;
-                }
+//             .adsContent {
+//                 .subtitle {
+//                     font-size: 1.8rem;
+//                 }
 
-                h1 {
-                    font-size: 85px;
-                    line-height: 5.5rem;
-                }
+//                 h1 {
+//                     font-size: 85px;
+//                     line-height: 5.5rem;
+//                 }
 
-                .desc {
-                    line-height: 3rem;
-                    font-size: 35px;
-                }
+//                 .desc {
+//                     line-height: 3rem;
+//                     font-size: 35px;
+//                 }
 
-                .btn-content {
-                    margin-top: 20px !important;
+//                 .btnContent {
+//                     margin-top: 20px !important;
 
-                    .book-btn {
-                        font-size: 2rem;
-                        padding: 15px 40px;
-                    }
-                }
-            }
+//                     .book-btn {
+//                         font-size: 2rem;
+//                         padding: 15px 40px;
+//                     }
+//                 }
+//             }
 
-            .img-content {
-                border-top-left-radius: 300px;
-                border-bottom-left-radius: 300px;
-                width: 52rem;
-                height: 30rem;
-                margin: 50px 0;
-            }
-        }
-    }
-}
+//             .imgContent {
+//                 border-top-left-radius: 300px;
+//                 border-bottom-left-radius: 300px;
+//                 width: 52rem;
+//                 height: 30rem;
+//                 margin: 50px 0;
+//             }
+//         }
+//     }
+// }
 
 // extra extra large (desktop)
 @media (max-width: 1400px) {}
 
 // extra large (laptops)
-@media (min-width: 1200px) and (max-width: 1400px) {
-    .hero {
-        padding: 25px 0;
+// @media (min-width: 1200px) and (max-width: 1400px) {
+//     .hero {
+//         padding: 25px 0;
 
-        .hero-content {
-            padding-top: 5.5rem;
+//         .heroContent {
+//             padding-top: 5.5rem;
 
-            .ads-content {
-                .subtitle {
-                    font-size: 1rem;
-                }
+//             .adsContent {
+//                 .subtitle {
+//                     font-size: 1rem;
+//                 }
 
-                h1 {
-                    font-size: 50px;
-                    line-height: 3.3rem;
-                }
+//                 h1 {
+//                     font-size: 50px;
+//                     line-height: 3.3rem;
+//                 }
 
-                .desc {
-                    line-height: 1.5rem;
-                    font-size: 18px;
-                }
+//                 .desc {
+//                     line-height: 1.5rem;
+//                     font-size: 18px;
+//                 }
 
-                .btn-content {
-                    margin-top: 5px !important;
+//                 .btnContent {
+//                     margin-top: 5px !important;
 
-                    .book-btn {
-                        font-size: 0.9rem;
-                        padding: 10px 25px;
-                    }
-                }
-            }
+//                     .book-btn {
+//                         font-size: 0.9rem;
+//                         padding: 10px 25px;
+//                     }
+//                 }
+//             }
 
-            .img-content {
-                width: 30rem;
-                height: 18rem;
-                margin: 15px 0;
-            }
-        }
-    }
-}
+//             .imgContent {
+//                 width: 30rem;
+//                 height: 18rem;
+//                 margin: 15px 0;
+//             }
+//         }
+//     }
+// }
 
 // large (laptop or Tab)
 @media (min-width: 992px) and (max-width: 1200px) {}
@@ -199,7 +199,45 @@
 @media (min-width: 768px) and (max-width: 992px) {}
 
 // small (mobile or Tablet)
-@media (min-width: 576px) and (max-width: 768px) {}
+@media (min-width: 576px) and (max-width: 768px) {
+    .hero {
+        height: 100vh;
+
+        .heroContent {
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+
+            .adsContent {
+                h1 {
+                    font-size: 3rem;
+                }
+
+                .desc {
+                    font-size: 18px;
+                    line-height: 1.2rem;
+                }
+
+                .btnContent {
+                    padding: 0;
+
+                    .readMoreBtn {
+                        padding: 8px 20px;
+
+                        a {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+
+            .imgContent {
+                width: 450px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
 
 // very small (mobile)
 // @media (max-width: 576px) {
