@@ -38,7 +38,7 @@ function Header () {
                                 <Link href='/' title='Home | PhysioTrends'>Home</Link>
                             </li>
                             <li className={`${styles.drop_down}`}>
-                                <Link href={`#articles`} title='Advertize | PhysioTrends'>Articles</Link>
+                                <Link href={`/articles`} title='Articles | PhysioTrends'>Articles</Link>
                             </li>
                             <li className={`${styles.drop_down}`}>
                                 <Link href='/advertize' title='Advertize | PhysioTrends'>Advertize </Link>
