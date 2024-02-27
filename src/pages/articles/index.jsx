@@ -45,7 +45,7 @@ function Articles ({ data, router }) {
                                 {articles?.map(article => {
                                     return (<>
                                         <React.Fragment key={article?._id}>
-                                            <div className={`${styles?.magazineCard}`}>
+                                            <div className={`${styles?.magazineCard}`} onClick={() => router.push(`/articles/${article?._id}`)}>
                                                 <div className={`${styles?.magazineImg}`}>
                                                     <Image src={articleImg?.src} alt={article?.title} width={100} height={100} />
                                                 </div>
