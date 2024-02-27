@@ -109,7 +109,11 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
     const articleID = parseInt(params.articleID)
-    const res = await fetch(`${process.env.DEPLOY}/api/articles/${articleID}`)
-    const data = await res.json()
-    return { props: { data } }
+    if (articleID >= 1 && articleID <= 4) {
+        const res = await fetch(`${process.env.DEPLOY}/api/articles/${articleID}`)
+        const data = await res.json()
+        return { props: { data } }
+    } else {
+        return { notFound: true }
+    }
 }
