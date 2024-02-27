@@ -10,7 +10,6 @@ import articleImg from '../../public/assets/img/magazines/vol1_issue1.jpg'
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  console.log('articles :>> ', articles);
   return (
     <>
       <Head>
@@ -52,7 +51,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="articles" className={`${styles?.articles}`}>
+        <section id="magazines" className={`${styles?.articles}`}>
           <h1 className={`sectionTitle`} data-heading='Our Latest'>Articles</h1>
 
           <HomePageArticles />

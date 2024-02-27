@@ -24,9 +24,11 @@ function Hero () {
                         </p>
 
                         <div className={`${styles?.btnContent} mt-3`}>
-                            <Button className={`${styles?.readMoreBtn}`}>
-                                <a href="#articles">Read More</a>
-                            </Button>
+                            <a href="#magazines">
+                                <Button className={`${styles?.readMoreBtn}`}>
+                                    Read More
+                                </Button>
+                            </a>
                         </div>
                     </div>
 

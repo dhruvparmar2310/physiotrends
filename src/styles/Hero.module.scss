@@ -57,27 +57,24 @@
             .btnContent {
                 padding: 15px 0px;
 
-                .readMoreBtn {
-                    border-radius: 99px;
-                    padding: 10px 30px;
-                    background: var(--black-color);
-                    transition: all 0.3s ease-in-out;
-                    border: none;
+                a {
+                    text-decoration: none;
 
-                    a {
-                        font-size: 1.1rem;
+                    .readMoreBtn {
                         font-weight: 600;
-                        text-transform: uppercase;
-                        text-decoration: none;
                         color: var(--white-color);
-                    }
+                        text-transform: uppercase;
+                        font-size: 1.1rem;
+                        border-radius: 99px;
+                        padding: 10px 30px;
+                        background: var(--black-color);
+                        transition: all 0.3s ease-in-out;
+                        border: none;
 
-                    &:hover {
-                        background: var(--white-color) !important;
-                        transform: translateY(-5px);
-                        box-shadow: 0 3px 10px var(--primary-color);
-
-                        a {
+                        &:hover {
+                            background: var(--white-color) !important;
+                            transform: translateY(-5px);
+                            box-shadow: 0 3px 10px var(--primary-color);
                             color: var(--primary-color);
                         }
                     }

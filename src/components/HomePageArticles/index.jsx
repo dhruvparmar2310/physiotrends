@@ -29,7 +29,6 @@ export default HomePageArticles
 
 export const getServerSideProps = async () => {
     const res = await fetch(`https://physiotrends.vercel.app/api/articles`)
-    console.log('res :>> ', res);
     const allArticles = await res.json()
     return { props: { allArticles } }
 }

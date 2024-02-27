@@ -12,7 +12,6 @@ function ArticleID ({ data }) {
     const [currentArticle, setCurrentArticle] = useState('100')
     const pageSize = 10
 
-    console.log('data :>> ', data?.aMagazines?.find(item => item?._id === currentArticle));
     const paginate = (items, pageNumber, pageSize) => {
         const startIndex = (pageNumber - 1) * pageSize
         return items?.content?.slice(startIndex, startIndex + pageSize);

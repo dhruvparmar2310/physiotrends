@@ -1,0 +1,62 @@
+.contact {
+    padding-top: 20px;
+
+    .contactContent {
+        text-align: justify;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: 600;
+
+        .sectionTitle {
+            text-align: left;
+            font-size: 2.5rem;
+        }
+
+        .line {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--secondary-200);
+        }
+
+        .contactCard {
+            display: block;
+            box-sizing: border-box;
+            background: #002e33;
+            background: linear-gradient(45deg, #002e33 0%, var(--primary-dark) 50%, var(--primary-color) 100%);
+            border-radius: 10px;
+            padding: 20px;
+            width: 20rem;
+
+            .cardIcon {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .cardTitle {
+                    text-transform: uppercase;
+                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    color: var(--secondary-100);
+                    font-size: 1.2rem;
+                    letter-spacing: 1px;
+                }
+
+                svg {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 1.8rem;
+                    border-radius: 10px;
+                    background: #002e33;
+                    background: linear-gradient(225deg, #002e33 0%, var(--primary-dark) 50%, var(--primary-color) 100%);
+                    padding: 10px;
+                    color: var(--white-color);
+                }
+            }
+
+            .cardValue {
+                margin-top: 10px;
+                margin-bottom: 0;
+                color: var(--white-color);
+            }
+        }
+    }
+}

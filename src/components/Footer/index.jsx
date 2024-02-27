@@ -64,9 +64,9 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className={`col-lg-6 p-0 ${styles.social_links}`} style={{ textAlign: 'end' }}>
-                        <Link href="https://github.com/dhruvparmar2310" target="_blank" className={styles.github} title='Dhruv Parmar | Github | Bhagavad Gita'><i className="ri-github-fill"></i></Link>
+                        {/* <Link href="https://github.com/dhruvparmar2310" target="_blank" className={styles.github} title='Dhruv Parmar | Github | Bhagavad Gita'><i className="ri-github-fill"></i></Link>
                         <Link href="https://www.facebook.com/dhruv.parmar.73550794" target="_blank" className={styles.facebook} title='Dhruv Parmar | Facebook | Bhagavad Gita'><i className="ri-facebook-fill"></i></Link>
-                        <Link href="https://www.instagram.com/dhan.parmar23/" target="_blank" className={styles.instagram} title='Dhruv Parmar | Instagram | Bhagavad Gita'><i className="ri-instagram-line"></i></Link>
+                        <Link href="https://www.instagram.com/dhan.parmar23/" target="_blank" className={styles.instagram} title='Dhruv Parmar | Instagram | Bhagavad Gita'><i className="ri-instagram-line"></i></Link> */}
                     </div>
                 </div>
             </footer>
