@@ -112,7 +112,7 @@ export const getStaticProps = async ({ params }) => {
     if (articleID >= 1 && articleID <= 4) {
         const res = await fetch(`${process.env.DEPLOY}/api/articles/${articleID}`)
         const data = await res.json()
-        return { props: { data } }
+        return { props: { data } || {} }
     } else {
         return { notFound: true }
     }
