@@ -6,6 +6,8 @@ import BreadCrumb from '@/components/BreadCrumb'
 import { Col, Row } from 'react-bootstrap'
 import Image from 'next/image'
 import { withRouter } from 'next/router'
+import { articles } from '@/data/articles'
+import articleImg from '../../../public/assets/img/magazines/vol1_issue1.jpg'
 
 function Articles ({ data, router }) {
     return (
@@ -28,7 +30,7 @@ function Articles ({ data, router }) {
                     <Row>
                         <Col>
                             <div className={`${styles?.magazine}`}>
-                                {data?.articles?.map(article => {
+                                {/* {data?.articles?.map(article => {
                                     return (<>
                                         <React.Fragment key={article?._id}>
                                             <div className={`${styles?.magazineCard}`} onClick={() => router.push(`/articles/${article?._id}`)}>
@@ -37,6 +39,18 @@ function Articles ({ data, router }) {
                                                 </div>
                                                 <p className={`${styles?.cardTitle}`}>{article?.title}</p>
                                             </div >
+                                        </React.Fragment>
+                                    </>)
+                                })} */}
+                                {articles?.map(article => {
+                                    return (<>
+                                        <React.Fragment key={article?._id}>
+                                            <div className={`${styles?.magazineCard}`}>
+                                                <div className={`${styles?.magazineImg}`}>
+                                                    <Image src={articleImg?.src} alt={article?.title} width={100} height={100} />
+                                                </div>
+                                                <p className={`${styles?.cardTitle}`}>{article?.title}</p>
+                                            </div>
                                         </React.Fragment>
                                     </>)
                                 })}
