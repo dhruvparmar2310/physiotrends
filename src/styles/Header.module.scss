@@ -87,11 +87,16 @@
     position: relative;
     color: #111;
     transition: 0.3s;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    font-weight: 600;
+    font-size: 1.15rem;
+    text-transform: capitalize;
+    font-weight: 700;
     letter-spacing: 0.8px;
     text-decoration: none;
+    font-family: 'Alice', serif;
+
+    &.active {
+        color: var(--primary-color);
+    }
 }
 
 .nav_menu a:hover,
@@ -309,7 +314,9 @@
 
 @media screen and (max-width: 576px) {
     .header .menu {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .nav_menu ul {
@@ -320,6 +327,7 @@
         position: absolute;
         width: 100%;
         top: 15px;
+        right: 0;
     }
 
     .nav_menu.expanded a {
@@ -328,7 +336,7 @@
 
     .nav_menu.expanded {
         background-color: #fff;
-        height: 35vh;
+        height: 40vh;
         position: relative;
     }
 
@@ -339,7 +347,7 @@
         left: 0px;
         flex-direction: column;
         width: 100vw;
-        /* height: 10vh; */
+        height: 25vh;
         margin: 0;
         padding: 0;
         list-style: none;

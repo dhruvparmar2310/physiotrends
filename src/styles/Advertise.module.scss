@@ -1,0 +1,80 @@
+.advertise {
+    padding-top: 20px;
+
+    .advertiseContent {
+        text-align: justify;
+        font-family: 'Alice', serif;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        word-spacing: 2.5px;
+        font-size: 1.1rem;
+
+        .sectionTitle {
+            text-align: left;
+            font-size: 2.5rem;
+        }
+
+        .line {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--secondary-200);
+        }
+
+        table {
+            font-size: 1rem;
+            letter-spacing: 0.8px;
+
+            th {
+                text-align: end;
+                text-wrap: nowrap;
+                text-transform: uppercase;
+                color: var(--black-color);
+            }
+
+            td {
+                text-wrap: nowrap;
+                text-transform: uppercase;
+                color: var(--black-color);
+            }
+
+            .price {
+                text-align: end;
+                color: var(--primary-color);
+            }
+        }
+
+        .notes {
+            display: block;
+            text-align: end;
+            color: #d93e3e;
+            font-style: italic;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .advertise {
+        .sectionTitle {
+            font-size: 1.6rem !important;
+            margin-bottom: 5px;
+            letter-spacing: 0.1px;
+            margin-top: 10px !important;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        p {
+            margin-top: 15px !important;
+            font-size: 15px !important;
+        }
+
+        ul {
+            li {
+                font-size: 15px;
+            }
+        }
+    }
+}

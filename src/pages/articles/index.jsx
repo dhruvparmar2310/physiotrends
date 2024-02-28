@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import styles from '../../styles/Articles.module.scss'
 import { Ysabeau } from 'next/font/google'
 import Head from 'next/head'
 import BreadCrumb from '@/components/BreadCrumb'
-import { Col, Row } from 'react-bootstrap'
+import { Col, Row, Spinner } from 'react-bootstrap'
 import Image from 'next/image'
 import { withRouter } from 'next/router'
 import { articles } from '@/data/articles'
@@ -21,16 +21,17 @@ function Articles ({ data, router }) {
                 <link rel="icon" href="assets/img/favicon.jpg" />
             </Head>
 
-            <BreadCrumb title={'Articles | PhysioTrends'} link={'Home'} current={'Articles'} />
-            <section className={`${styles?.articles}`}>
-                <div className={`${styles?.articlesContent}`}>
-                    <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Our Articles</h1>
-                    <div className={`${styles?.line}`}></div>
+            <Suspense fallback={<Spinner animation='border' size='md' variant='primary' />}>
+                <BreadCrumb title={'Articles | PhysioTrends'} link={'Home'} current={'Articles'} />
+                <section className={`${styles?.articles}`}>
+                    <div className={`${styles?.articlesContent}`}>
+                        <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Our Articles</h1>
+                        <div className={`${styles?.line}`}></div>
 
-                    <Row>
-                        <Col>
-                            <div className={`${styles?.magazine}`}>
-                                {/* {data?.articles?.map(article => {
+                        <Row>
+                            <Col>
+                                <div className={`${styles?.magazine}`}>
+                                    {/* {data?.articles?.map(article => {
                                     return (<>
                                         <React.Fragment key={article?._id}>
                                             <div className={`${styles?.magazineCard}`} onClick={() => router.push(`/articles/${article?._id}`)}>
@@ -42,23 +43,24 @@ function Articles ({ data, router }) {
                                         </React.Fragment>
                                     </>)
                                 })} */}
-                                {articles?.map(article => {
-                                    return (<>
-                                        <React.Fragment key={article?._id}>
-                                            <div className={`${styles?.magazineCard}`} onClick={() => router.push(`/articles/${article?._id}`)}>
-                                                <div className={`${styles?.magazineImg}`}>
-                                                    <Image src={articleImg?.src} alt={article?.title} width={100} height={100} />
+                                    {articles?.map(article => {
+                                        return (<>
+                                            <React.Fragment key={article?._id}>
+                                                <div className={`${styles?.magazineCard}`} onClick={() => router.push(`/articles/${article?._id}`)}>
+                                                    <div className={`${styles?.magazineImg}`}>
+                                                        <Image src={articleImg?.src} alt={article?.title} width={100} height={100} />
+                                                    </div>
+                                                    <p className={`${styles?.cardTitle}`}>{article?.title}</p>
                                                 </div>
-                                                <p className={`${styles?.cardTitle}`}>{article?.title}</p>
-                                            </div>
-                                        </React.Fragment>
-                                    </>)
-                                })}
-                            </div>
-                        </Col>
-                    </Row >
-                </div >
-            </section >
+                                            </React.Fragment>
+                                        </>)
+                                    })}
+                                </div>
+                            </Col>
+                        </Row >
+                    </div >
+                </section >
+            </Suspense>
         </>
     )
 }

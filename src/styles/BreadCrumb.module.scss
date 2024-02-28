@@ -11,9 +11,10 @@
             a {
                 display: flex;
                 flex-wrap: nowrap;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-family: 'Alice', serif;
                 text-decoration: none !important;
                 font-weight: 600;
+                letter-spacing: 0.8px;
                 color: var(--primary-color);
 
                 &:hover {
@@ -30,9 +31,10 @@
         }
 
         .currentPage {
+            font-family: 'Alice', serif;
             color: var(--secondary-400);
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             font-weight: 600;
+            letter-spacing: 0.8px;
         }
     }
 }

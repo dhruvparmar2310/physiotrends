@@ -70,7 +70,7 @@ function ArticleID ({ data }) {
                                 <h1 className={`${styles?.magazineName}`}>{data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.name}</h1>
                                 <div className={`${styles?.line}`}></div>
                                 <p className={`${styles?.authorName}`}>{data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.author}</p>
-                                <div dangerouslySetInnerHTML={{ __html: data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.magazine }} className={`mt-3`}></div>
+                                <div dangerouslySetInnerHTML={{ __html: data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.magazine }} className={`mt-3 ${styles?.magazineContent}`}></div>
                             </div>
                         </>
                     </div>

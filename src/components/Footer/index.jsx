@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from '../../styles/Footer.module.scss'
 import Link from 'next/link'
-import Head from 'next/head'
 
 const Footer = () => {
     return (
@@ -16,8 +15,8 @@ const Footer = () => {
                             </h3>
                             <h4 style={{ padding: '0', margin: '0' }}>Get in touch :</h4>
                             <p style={{ fontSize: '16px' }} className='mt-2'>
-                                <strong className=''>Phone:<Link href="tel:7984377793"> +91 7984-377-793</Link></strong><br />
-                                <strong>Email:<Link href="mailto:darshanparmar680@gmail.com" title='darshanparmar680@gmail.com'> darshanparmar680@gmail.com</Link></strong><br />
+                                <span className=''>Phone:<Link href="tel:7984377793"> +91 7984-377-793</Link></span><br />
+                                <span>Email:<Link href="mailto:darshanparmar680@gmail.com" title='darshanparmar680@gmail.com'> darshanparmar680@gmail.com</Link></span><br />
                             </p>
                         </div>
 
@@ -36,7 +35,7 @@ const Footer = () => {
                                 <h4>Quick Links</h4>
                                 <ul>
                                     <li><i className="ri-arrow-right-s-line"></i> <Link href="/about">All Articles</Link></li>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/about">Advertizement</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/about">Advertisement</Link></li>
                                 </ul>
                             </div>
 

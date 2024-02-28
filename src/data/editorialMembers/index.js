@@ -32,11 +32,11 @@ export const members = [
     {
         _id: '4',
         name: 'Dr. Parita Dave',
-        profile: '-',
+        profile: 'assets/img/Members/DrParitaDave.jpg',
         education: 'MPT in CardioPulmonary Conditions',
         designation: 'Associate Professor at K.D.Institute of Physiotherapy',
         role: '-',
-        emailAddress: '-',
+        emailAddress: 'paritadave90@gmail.com',
         address: 'Ahmedabad'
     },
     {
