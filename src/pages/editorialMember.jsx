@@ -17,7 +17,7 @@ const EditorialMember = ({ data }) => {
                 <link rel="icon" href="assets/img/favicon.jpg" />
             </Head>
 
-            <BreadCrumb title={'Editorial Members | PhysioTrends'} link={'Home'} current={'Editorial Members'} />
+            <BreadCrumb title={'Home | PhysioTrends'} link={'Home'} current={'Editorial Members'} />
             <section className={`${styles?.editorialMember}`}>
                 <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Editorial Members</h1>
                 <div className={`${styles?.line}`}></div>
@@ -33,6 +33,7 @@ const EditorialMember = ({ data }) => {
                                         </div>
                                         <div className={`${styles?.memberCardBody}`}>
                                             <h3 className={`${styles?.doctorName}`}>{member?.name}</h3>
+                                            <span className={`${styles?.occupation}`}>{member?.occupation || ''}</span>
                                             <ul>
                                                 <li className={`${styles?.details}`}>{member?.education}</li>
                                                 <li className={`${styles?.details}`}>{member?.designation}</li>

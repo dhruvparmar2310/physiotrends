@@ -7,7 +7,7 @@ export const members = [
         designation: 'Assistant Professor at K.D.Institute of Physiotherapy',
         role: ['Founder of PhysioTrends, ThePhysioBrothers, YogaSanskriti'],
         emailAddress: 'darshanparmar680@gmail.com',
-        address: 'Dindoli, Surat'
+        address: 'Rajkot'
     },
     {
         _id: '2',
@@ -22,6 +22,7 @@ export const members = [
     {
         _id: '3',
         name: 'Dr. Jaspreet Kaur Kang',
+        occupation: '(Editor-in-Chief)',
         profile: 'assets/img/Members/DrJaspreetKaurKang.JPG',
         education: 'PhD., MPT in Neurological Conditions',
         designation: 'Principal at K.D.Institute of Physiotherapy',
@@ -32,6 +33,7 @@ export const members = [
     {
         _id: '4',
         name: 'Dr. Parita Dave',
+        occupation: '(Editor-in-Chief)',
         profile: 'assets/img/Members/DrParitaDave.jpg',
         education: 'MPT in CardioPulmonary Conditions',
         designation: 'Associate Professor at K.D.Institute of Physiotherapy',

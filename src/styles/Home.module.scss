@@ -54,6 +54,26 @@ main {
           }
         }
       }
+
+      .aboutUsDetails {
+        table {
+          th {
+            font-weight: 700;
+          }
+
+          td {
+            font-weight: 600;
+            font-family: 'Alice', serif;
+
+            &.dataValue {
+              color: var(--primary-dark);
+              font-weight: 600;
+              font-family: 'Alice', serif;
+            }
+          }
+
+        }
+      }
     }
   }
 

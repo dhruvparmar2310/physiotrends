@@ -25,13 +25,7 @@
             font-size: 1rem;
             letter-spacing: 0.8px;
 
-            th {
-                text-align: end;
-                text-wrap: nowrap;
-                text-transform: uppercase;
-                color: var(--black-color);
-            }
-
+            th,
             td {
                 text-wrap: nowrap;
                 text-transform: uppercase;
@@ -39,8 +33,43 @@
             }
 
             .price {
-                text-align: end;
                 color: var(--primary-color);
+            }
+        }
+
+        .whyUs {
+            .detailCardContent {
+                display: flex;
+                justify-content: space-evenly;
+                gap: 20px;
+                align-items: center;
+                margin-top: 30px;
+                flex-wrap: wrap;
+
+                .detailCard {
+                    background: #002e33;
+                    background: linear-gradient(45deg, #002e33 0%, var(--primary-dark) 50%, var(--primary-color) 100%);
+                    border-radius: 8px;
+                    padding: 20px;
+                    border: none;
+                    width: 100%;
+                    max-width: 380px;
+                    box-sizing: border-box;
+                    text-align: center;
+
+                    .detailCardIcon {
+                        svg {
+                            color: var(--white-color);
+                            font-size: 3rem;
+                            border: 8px;
+                        }
+                    }
+
+                    .detailCardBody {
+                        color: var(--white-color);
+                        font-size: 1.5rem;
+                    }
+                }
             }
         }
 
@@ -49,6 +78,25 @@
             text-align: end;
             color: #d93e3e;
             font-style: italic;
+        }
+
+        .clientContent {
+            .contentTitle {
+                font-size: 1.8rem;
+                font-weight: 600;
+                letter-spacing: 0.8px;
+                color: var(--primary-dark);
+                text-align: center;
+            }
+
+            .clientLogo {
+                text-align: center;
+
+                img {
+                    width: 150px;
+                    aspect-ratio: 10/4;
+                }
+            }
         }
     }
 }

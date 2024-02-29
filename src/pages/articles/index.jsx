@@ -22,7 +22,7 @@ function Articles ({ data, router }) {
             </Head>
 
             <Suspense fallback={<Spinner animation='border' size='md' variant='primary' />}>
-                <BreadCrumb title={'Articles | PhysioTrends'} link={'Home'} current={'Articles'} />
+                <BreadCrumb title={'Home | PhysioTrends'} link={'Home'} current={'Articles'} />
                 <section className={`${styles?.articles}`}>
                     <div className={`${styles?.articlesContent}`}>
                         <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Our Articles</h1>

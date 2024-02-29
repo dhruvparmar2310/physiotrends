@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import HomePageArticles from "@/components/HomePageArticles";
 import { articles } from "@/data/articles";
 import articleImg from '../../public/assets/img/magazines/vol1_issue1.jpg'
+import { Table } from "react-bootstrap";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -47,6 +48,71 @@ export default function Home() {
                   To showcase Physio's Innovation, Talent, and Creativity in the form of Articles.
                 </p>
               </div>
+            </div>
+
+            <div className={`${styles?.aboutUsDetails} mt-3`}>
+              <Table hover responsive>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Title</td>
+                    <td className={`${styles?.dataValue}`}>PhysioTrends</td>
+                  </tr>
+                  <tr>
+                    <td>Frequency</td>
+                    <td className={`${styles?.dataValue}`}>Quarterly</td>
+                  </tr>
+                  <tr>
+                    <td>ISSN No.</td>
+                    <td className={`${styles?.dataValue}`}></td>
+                  </tr>
+                  <tr>
+                    <td>Chief Editor</td>
+                    <td className={`${styles?.dataValue}`}>Dr. Jaspreet Kaur Kang, Dr. Parita Dave</td>
+                  </tr>
+                  <tr>
+                    <td>Copyright</td>
+                    <td className={`${styles?.dataValue}`}>PhysioTrends</td>
+                  </tr>
+                  <tr>
+                    <td>Starting Year</td>
+                    <td className={`${styles?.dataValue}`}>2024</td>
+                  </tr>
+                  <tr>
+                    <td>Subject</td>
+                    <td className={`${styles?.dataValue}`}>Medical Science, Physiotherapy</td>
+                  </tr>
+                  <tr>
+                    <td>Language</td>
+                    <td className={`${styles?.dataValue}`}>English</td>
+                  </tr>
+                  <tr>
+                    <td>Publication Format</td>
+                    <td className={`${styles?.dataValue}`}>Online</td>
+                  </tr>
+                  <tr>
+                    <td>Email Address</td>
+                    <td className={`${styles?.dataValue}`}>darshanparmar680@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>Phone No.</td>
+                    <td className={`${styles?.dataValue}`}>+91 7984-377-793</td>
+                  </tr>
+                  <tr>
+                    <td>Website</td>
+                    <td className={`${styles?.dataValue}`}>https://physiotrends.vercel.app</td>
+                  </tr>
+                  <tr>
+                    <td>Address</td>
+                    <td className={`${styles?.dataValue}`}>Kuldevi Krupa, Sahkar Society, Street No.3, Sahkar Main Road, Bhaktinagar, Rajkot - 360002</td>
+                  </tr>
+                </tbody>
+              </Table>
             </div>
           </div>
         </section>

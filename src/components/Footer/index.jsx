@@ -25,8 +25,8 @@ const Footer = () => {
                                 <h4>Useful Links</h4>
                                 <ul>
                                     <li><i className="ri-arrow-right-s-line"></i> <Link href="/">Home</Link></li>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/about">About us</Link></li>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/bhajan">Latest Magazine</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/#about">About us</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/articles">Latest Magazine</Link></li>
                                     <li><i className="ri-arrow-right-s-line"></i> <Link href="/contact">Contact</Link></li>
                                 </ul>
                             </div>
@@ -34,17 +34,15 @@ const Footer = () => {
                             <div className={`${styles.footer_links}`}>
                                 <h4>Quick Links</h4>
                                 <ul>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/about">All Articles</Link></li>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/about">Advertisement</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/articles">All Articles</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/advertise">Advertisement</Link></li>
                                 </ul>
                             </div>
 
                             <div className={`${styles.footer_links}`}>
                                 <h4>Additional Links</h4>
                                 <ul>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/about/adhyay">FAQs</Link></li>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/about/wallpapers">Privacy Policy</Link></li>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/about/quotes">Terms & Conditions</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/terms-and-conditions">Terms & Conditions</Link></li>
                                 </ul>
                             </div>
                         </div>

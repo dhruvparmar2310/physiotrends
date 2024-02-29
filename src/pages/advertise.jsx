@@ -2,7 +2,13 @@ import BreadCrumb from '@/components/BreadCrumb'
 import Head from 'next/head'
 import React from 'react'
 import styles from '../styles/Advertise.module.scss'
-import { Table } from 'react-bootstrap'
+import { Col, Row, Table } from 'react-bootstrap'
+import { MdNoiseAware } from "react-icons/md"
+import { AiOutlineStock } from "react-icons/ai"
+import { FaUsers } from "react-icons/fa"
+import Image from 'next/image'
+import ThePhysioBrothers from '../../public/assets/img/Clients/physiobrothers.png'
+import YogaSanskriti from '../../public/assets/img/Clients/header-logo.png'
 
 const Advertise = () => {
     return (
@@ -16,34 +22,46 @@ const Advertise = () => {
                 <link rel="icon" href="assets/img/favicon.jpg" />
             </Head>
 
-            <BreadCrumb title={'Advertise | PhysioTrends'} link={'Home'} current={'Advertise'} />
+            <BreadCrumb title={'Home | PhysioTrends'} link={'Home'} current={'Advertise'} />
             <section className={`${styles?.advertise}`}>
                 <div className={`${styles?.advertiseContent}`}>
                     <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Advertise With Us!</h1>
                     <div className={`${styles?.line}`}></div>
                     <p className={`${styles?.advertiseDesc} mt-4`}>
-                        PHYSIOTRENDS is one of the fastest growing E-magazine for the Physiotherapist. Articles from the great Innovators, Thinkers, Researchers and Creators in the field of physiotherapy can be found in the PhysioTrends E-Magazine. Additionally, PhysioTrends has an advertisement section where users can promote their products or services in order to target consumers.
+                        PHYSIOTRENDS is one of the fastest growing ISSN Certified E-magazine for the Physiotherapist. Articles from the great Innovators, Thinkers, Researchers and Creators in the field of physiotherapy can be found in the PhysioTrends E-Magazine. Additionally, PhysioTrends has an advertisement section where users can promote their products or services in order to target consumers.
                     </p>
 
-                    <h1 className={`sectionTitle ${styles?.sectionTitle} mt-5`}>Who can give their Advertisement:</h1>
-                    <div className={`${styles?.line}`}></div>
-                    <ul className='mt-3'>
-                        <li className={`${styles?.advertisePoints}`}>Physiotherapy Modalities Company/Distributor/Seller.</li>
-                        <li className={`${styles?.advertisePoints}`}>Any Product which belongs to the field of Physiotherapy.</li>
-                        <li className={`${styles?.advertisePoints}`}>Physiotherapy Innovations</li>
-                        <li className={`${styles?.advertisePoints}`}>Physiotherapy Equipments Manufacturer/ Distributor/Seller.</li>
-                        <li className={`${styles?.advertisePoints}`}>Beauty products</li>
-                        <li className={`${styles?.advertisePoints}`}>Physiotherapy Book’s Distributor/Seller</li>
-                        <li className={`${styles?.advertisePoints}`}>Events/Workshops/Webinars/Conferences of Physiotherapy.</li>
-                        <li className={`${styles?.advertisePoints}`}>Business ideas for the field of Physiotherapy</li>
-                        <li className={`${styles?.advertisePoints}`}>Banks that can give Financial support for students  </li>
-                    </ul>
+                    <div className={`${styles?.whyUs}`}>
+                        <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Why Us?</h1>
+                        <div className={`${styles?.line}`}></div>
+
+                        <div className={`${styles?.detailCardContent}`}>
+                            <div className={`${styles?.detailCard}`}>
+                                <div className={`${styles?.detailCardIcon}`}>
+                                    <MdNoiseAware />
+                                </div>
+                                <p className={`${styles?.detailCardBody}`}>Build Brand Awareness</p>
+                            </div>
+                            <div className={`${styles?.detailCard}`}>
+                                <div className={`${styles?.detailCardIcon}`}>
+                                    <AiOutlineStock />
+                                </div>
+                                <p className={`${styles?.detailCardBody}`}>Increase Reach</p>
+                            </div>
+                            <div className={`${styles?.detailCard}`}>
+                                <div className={`${styles?.detailCardIcon}`}>
+                                    <FaUsers />
+                                </div>
+                                <p className={`${styles?.detailCardBody}`}>Get Targeted Audience</p>
+                            </div>
+                        </div>
+                    </div>
 
                     <div>
                         <h1 className={`sectionTitle ${styles?.sectionTitle} mt-5`}>Rate of Advertisement:</h1>
                         <div className={`${styles?.line}`}></div>
 
-                        <Table borderless responsive className={`mt-4`}>
+                        <Table responsive className={`mt-4`}>
                             <thead>
                                 <tr>
                                     <th></th>
@@ -66,6 +84,19 @@ const Advertise = () => {
                             </tbody>
                         </Table>
                         <span className={`${styles?.notes}`}>Note: 100% payment is mandatory for the Advertisement</span>
+                    </div>
+
+                    <div className={`${styles?.clientContent} mt-5`}>
+                        <h1 className={`${styles?.contentTitle}`}>A few of our many Satisfied Clients</h1>
+
+                        <div className='d-flex flex-wrap justify-content-center gap-2 mt-4'>
+                            <div className={`${styles?.clientLogo}`}>
+                                <Image src={ThePhysioBrothers} className={'img-fluid'} alt='' quality={100} />
+                            </div>
+                            <div className={`${styles?.clientLogo}`}>
+                                <Image src={YogaSanskriti} className={'img-fluid'} alt='' quality={100} />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

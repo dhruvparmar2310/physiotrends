@@ -4,6 +4,9 @@ import Head from 'next/head'
 import styles from '../styles/Contact.module.scss'
 import { MdEmail } from "react-icons/md"
 import { IoCall } from "react-icons/io5"
+import { Col, Form, Row } from 'react-bootstrap'
+import { FaLocationDot } from "react-icons/fa6"
+import Link from 'next/link'
 
 const Contact = () => {
     return (
@@ -17,28 +20,43 @@ const Contact = () => {
                 <link rel="icon" href="assets/img/favicon.jpg" />
             </Head>
 
-            <BreadCrumb title={'Contact | PhysioTrends'} link={'Home'} current={'Contact'} />
+            <BreadCrumb title={'Home | PhysioTrends'} link={'Home'} current={'Contact'} />
             <section className={`${styles?.contact}`}>
                 <div className={`${styles?.contactContent}`}>
                     <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Stay Connected With Us!</h1>
                     <div className={`${styles?.line}`}></div>
 
-                    <div className='d-flex flex-wrap gap-3 mt-4'>
-                        <div className={`${styles?.contactCard}`}>
-                            <span className={`${styles?.cardIcon}`}>
-                                <p className={`${styles?.cardTitle}`}>Email Address</p>
-                                <MdEmail />
-                            </span>
-                            <p className={`${styles?.cardValue}`}>darshanparmar680@gmail.com</p>
-                        </div>
-
-                        <div className={`${styles?.contactCard}`}>
-                            <span className={`${styles?.cardIcon}`}>
-                                <p className={`${styles?.cardTitle}`}>Phone Number</p>
-                                <IoCall />
-                            </span>
-                            <p className={`${styles?.cardValue}`}>7984377793</p>
-                        </div>
+                    <p className={`${styles?.notes} mt-2`}>Note: One must read all the <Link href={'/terms-and-conditions'}>Terms & Conditions</Link> before submitting the Article.</p>
+                    <div className='gap-3 mt-5'>
+                        <Row>
+                            <Col lg={4}>
+                                <div className={`${styles?.cardDetails}`}>
+                                    <div className={`${styles?.cardIcon}`}>
+                                        <FaLocationDot className={`${styles?.location}`} />
+                                    </div>
+                                    <p>Kuldevi Krupa, Sahkar Society,</p>
+                                    <p>Street No.3, Sahkar Main Road,</p>
+                                    <p>Bhaktinagar, Rajkot - 360002</p>
+                                </div>
+                            </Col>
+                            <Col lg={4}>
+                                <div className={`${styles?.cardDetails}`}>
+                                    <div className={`${styles?.cardIcon}`}>
+                                        <IoCall className={`${styles?.phoneNo}`} />
+                                    </div>
+                                    <p>+91 7984-377-793</p>
+                                    <p>+91 9820-553-515</p>
+                                </div>
+                            </Col>
+                            <Col lg={4}>
+                                <div className={`${styles?.cardDetails}`}>
+                                    <div className={`${styles?.cardIcon}`}>
+                                        <MdEmail className={`${styles?.email}`} />
+                                    </div>
+                                    <p>darshanparmar680@gmail.com</p>
+                                </div>
+                            </Col>
+                        </Row>
                     </div>
                 </div>
             </section>
