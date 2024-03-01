@@ -432,3 +432,27 @@
         padding-right: 35px;
     }
 }
+
+// very large display
+@media (min-width: 1400px) and (max-width: 1950px) {
+    .header {
+        .logo {
+            img {
+                width: 350px;
+                height: 200px;
+            }
+        }
+
+        .home {
+            padding: 20px 30px;
+            display: flex !important;
+            justify-content: space-between;
+        }
+
+        .nav_menu {
+            a {
+                font-size: 2rem;
+            }
+        }
+    }
+}

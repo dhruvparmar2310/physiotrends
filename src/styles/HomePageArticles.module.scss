@@ -41,3 +41,23 @@
         }
     }
 }
+
+// very large display
+@media (min-width: 1400px) and (max-width: 1950px) {
+    .magazine {
+        .magazineCard {
+            width: 500px !important;
+            height: 650px;
+
+            .magazineImg {
+                img {
+                    height: 580px !important;
+                }
+            }
+
+            .cardTitle {
+                font-size: 2.2rem;
+            }
+        }
+    }
+}

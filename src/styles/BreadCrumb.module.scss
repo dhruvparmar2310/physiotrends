@@ -38,3 +38,15 @@
         }
     }
 }
+
+// very large display
+@media (min-width: 1400px) and (max-width: 1950px) {
+    .breadcrumbContent {
+        margin-top: 6rem !important;
+
+        .breadcrumbItem,
+        .currentPage {
+            font-size: 1.8rem !important;
+        }
+    }
+}

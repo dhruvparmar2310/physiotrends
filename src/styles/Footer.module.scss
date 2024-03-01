@@ -259,3 +259,41 @@
     }
 
 }
+
+// very large display
+@media (min-width: 1400px) and (max-width: 1950px) {
+    .footer {
+        .footerContent {
+            max-width: calc(100% - 8%);
+        }
+
+        .footer_contact {
+            h3 {
+                a {
+                    font-size: 3.5rem !important;
+                }
+            }
+
+            h4,
+            p {
+                font-size: 1.8rem !important;
+            }
+
+            p {
+                line-height: 3rem !important;
+            }
+        }
+
+        .footerLinksContent {
+            .footer_links {
+                display: flex;
+                justify-content: space-between;
+
+                h4,
+                a {
+                    font-size: 1.8rem !important;
+                }
+            }
+        }
+    }
+}

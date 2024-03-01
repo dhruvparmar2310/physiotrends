@@ -12,13 +12,19 @@ import { RiMenu3Fill } from "react-icons/ri";
 
 function Header () {
     const router = useRouter()
-    console.log('router :>> ', router);
     const [isNavExpanded, setIsNavExpanded] = useState(false)
+    console.log('isNavExpanded :>> ', isNavExpanded);
 
+    const handleClick = (e, path) => {
+        e?.preventDefault()
+
+        setIsNavExpanded(false)
+        router?.push(path)
+    }
     return (
         <>
             <header id='header' className={`fixed-top shadow bg-white ${styles.header}`}>
-                <div className={`container d-flex align-items-center ${styles.home}`}>
+                <div className={`d-flex align-items-center ${styles.home}`}>
                     <div className={isNavExpanded ? `${styles.top_header}` : ``}>
                         <h1 className={`${styles.logo} mr-auto`} title={`PhysioTrends`}>
                             <Link href='/' style={{ fontWeight: '500' }}>
@@ -37,19 +43,19 @@ function Header () {
                     >
                         <ul>
                             <li className="active">
-                                <Link href='/' title='Home | PhysioTrends' className={`${router?.route === '/' && styles?.active} `}>Home</Link>
+                                <Link href='/' title='Home | PhysioTrends' className={`${router?.route === '/' && styles?.active} `} onClick={(e) => handleClick(e, '/')}>Home</Link>
                             </li>
                             <li className={`${styles.drop_down}`}>
-                                <Link href={`/articles`} title='Articles | PhysioTrends' className={`${router?.route?.includes('/articles') && styles?.active}`}>Articles</Link>
+                                <Link href={`/articles`} title='Articles | PhysioTrends' className={`${router?.route?.includes('/articles') && styles?.active}`} onClick={(e) => handleClick(e, '/articles')}>Articles</Link>
                             </li>
                             <li className={`${styles.drop_down}`}>
-                                <Link href='/advertise' title='Advertise | PhysioTrends' className={`${router?.route?.includes('/advertise') && styles?.active}`}>Advertise </Link>
+                                <Link href='/advertise' title='Advertise | PhysioTrends' className={`${router?.route?.includes('/advertise') && styles?.active}`} onClick={(e) => handleClick(e, '/advertise')}>Advertise </Link>
                             </li>
                             <li>
-                                <Link href={'/editorialMember'} title='Editorial Members | PhysioTrends' className={`${router?.route?.includes('/editorialMember') && styles?.active}`}>Editorial Members</Link>
+                                <Link href={'/editorialMember'} title='Editorial Members | PhysioTrends' className={`${router?.route?.includes('/editorialMember') && styles?.active}`} onClick={(e) => handleClick(e, '/editorialMember')}>Editorial Members</Link>
                             </li>
                             <li>
-                                <Link href={'/contact'} title='Contact | PhysioTrends'>Contact</Link>
+                                <Link href={'/contact'} title='Contact | PhysioTrends' onClick={(e) => handleClick(e, '/contact')}>Contact</Link>
                             </li>
                         </ul>
                     </nav>

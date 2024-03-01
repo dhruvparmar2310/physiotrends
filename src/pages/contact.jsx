@@ -53,7 +53,7 @@ const Contact = () => {
                                     <div className={`${styles?.cardIcon}`}>
                                         <MdEmail className={`${styles?.email}`} />
                                     </div>
-                                    <p>darshanparmar680@gmail.com</p>
+                                    <p>physiothrendsmagazine@gmail.com</p>
                                 </div>
                             </Col>
                         </Row>

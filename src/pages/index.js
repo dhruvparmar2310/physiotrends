@@ -37,7 +37,7 @@ export default function Home() {
                 <h1 className={`${styles?.cardTitle}`}>Vision</h1>
                 <div className={`${styles?.line}`}></div>
                 <p className={`${styles?.cardBody}`}>
-                  To become India's No. 1 E-Magazine for Physiotherapist.
+                  "To be the premier global platform for physiotherapy professionals, recognized for our unparalleled commitment to delivering timely, evidence-based information, fostering innovation, and fostering a collaborative community dedicated to elevating standards and improving outcomes in physiotherapy practice."
                 </p>
               </div>
 
@@ -45,7 +45,7 @@ export default function Home() {
                 <h1 className={`${styles?.cardTitle}`}>Mission</h1>
                 <div className={`${styles?.line}`}></div>
                 <p className={`${styles?.cardBody}`}>
-                  To showcase Physio's Innovation, Talent, and Creativity in the form of Articles.
+                  "To empower physiotherapy professionals worldwide with cutting-edge knowledge, insights, and trends, enabling them to enhance patient care, advance their practice, and contribute to the evolution of the physiotherapy profession."
                 </p>
               </div>
             </div>
@@ -73,7 +73,7 @@ export default function Home() {
                   </tr>
                   <tr>
                     <td>Chief Editor</td>
-                    <td className={`${styles?.dataValue}`}>Dr. Jaspreet Kaur Kang, Dr. Parita Dave</td>
+                    <td className={`${styles?.dataValue}`}>Dr. Jaspreet Kaur Kang</td>
                   </tr>
                   <tr>
                     <td>Copyright</td>
@@ -97,7 +97,7 @@ export default function Home() {
                   </tr>
                   <tr>
                     <td>Email Address</td>
-                    <td className={`${styles?.dataValue}`}>darshanparmar680@gmail.com</td>
+                    <td className={`${styles?.dataValue}`}>physiothrendsmagazine@gmail.com</td>
                   </tr>
                   <tr>
                     <td>Phone No.</td>

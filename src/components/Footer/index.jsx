@@ -16,7 +16,7 @@ const Footer = () => {
                             <h4 style={{ padding: '0', margin: '0' }}>Get in touch :</h4>
                             <p style={{ fontSize: '16px' }} className='mt-2'>
                                 <span className=''>Phone:<Link href="tel:7984377793"> +91 7984-377-793</Link></span><br />
-                                <span>Email:<Link href="mailto:darshanparmar680@gmail.com" title='darshanparmar680@gmail.com'> darshanparmar680@gmail.com</Link></span><br />
+                                <span>Email:<Link href="mailto:physiothrendsmagazine@gmail.com" title='physiothrendsmagazine@gmail.com'> physiothrendsmagazine@gmail.com</Link></span><br />
                             </p>
                         </div>
 

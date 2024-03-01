@@ -49,8 +49,9 @@ main {
             margin-top: 15px;
             color: var(--white-color);
             font-family: 'Alice', serif;
-            font-size: 1.2rem;
-            letter-spacing: 0.5px;
+            font-size: 1rem;
+            letter-spacing: 0.8px;
+            text-align: center;
           }
         }
       }
@@ -113,6 +114,51 @@ main {
       .desc {
         margin-top: 30px !important;
         font-size: 1.1rem !important;
+      }
+    }
+  }
+}
+
+// very large display
+@media (min-width: 1400px) and (max-width: 1950px) {
+  .about {
+    .innerContent {
+      .desc {
+        font-size: 2.5rem !important;
+        line-height: 3rem !important;
+      }
+
+      table {
+
+        th,
+        td {
+          font-size: 2.3rem;
+          text-align: left;
+
+          &:last-child {
+            text-align: end;
+          }
+        }
+      }
+
+      .visionContent {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        gap: 2rem !important;
+
+        .card {
+          width: auto !important;
+
+          .cardTitle {
+            font-size: 4rem;
+          }
+
+          .cardBody {
+            padding: 15px 0;
+            font-size: 2.3rem !important;
+          }
+        }
       }
     }
   }

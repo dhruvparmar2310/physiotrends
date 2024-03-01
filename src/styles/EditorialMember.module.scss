@@ -98,3 +98,27 @@
         }
     }
 }
+
+// very large display
+@media (min-width: 1400px) and (max-width: 1950px) {
+    .memberContent {
+        margin-top: 2.2rem !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px !important;
+
+        .memberCard {
+            width: 52rem !important;
+
+            .memberCardBody {
+                padding: 10px 10px !important;
+
+                .details {
+                    font-size: 1.4rem !important;
+                    line-height: 2rem !important;
+                    word-break: break-all !important;
+                }
+            }
+        }
+    }
+}

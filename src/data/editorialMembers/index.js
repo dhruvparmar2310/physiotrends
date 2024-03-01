@@ -27,13 +27,24 @@ export const members = [
         education: 'PhD., MPT in Neurological Conditions',
         designation: 'Principal at K.D.Institute of Physiotherapy',
         role: '-',
-        emailAddress: '-',
+        emailAddress: 'principal.phy@kdhospital.co.in',
         address: 'Ahmedabad'
     },
     {
         _id: '4',
+        name: 'Dr. Karishma Jagad',
+        occupation: '',
+        profile: 'assets/img/Members/DrKrishmaJagad.jpg',
+        education: 'MPT in Neurological Conditions',
+        designation: 'Sr. Lecturer at Govt. Physiotherapy College, Jamnagar',
+        role: '-',
+        emailAddress: 'karishma.jagad@gptcjam.edu.in',
+        address: 'Jamnagar'
+    },
+    {
+        _id: '5',
         name: 'Dr. Parita Dave',
-        occupation: '(Editor-in-Chief)',
+        occupation: '',
         profile: 'assets/img/Members/DrParitaDave.jpg',
         education: 'MPT in CardioPulmonary Conditions',
         designation: 'Associate Professor at K.D.Institute of Physiotherapy',
@@ -42,27 +53,27 @@ export const members = [
         address: 'Ahmedabad'
     },
     {
-        _id: '5',
+        _id: '6',
         name: 'Dr. Chirag Solanki',
         profile: 'assets/img/Members/Dr.ChiragSolanki.jpg',
         education: 'MPT in Neurological Conditions',
         designation: 'Assistant Professor at School of Physiotherapy, R.K.University',
-        role: ['Owner and Director of Maruti Physiotherapy Center, Samarpan Physiotherapy Center', 'Consultant Chief Physiotherapist at Pulse + Multi Specialty Hospital'],
+        role: ['Owner and Director of Maruti Physiotherapy Center, Samarpan Physiotherapy Center'],
         emailAddress: 'chirag.solanki@rku.ac.in',
         address: 'Rajkot'
     },
     {
-        _id: '6',
+        _id: '7',
         name: 'Dr. Poorvin Shah',
         profile: 'assets/img/Members/DrPoorvinShah.jpg',
         education: 'MPT in Orthopedics',
         designation: 'Assistant Professor at K.D.Institute of Physiotherapy',
         role: '-',
-        emailAddress: 'puru29595@gmail.com',
+        emailAddress: 'puru29596@gmail.com',
         address: 'Ahmedabad'
     },
     {
-        _id: '7',
+        _id: '8',
         name: 'Dr. Hetvi Dimothe',
         profile: 'assets/img/Members/DrHetiDimothe.jpg',
         education: 'MPT in Rehabilitation',
