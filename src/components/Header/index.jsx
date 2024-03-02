@@ -27,7 +27,7 @@ function Header () {
                 <div className={`d-flex align-items-center ${styles.home}`}>
                     <div className={isNavExpanded ? `${styles.top_header}` : ``}>
                         <h1 className={`${styles.logo} mr-auto`} title={`PhysioTrends`}>
-                            <Link href='/' style={{ fontWeight: '500' }}>
+                            <Link href='/' style={{ fontWeight: '500' }} passHref>
                                 <Image src={TextLogo} alt='' quality={100} width={250} height={100} />
                             </Link>
                         </h1>

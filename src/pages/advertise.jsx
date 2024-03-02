@@ -9,6 +9,7 @@ import { FaUsers } from "react-icons/fa"
 import Image from 'next/image'
 import ThePhysioBrothers from '../../public/assets/img/Clients/physiobrothers.png'
 import YogaSanskriti from '../../public/assets/img/Clients/header-logo.png'
+import PricePlan from '../../public/assets/PricePlan'
 
 const Advertise = () => {
     return (
@@ -17,8 +18,13 @@ const Advertise = () => {
                 <title>Advertise | PhysioTrends</title>
                 <meta charset="utf-8"></meta>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name='keywords' content='PhysioTrends, Physiotherapy, Physio Magazine, Physio Article, ThePhysioBrothers' />
-                <meta name="description" content="PHYSIOTRENDS is India’s fastest growing E-Magazine for Physical Therapist, your ultimate resource for all things related to physical therapy and rehabilitation. Explore expert articles, in-depth interviews with leading professionals, latest research findings, innovative techniques, and practical tips to enhance your understanding and practice in the field of physiotherapy. Whether you're a seasoned practitioner or just starting your journey, our E-Magazine is your go-to destination for staying updated, informed, and inspired in the world of physiotherapy." />
+                <meta name='keywords' content='PhysioTrends, Physiotherapy, Advertise of PhysioTrends, PhysioTrends Ads, Physio Magazine, Physio Article, ThePhysioBrothers' />
+                <meta name="description" content="PHYSIOTRENDS is India’s fastest growing ISSN Certified E-Magazine for Physical Therapist, your ultimate resource for all things related to physical therapy and rehabilitation. Explore expert articles, in-depth interviews with leading professionals, latest research findings, innovative techniques, and practical tips to enhance your understanding and practice in the field of physiotherapy. Whether you're a seasoned practitioner or just starting your journey, our E-Magazine is your go-to destination for staying updated, informed, and inspired in the world of physiotherapy." />
+                <meta property="og:title" content="PhysioTrends: India's #1 PT E-Magazine Empowering You with Expert Articles & Latest Research" />
+                <meta property="og:description" content="Promote your brand to targeted physio audiences - Advertise with Physiotrends." />
+                <meta property="og:url" content="https://physiotrends.vercel.app/advertise" />
+                <meta property="og:image" content="assets/img/favicon.jpg" />
+                <meta property="og:type" content="website" />
                 <link rel="icon" href="assets/img/favicon.jpg" />
             </Head>
 
@@ -36,57 +42,74 @@ const Advertise = () => {
                         <div className={`${styles?.line}`}></div>
 
                         <div className={`${styles?.detailCardContent}`}>
-                            <div className={`${styles?.detailCard}`}>
-                                <div className={`${styles?.detailCardIcon}`}>
-                                    <MdNoiseAware />
-                                </div>
-                                <p className={`${styles?.detailCardBody}`}>Build Brand Awareness</p>
-                            </div>
-                            <div className={`${styles?.detailCard}`}>
-                                <div className={`${styles?.detailCardIcon}`}>
-                                    <AiOutlineStock />
-                                </div>
-                                <p className={`${styles?.detailCardBody}`}>Increase Reach</p>
-                            </div>
-                            <div className={`${styles?.detailCard}`}>
-                                <div className={`${styles?.detailCardIcon}`}>
-                                    <FaUsers />
-                                </div>
-                                <p className={`${styles?.detailCardBody}`}>Get Targeted Audience</p>
-                            </div>
+                            <Row>
+                                <Col lg={4} md={6}>
+                                    <div className={`${styles?.detailCard}`}>
+                                        <div className={`${styles?.detailCardIcon}`}>
+                                            <MdNoiseAware />
+                                        </div>
+                                        <p className={`${styles?.detailCardBody}`}>Build Brand Awareness</p>
+                                    </div>
+                                </Col>
+                                <Col lg={4} md={6} className='mt-md-0 mt-3'>
+                                    <div className={`${styles?.detailCard}`}>
+                                        <div className={`${styles?.detailCardIcon}`}>
+                                            <AiOutlineStock />
+                                        </div>
+                                        <p className={`${styles?.detailCardBody}`}>Increase Reach</p>
+                                    </div>
+                                </Col>
+                                <Col lg={4} md={6} className='mt-lg-0 mt-md-3 mt-3'>
+                                    <div className={`${styles?.detailCard}`}>
+                                        <div className={`${styles?.detailCardIcon}`}>
+                                            <FaUsers />
+                                        </div>
+                                        <p className={`${styles?.detailCardBody}`}>Get Targeted Audience</p>
+                                    </div>
+                                </Col>
+                            </Row>
                         </div>
                     </div>
 
                     <div>
-                        <h1 className={`sectionTitle ${styles?.sectionTitle} mt-5`}>Rate of Advertisement:</h1>
+                        <h1 className={`sectionTitle ${styles?.sectionTitle} mt-5`} title='Rate of Advertisement | PhysioTrends'>Rate of Advertisement:</h1>
                         <div className={`${styles?.line}`}></div>
 
-                        <Table responsive className={`mt-4`}>
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Single Issue</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Full Page</td>
-                                    <td className={`${styles?.price}`}>2000/-</td>
-                                </tr>
-                                <tr>
-                                    <td>Double Pages</td>
-                                    <td className={`${styles?.price}`}>3000/-</td>
-                                </tr>
-                                <tr>
-                                    <td>Half Page</td>
-                                    <td className={`${styles?.price}`}>1,500/-</td>
-                                </tr>
-                            </tbody>
-                        </Table>
-                        <span className={`${styles?.notes}`}>Note: 100% payment is mandatory for the Advertisement</span>
+                        <Row className={`${styles?.priceSection}`}>
+                            <Col lg={6} md={12}>
+                                <div className={`${styles?.adsImg}`}>
+                                    <PricePlan />
+                                </div>
+                            </Col>
+                            <Col lg={6} md={12} className={`${styles?.tableContent}`}>
+                                <Table responsive>
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Single Issue</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Full Page</td>
+                                            <td className={`${styles?.price}`}>2000/-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Double Pages</td>
+                                            <td className={`${styles?.price}`}>3000/-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Half Page</td>
+                                            <td className={`${styles?.price}`}>1,500/-</td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                                <span className={`${styles?.notes}`}>Note: 100% payment is mandatory for the Advertisement</span>
+                            </Col>
+                        </Row>
                     </div>
 
-                    <div className={`${styles?.clientContent} mt-5`}>
+                    <div className={`${styles?.clientContent} mt-1`}>
                         <h1 className={`${styles?.contentTitle}`}>A few of our many Satisfied Clients</h1>
 
                         <div className='d-flex flex-wrap justify-content-center gap-2 mt-4'>

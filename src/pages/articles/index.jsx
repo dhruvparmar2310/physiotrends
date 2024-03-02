@@ -17,7 +17,12 @@ function Articles ({ data, router }) {
                 <meta charset="utf-8"></meta>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name='keywords' content='PhysioTrends, Physiotherapy, Physio Magazine, Physio Article, ThePhysioBrothers' />
-                <meta name="description" content="PHYSIOTRENDS is India’s fastest growing E-Magazine for Physical Therapist, your ultimate resource for all things related to physical therapy and rehabilitation. Explore expert articles, in-depth interviews with leading professionals, latest research findings, innovative techniques, and practical tips to enhance your understanding and practice in the field of physiotherapy. Whether you're a seasoned practitioner or just starting your journey, our E-Magazine is your go-to destination for staying updated, informed, and inspired in the world of physiotherapy." />
+                <meta name="description" content="PHYSIOTRENDS is India’s fastest growing ISSN Certified E-Magazine for Physical Therapist, your ultimate resource for all things related to physical therapy and rehabilitation. Explore expert articles, in-depth interviews with leading professionals, latest research findings, innovative techniques, and practical tips to enhance your understanding and practice in the field of physiotherapy. Whether you're a seasoned practitioner or just starting your journey, our E-Magazine is your go-to destination for staying updated, informed, and inspired in the world of physiotherapy." />
+                <meta property="og:title" content="PhysioTrends: India's #1 PT E-Magazine Empowering You with Expert Articles & Latest Research" />
+                <meta property="og:description" content="PhysioTrends: Explore all the expert articles and latest research on Physiotherapy here." />
+                <meta property="og:url" content="https://physiotrends.vercel.app/articles" />
+                <meta property="og:image" content="assets/img/favicon.jpg" />
+                <meta property="og:type" content="article" />
                 <link rel="icon" href="assets/img/favicon.jpg" />
             </Head>
 
@@ -46,7 +51,7 @@ function Articles ({ data, router }) {
                                     {articles?.map(article => {
                                         return (<>
                                             <React.Fragment key={article?._id}>
-                                                <div className={`${styles?.magazineCard}`} onClick={() => router.push(`/articles/${article?._id}`)}>
+                                                <div className={`${styles?.magazineCard}`} onClick={() => router.push(`/articles/${article?._id}?sArticle=${article?.title}`)} title={`${article?.title} | PhysioTrends`}>
                                                     <div className={`${styles?.magazineImg}`}>
                                                         <Image src={articleImg?.src} alt={article?.title} width={100} height={100} />
                                                     </div>

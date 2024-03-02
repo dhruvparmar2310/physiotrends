@@ -7,7 +7,7 @@
     background: #111;
 
     .footer_top {
-        padding: 60px 0 30px 0;
+        padding: 35px 40px;
         background: #1e1e1e;
 
         h4 {
@@ -25,7 +25,6 @@
             justify-content: space-between;
 
             .footer_contact {
-                margin-bottom: 30px;
                 width: 50%;
 
                 h3 {
@@ -59,6 +58,8 @@
                 }
 
                 span {
+                    font-family: 'Alice', serif;
+
                     a {
                         color: gray;
                         font-family: 'Alice', serif;
@@ -153,6 +154,10 @@
             font-family: 'Alice', serif;
             font-weight: 500;
         }
+    }
+
+    .footerCopyRight {
+        padding: 15px 40px !important;
     }
 }
 

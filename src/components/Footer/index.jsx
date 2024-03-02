@@ -8,7 +8,7 @@ const Footer = () => {
             <footer id="footer" className={`${styles.footer}`}>
 
                 <div className={`${styles.footer_top}`}>
-                    <div className={`container ${styles?.footerContent}`}>
+                    <div className={`${styles?.footerContent}`}>
                         <div className={`${styles.footer_contact}`} style={{ width: '20rem' }}>
                             <h3 title='PhysioTrends'>
                                 <Link href="/">PHYSIO<span>TRENDS</span></Link>
@@ -24,25 +24,25 @@ const Footer = () => {
                             <div className={`${styles.footer_links}`}>
                                 <h4>Useful Links</h4>
                                 <ul>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/">Home</Link></li>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/#about">About us</Link></li>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/articles">Latest Magazine</Link></li>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/contact">Contact</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/" title='Home | PhysioTrends'>Home</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/#about" title='About Us | PhysioTrends'>About us</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/articles" title='Our Latest Articles | PhysioTrends'>Latest Magazine</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/contact" title='Contact Us | PhysioTrends'>Contact</Link></li>
                                 </ul>
                             </div>
 
                             <div className={`${styles.footer_links}`}>
                                 <h4>Quick Links</h4>
                                 <ul>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/articles">All Articles</Link></li>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/advertise">Advertisement</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/articles" title='All Articles | PhysioTrends'>All Articles</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/advertise" title='Advertise with Us | PhysioTrends'>Advertisement</Link></li>
                                 </ul>
                             </div>
 
                             <div className={`${styles.footer_links}`}>
                                 <h4>Additional Links</h4>
                                 <ul>
-                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/terms-and-conditions">Terms & Conditions</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/terms-and-conditions" title='Our Terms & Conditions | PhysioTrends'>Terms & Conditions</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -50,7 +50,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="container row" style={{ display: 'flex !important', alignItems: 'center', justifyContent: 'center', alignContent: 'center', padding: '20px', margin: '0 auto' }}>
+                <div className={`row ${styles?.footerCopyRight}`} style={{ display: 'flex !important', alignItems: 'center', justifyContent: 'center', alignContent: 'center', padding: '20px', margin: '0 auto' }}>
 
                     <div className="col-lg-6 p-0">
                         <div className={`${styles.copyright}`}>

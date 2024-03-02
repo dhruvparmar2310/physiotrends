@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../../styles/Hero.module.scss'
 import { Bebas_Neue, Teko } from 'next/font/google'
 import Image from 'next/image'
@@ -9,6 +9,13 @@ import { Button } from 'react-bootstrap'
 // const Teko_Font = Teko({ subsets: ['latin'], weight: ['300', '400', '500', '600'], style: ['normal'] })
 
 function Hero () {
+    const [mobile, setMobile] = useState(null)
+
+    useEffect(() => {
+        if (window?.innerWidth < 576) {
+            setMobile(true)
+        }
+    }, [mobile])
     return (
         <>
             <section className={`${styles?.hero}`} id='hero'>

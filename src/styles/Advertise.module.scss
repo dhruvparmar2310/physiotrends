@@ -21,30 +21,54 @@
             background: var(--secondary-200);
         }
 
-        table {
-            font-size: 1rem;
-            letter-spacing: 0.8px;
-
-            th,
-            td {
-                text-wrap: nowrap;
-                text-transform: uppercase;
-                color: var(--black-color);
+        .priceSection {
+            .adsImg {
+                width: 90%;
+                margin: 0 auto;
             }
 
-            .price {
-                color: var(--primary-color);
+            .tableContent {
+                margin: auto 0;
+
+                table {
+                    font-size: 1rem;
+                    letter-spacing: 0.8px;
+                    margin-bottom: 5px;
+
+                    th,
+                    td {
+                        text-wrap: nowrap;
+                        text-transform: uppercase;
+                        color: var(--black-color);
+                        text-align: left;
+
+                        &:last-child {
+                            text-align: end;
+                        }
+                    }
+
+                    .price {
+                        color: var(--primary-color);
+                    }
+                }
+
+                .notes {
+                    display: block;
+                    text-align: start;
+                    color: #d93e3e;
+                    font-size: 15px;
+                    font-family: 'Alice', serif;
+                }
             }
         }
 
+
+
         .whyUs {
             .detailCardContent {
-                display: flex;
-                justify-content: space-evenly;
-                gap: 20px;
+                gap: 10px;
                 align-items: center;
                 margin-top: 30px;
-                flex-wrap: wrap;
 
                 .detailCard {
                     background: #002e33;
@@ -53,7 +77,7 @@
                     padding: 20px;
                     border: none;
                     width: 100%;
-                    max-width: 380px;
+                    height: 100%;
                     box-sizing: border-box;
                     text-align: center;
 
@@ -71,13 +95,6 @@
                     }
                 }
             }
-        }
-
-        .notes {
-            display: block;
-            text-align: end;
-            color: #d93e3e;
-            font-style: italic;
         }
 
         .clientContent {

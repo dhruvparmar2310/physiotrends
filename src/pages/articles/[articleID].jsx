@@ -7,7 +7,7 @@ import { Button, Table } from 'react-bootstrap'
 
 function ArticleID ({ data }) {
     const router = useRouter()
-    const { articleID } = router.query
+    const { articleID, sArticle } = router.query
     const [currentPage, setCurrentPage] = useState(1)
     const [currentArticle, setCurrentArticle] = useState('100')
     const pageSize = 10
@@ -25,18 +25,23 @@ function ArticleID ({ data }) {
     return (
         <>
             <Head>
-                <title>Articles - {articleID} | PhysioTrends</title>
+                <title>Articles - {sArticle} | PhysioTrends</title>
                 <meta charset="utf-8"></meta>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name='keywords' content='PhysioTrends, Physiotherapy, Physio Magazine, Physio Article, ThePhysioBrothers' />
-                <meta name="description" content="PHYSIOTRENDS is India’s fastest growing E-Magazine for Physical Therapist, your ultimate resource for all things related to physical therapy and rehabilitation. Explore expert articles, in-depth interviews with leading professionals, latest research findings, innovative techniques, and practical tips to enhance your understanding and practice in the field of physiotherapy. Whether you're a seasoned practitioner or just starting your journey, our E-Magazine is your go-to destination for staying updated, informed, and inspired in the world of physiotherapy." />
+                <meta name='keywords' content={`PhysioTrends, Physiotrends, Physio trends, Physiotherapy, Physio Magazine, Physio Article, ThePhysioBrothers, ${sArticle} of PhysioTrends`} />
+                <meta name="description" content="PHYSIOTRENDS is India’s fastest growing ISSN Certified E-Magazine for Physical Therapist, your ultimate resource for all things related to physical therapy and rehabilitation. Explore expert articles, in-depth interviews with leading professionals, latest research findings, innovative techniques, and practical tips to enhance your understanding and practice in the field of physiotherapy. Whether you're a seasoned practitioner or just starting your journey, our E-Magazine is your go-to destination for staying updated, informed, and inspired in the world of physiotherapy." />
+                <meta property="og:title" content="PhysioTrends: India's #1 PT E-Magazine Empowering You with Expert Articles & Latest Research" />
+                <meta property="og:description" content="PhysioTrends: Explore all the expert articles and latest research on Physiotherapy here." />
+                <meta property="og:url" content="https://physiotrends.vercel.app/articles" />
+                <meta property="og:image" content="assets/img/favicon.jpg" />
+                <meta property="og:type" content="article" />
                 <link rel="icon" href="assets/img/favicon.jpg" />
             </Head>
 
-            <BreadCrumb title={'Articles | PhysioTrends'} link={'Home'} current={'Articles'} />
+            <BreadCrumb title={'Articles | PhysioTrends'} link={'Home'} current={`Articles - ${sArticle}`} />
             <section className={`${styles?.articles}`}>
                 <div className={`${styles?.articlesContent}`}>
-                    <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Table of Content:</h1>
+                    <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Table of Contents:</h1>
                     <div className={`${styles?.line}`}></div>
 
                     <Table striped bordered responsive className={`mt-4`}>
@@ -53,7 +58,7 @@ function ArticleID ({ data }) {
                                     <>
                                         <tr key={index}>
                                             <td>{index + 1}</td>
-                                            <td>{magazine?.name}</td>
+                                            <td title={`${magazine?.name} | PhysioTrends`}>{magazine?.name}</td>
                                             <td>
                                                 <Button variant='dark' size='sm' onClick={() => setCurrentArticle(magazine?._id)}>Read</Button>
                                             </td>
@@ -67,7 +72,7 @@ function ArticleID ({ data }) {
                     <div className='mt-3'>
                         <>
                             <div>
-                                <h1 className={`${styles?.magazineName}`}>{data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.name}</h1>
+                                <h1 className={`${styles?.magazineName}`} title={`${data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.name} | Article by ${data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.author} | PhysioTrends`}>{data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.name}</h1>
                                 <div className={`${styles?.line}`}></div>
                                 <p className={`${styles?.authorName}`}>{data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.author}</p>
                                 <div dangerouslySetInnerHTML={{ __html: data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.magazine }} className={`mt-3 ${styles?.magazineContent}`}></div>

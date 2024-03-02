@@ -256,11 +256,11 @@
     }
 
     .hero {
-        height: 100vh;
+        height: 65vh;
         padding: 25px 0;
 
         .heroContent {
-            padding-top: 3.5rem;
+            padding-top: 4rem;
             flex-direction: column;
 
             .adsContent {
@@ -298,6 +298,7 @@
                 margin: 0;
 
                 img {
+                    margin-top: 20px;
                     width: 80%;
                 }
             }
