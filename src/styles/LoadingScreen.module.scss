@@ -1,0 +1,31 @@
+.loadingOverlay {
+    position: fixed;
+    /* Ensures overlay stays on top */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    z-index: 10000;
+
+    span {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--primary-dark);
+        position: relative;
+        left: -10px;
+        top: -18px;
+        font-weight: 600;
+    }
+}
+
+.loadingOverlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}

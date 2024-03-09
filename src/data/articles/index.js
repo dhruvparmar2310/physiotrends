@@ -2,6 +2,7 @@ export const articles = [
     {
         _id: '1',
         title: 'Volume - 1 | Issue - 1',
+        nMonth: 'March, 2024',
         img: 'assets/img/magazines/vol1_issue1.JPG',
         aMagazines: [
             {
@@ -35,5 +36,12 @@ export const articles = [
                 magazine: '<p>As people age, their immune systems vary significantly, resulting in differences in how older men and women respond to flu vaccines. According to research, elderly men&#39;s and women&#39;s immunological responses to influenza vaccine vary significantly.</p><p>Hormonal differences between men and women have a significant role in these discrepancies. Estrogen, which is found in greater amounts in women, has been demonstrated to improve immunological response to vaccinations, particularly flu injections. According to studies, women may have a stronger immunological response to vaccination than males because of hormonal influences.</p><p>Furthermore, age-related immune system changes, known as immunosenescence, influence how older people respond to immunizations. In general, older persons have a weakened immune system, which leads to a worse response to vaccination. However, research suggests that women may maintain greater immune function as they age than males, perhaps leading to a more effective response to flu vaccines.</p><p>In addition, variations in the way older men and women react to flu vaccines might be attributed to hereditary factors. It is known that individual reactions to vaccination are influenced by differences in genes linked to immune function and vaccine response. Variations in vaccination effectiveness between older men and women have been identified; these discrepancies may be partially explained by genetic differences.</p><p>In summary, whereas vaccinations against influenza protect against the disease for older men and women alike, there are notable variations in the immune responses of these populations. Comprehending these distinctions is crucial for refining vaccination plans for senior citizens and creating specialized methods to increase vaccination efficacy in this demographic.</p>'
             }
         ]
+    },
+    {
+        _id: '2',
+        title: 'Volume - 1 | Issue - 2',
+        nMonth: 'Coming Soon...',
+        img: 'assets/img/magazines/vol1_issue1.JPG',
+        aMagazines: []
     }
 ]

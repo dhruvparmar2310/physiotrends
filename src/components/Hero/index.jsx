@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from '../../styles/Hero.module.scss'
 import { Bebas_Neue, Teko } from 'next/font/google'
 import Image from 'next/image'
-import PhoneMockUp from '../../../public/assets/img/phone-mockUp-2.png'
+import Character from '../../../public/assets/img/char-1.png'
 import { Button } from 'react-bootstrap'
 
 // const Bebas_Neue_Font = Bebas_Neue({ subsets: ['latin'], weight: ['400'], style: ['normal'] })
@@ -16,6 +16,7 @@ function Hero () {
             setMobile(true)
         }
     }, [mobile])
+
     return (
         <>
             <section className={`${styles?.hero}`} id='hero'>
@@ -24,10 +25,10 @@ function Hero () {
                         <h1 data-heading='ISSN Number'>PhysioTrends</h1>
 
                         <p className={`${styles?.desc} mt-lg-5 mt-3`}>
-                            PHYSIOTRENDS is India’s fastest growing E-Magazine for Physical Therapist
+                            Empowering Physiotherapists
                         </p>
                         <p className={`${styles?.desc} mt-3`}>
-                            Join our family now by Publishing an article for <span className={`${styles?.freeTag}`}>Free</span>.
+                            Read the latest research and empower your physiotherapy journey.
                         </p>
 
                         <div className={`${styles?.btnContent} mt-3`}>
@@ -40,11 +41,11 @@ function Hero () {
                     </div>
 
                     <div className={`${styles?.imgContent}`}>
-                        <Image src={PhoneMockUp} quality={100} width={100} height={100} className={`${styles?.phoneMockUp}`} />
+                        <Image src={Character} quality={100} width={100} height={100} className={`${styles?.phoneMockUp}`} />
                     </div>
-                </div>
+                </div >
 
-            </section>
+            </section >
         </>
     )
 }

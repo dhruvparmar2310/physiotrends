@@ -57,20 +57,12 @@ main {
           th {
             font-weight: 700;
             text-align: left;
-
-            &:last-child {
-              text-align: end !important;
-            }
           }
 
           td {
             font-weight: 600;
             font-family: 'Alice', serif;
             text-align: left;
-
-            &:last-child {
-              text-align: end !important;
-            }
 
             &.dataValue {
               color: var(--primary-dark);

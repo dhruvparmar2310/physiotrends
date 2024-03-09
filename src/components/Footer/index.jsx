@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../../styles/Footer.module.scss'
 import Link from 'next/link'
+import { FaLinkedinIn, FaWhatsapp, FaInstagram } from "react-icons/fa"
 
 const Footer = () => {
     return (
@@ -57,13 +58,19 @@ const Footer = () => {
                             Copyright &copy; <span style={{ fontSize: '18px' }}>2024</span>, <strong style={{ color: 'var(--primary-color)' }}>PHYSIO<span style={{ color: '#ddd' }}>TRENDS</span></strong>. All Rights Reserved
                         </div>
                         <div className={styles.credits}>
-                            Developed by <Link href="https://dhanparmar.netlify.app" target="_blank" title='Dhruv Parmar | Bhagavad Gita'>Dhruv Parmar</Link>
+                            Developed by <Link href="https://dhanparmar.netlify.app" target="_blank" title='Dhruv Parmar'>Dhruv Parmar</Link>
                         </div>
                     </div>
                     <div className={`col-lg-6 p-0 ${styles.social_links}`} style={{ textAlign: 'end' }}>
-                        {/* <Link href="https://github.com/dhruvparmar2310" target="_blank" className={styles.github} title='Dhruv Parmar | Github | Bhagavad Gita'><i className="ri-github-fill"></i></Link>
-                        <Link href="https://www.facebook.com/dhruv.parmar.73550794" target="_blank" className={styles.facebook} title='Dhruv Parmar | Facebook | Bhagavad Gita'><i className="ri-facebook-fill"></i></Link>
-                        <Link href="https://www.instagram.com/dhan.parmar23/" target="_blank" className={styles.instagram} title='Dhruv Parmar | Instagram | Bhagavad Gita'><i className="ri-instagram-line"></i></Link> */}
+                        <Link href="https://www.linkedin.com/posts/physiotrends_physiotrends-linkedin-activity-7171034285615898625-nQlZ" target="_blank" className={styles.linkedin} title='LinkedIn | PhysioTrends'>
+                            <FaLinkedinIn />
+                        </Link>
+                        <Link href="https://chat.whatsapp.com/JDCR6lerXr95qfKZKzexoV" target="_blank" className={styles.whatsapp} title='Whatsapp | PhysioTrends'>
+                            <FaWhatsapp />
+                        </Link>
+                        <Link href="https://www.instagram.com/thephysiobrothers8/" target="_blank" className={styles.instagram} title='Instagram | PhysioTrends'>
+                            <FaInstagram />
+                        </Link>
                     </div>
                 </div>
             </footer>

@@ -13,7 +13,7 @@
         width: 100%;
         background: var(--primary-color);
         border-radius: 10px;
-        padding-top: 4.5rem;
+        padding-top: 3rem;
 
         .adsContent {
             padding: 1rem 3rem;
@@ -87,15 +87,14 @@
         .imgContent {
             overflow: hidden;
             height: auto;
-            width: 500px;
-            margin: 30px 0;
             display: block;
 
             img {
-                width: 100%;
+                width: 95%;
                 height: 100%;
-                position: relative;
-                top: -40px;
+                object-fit: contain;
+                // position: relative;
+                // top: -40px;
                 max-height: fit-content;
             }
         }
@@ -106,12 +105,15 @@
 @media (min-width: 1400px) and (max-width: 1950px) {
     .hero {
         padding: 50px 0;
-        height: 70vh;
+        height: 85vh;
 
         .heroContent {
-            padding-top: 7rem;
+            padding-top: 4rem;
+            box-sizing: border-box;
 
             .adsContent {
+                padding: 7.5rem 3rem;
+
                 .subtitle {
                     font-size: 3.8rem;
                 }
@@ -256,11 +258,11 @@
     }
 
     .hero {
-        height: 65vh;
+        height: 75vh;
         padding: 25px 0;
 
         .heroContent {
-            padding-top: 4rem;
+            padding-top: 3rem;
             flex-direction: column;
 
             .adsContent {
@@ -298,8 +300,7 @@
                 margin: 0;
 
                 img {
-                    margin-top: 20px;
-                    width: 80%;
+                    width: 75%;
                 }
             }
         }

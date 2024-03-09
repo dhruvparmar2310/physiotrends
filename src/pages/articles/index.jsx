@@ -1,13 +1,11 @@
 import React, { Suspense } from 'react'
 import styles from '../../styles/Articles.module.scss'
-import { Ysabeau } from 'next/font/google'
 import Head from 'next/head'
 import BreadCrumb from '@/components/BreadCrumb'
-import { Col, Row, Spinner } from 'react-bootstrap'
-import Image from 'next/image'
+import { Button, OverlayTrigger, Spinner, Table, Tooltip } from 'react-bootstrap'
 import { withRouter } from 'next/router'
 import { articles } from '@/data/articles'
-import articleImg from '../../../public/assets/img/magazines/vol1_issue1.jpg'
+import { MdContentCopy } from "react-icons/md"
 
 function Articles ({ data, router }) {
     return (
@@ -33,11 +31,8 @@ function Articles ({ data, router }) {
                         <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Our Articles</h1>
                         <div className={`${styles?.line}`}></div>
 
-                        <Row>
-                            <Col>
-                                <div className={`${styles?.magazine}`}>
-                                    {/* {data?.articles?.map(article => {
-                                    return (<>
+                        {/* {data?.articles?.map(article => {
+                                        return (<>
                                         <React.Fragment key={article?._id}>
                                             <div className={`${styles?.magazineCard}`} onClick={() => router.push(`/articles/${article?._id}`)}>
                                                 <div className={`${styles?.magazineImg}`}>
@@ -48,24 +43,65 @@ function Articles ({ data, router }) {
                                         </React.Fragment>
                                     </>)
                                 })} */}
-                                    {articles?.map(article => {
-                                        return (<>
-                                            <React.Fragment key={article?._id}>
-                                                <div className={`${styles?.magazineCard}`} onClick={() => router.push(`/articles/${article?._id}?sArticle=${article?.title}`)} title={`${article?.title} | PhysioTrends`}>
-                                                    <div className={`${styles?.magazineImg}`}>
-                                                        <Image src={articleImg?.src} alt={article?.title} width={100} height={100} />
-                                                    </div>
-                                                    <p className={`${styles?.cardTitle}`}>{article?.title}</p>
-                                                </div>
-                                            </React.Fragment>
-                                        </>)
-                                    })}
-                                </div>
-                            </Col>
-                        </Row >
-                    </div >
+                        <Table striped bordered className={`mt-4 ${styles?.articleIndex}`}>
+                            <thead>
+                                <tr>
+                                    <th style={{ width: '100px !important' }}>Sr. No.:</th>
+                                    <th>Magazines</th>
+                                    <th>Month</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {articles?.map(article => {
+                                    return (<>
+                                        <tr key={article?._id}>
+                                            <td><span>{article?._id}</span></td>
+                                            <td style={{ textAlign: 'left !important' }}><span>{article?.title}</span></td>
+                                            <td><span>{article?.nMonth}</span></td>
+                                            <td>
+                                                {article?.nMonth === 'Coming Soon...' ? '---' :
+                                                    <>
+                                                        <Button
+                                                            variant='dark'
+                                                            size='sm'
+                                                            onClick={() => router.push(`/articles/${article?._id}?sArticle=${article?.title}`)}
+                                                            title={`${article?.title} | PhysioTrends`}
+                                                        >
+                                                            Read
+                                                        </Button>
+
+                                                        <OverlayTrigger
+                                                            placement='top'
+                                                            overlay={
+                                                                <Tooltip id='copyLink'>
+                                                                    Copy
+                                                                </Tooltip>
+                                                            }
+                                                        >
+                                                            <Button
+                                                                variant='info'
+                                                                size='sm'
+                                                                onClick={() => router.push(`/articles/${article?._id}?sArticle=${article?.title}`)}
+                                                                title={`${article?.title} | PhysioTrends`}
+                                                                style={{ marginLeft: '5px' }}
+                                                            >
+                                                                <MdContentCopy />
+                                                            </Button>
+                                                        </OverlayTrigger>
+                                                    </>
+                                                }
+                                            </td>
+                                        </tr>
+                                    </>)
+                                })}
+                            </tbody>
+                        </Table>
+
+                        <span className={`${styles?.notes}`}>Note: Publish your Article for Free in the upcoming Issue.</span>
+                    </div>
                 </section >
-            </Suspense>
+            </Suspense >
         </>
     )
 }

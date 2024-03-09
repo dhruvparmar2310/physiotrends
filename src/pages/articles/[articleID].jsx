@@ -87,43 +87,6 @@ function ArticleID ({ data }) {
 
 export default withRouter(ArticleID)
 
-// export const getStaticPaths = async () => {
-//     const paths = []
-
-//     for (let i = 1; i <= 4; i++) {
-//         paths.push({
-//             params: {
-//                 // adhyay: 'adhyay',
-//                 articleID: i.toString(),
-//             },
-//         })
-//     }
-//     return {
-//         // paths: [
-//         //   {
-//         //     params: {
-//         //       adhyay: 'some-value',
-//         //       adhyayID: '1',
-//         //     },
-//         //   }, // See the "paths" section below
-//         // ],
-//         paths: paths,
-//         fallback: true, // false or "blocking"
-//     }
-// }
-
-// export const getStaticProps = async ({ params }) => {
-//     const articleID = parseInt(params.articleID)
-//     if (articleID >= 1 && articleID <= 4) {
-//         const res = await fetch(`${process.env.LOCALHOST}/api/articles/${articleID}`)
-//         const data = await res.json()
-//         console.log(data, 'data')
-//         return { props: { data } || {} }
-//     } else {
-//         return { notFound: true }
-//     }
-// }
-
 export const getServerSideProps = async ({ params }) => {
     const articleID = parseInt(params.articleID)
     const res = await fetch(`${process.env.DEPLOY}/api/articles/${articleID}`)

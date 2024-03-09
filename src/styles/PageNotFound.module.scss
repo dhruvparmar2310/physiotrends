@@ -1,0 +1,38 @@
+.notFound {
+    padding: 100px 60px;
+    text-align: center;
+
+    h1 {
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 5.5rem;
+        font-weight: 600;
+        margin-top: 25px;
+        margin-bottom: 0;
+    }
+
+    .sorryText {
+        font-family: 'Titillium Web', sans-serif;
+        font-weight: 600;
+        font-size: 1.6rem;
+        color: var(--primary-color);
+    }
+
+    .details {
+        font-family: 'Titillium Web', sans-serif;
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 0.5rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--primary-color);
+        font-family: 'Titillium Web', sans-serif;
+        font-weight: 600;
+        transition: 0.5s;
+
+        &:hover {
+            color: var(--primary-dark);
+        }
+    }
+}
