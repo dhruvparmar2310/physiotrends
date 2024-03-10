@@ -25,6 +25,14 @@ html {
   border-radius: 0.5rem;
 }
 
+.table-responsive::-webkit-scrollbar {
+  height: 5px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  height: 5px;
+}
+
 a {
   color: var(--black-color);
 }

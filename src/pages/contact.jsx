@@ -17,7 +17,6 @@ const Contact = () => {
     const { control, register, handleSubmit, watch, errors } = useForm({ mode: 'all' })
 
     const onHandleSubmit = (data) => {
-        console.log('data :>> ', data);
         // formData = `https://wa.me/7984377793?text=Hello%20there,%20I'am%20${watch('sName')}%20and%2C%20I%20wanted%20to%20discuss%20about%20${watch('sSubject')}%20that,%20${watch('sMessage')}`
 
         router?.push(`https://wa.me/7984377793?text=Hello%20there,%20I'am%20${data?.sName}%20and%2C%20I%20wanted%20to%20discuss%20about%20${data?.sSubject}%20that,%20${data?.sMessage}`)

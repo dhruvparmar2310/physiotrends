@@ -72,7 +72,7 @@ const Advertise = () => {
                     </div>
 
                     <div>
-                        <h1 className={`sectionTitle ${styles?.sectionTitle} mt-5`} title='Rate of Advertisement | PhysioTrends'>Rate of Advertisement:</h1>
+                        <h1 className={`sectionTitle ${styles?.sectionTitle} mt-4`} title='Rate of Advertisement | PhysioTrends'>Rate of Advertisement:</h1>
                         <div className={`${styles?.line}`}></div>
 
                         <Row className={`${styles?.priceSection}`}>
@@ -109,7 +109,7 @@ const Advertise = () => {
                         </Row>
                     </div>
 
-                    <div className={`${styles?.clientContent} mt-1`}>
+                    <div className={`${styles?.clientContent} mt-4`}>
                         <h1 className={`${styles?.contentTitle}`}>A few of our many Satisfied Clients</h1>
 
                         <div className='d-flex flex-wrap justify-content-center gap-2 mt-4'>

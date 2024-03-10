@@ -122,11 +122,16 @@
             font-size: 1.6rem !important;
             margin-bottom: 5px;
             letter-spacing: 0.1px;
-            margin-top: 10px !important;
+            margin-top: 0px;
 
-            &:first-child {
-                margin-top: 0;
+            &:not(:first-child) {
+                margin-top: 10px !important;
             }
+        }
+
+        .contentTitle {
+            font-size: 1.6rem !important;
+            font-weight: 500 !important;
         }
 
         p {

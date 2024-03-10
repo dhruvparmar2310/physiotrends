@@ -6,7 +6,6 @@ import Image from 'next/image'
 import { Accordion, Card, Col, Row } from 'react-bootstrap'
 
 const EditorialMember = ({ data }) => {
-    console.log('data :>> ', data);
     const founders = data?.members?.filter(item => item?.type === 'Founder')
     const chiefEditor = data?.members?.find(item => item?.type === 'ChiefEditor')
     const associateEditors = data?.members?.filter(item => item?.type === 'AssociateEditors')

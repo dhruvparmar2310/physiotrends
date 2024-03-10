@@ -6,11 +6,14 @@ import Hero from "@/components/Hero";
 import HomePageArticles from "@/components/HomePageArticles";
 import { articles } from "@/data/articles";
 import articleImg from '../../public/assets/img/magazines/vol1_issue1.jpg'
-import { Col, Row, Table } from "react-bootstrap";
+import { Button, Col, Row, Table } from "react-bootstrap";
+import { useRouter } from "next/router";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home () {
+  const router = useRouter()
   return (
     <>
       <Head>
@@ -44,7 +47,7 @@ export default function Home () {
                     <h1 className={`${styles?.cardTitle}`}>Vision</h1>
                     <div className={`${styles?.line}`}></div>
                     <p className={`${styles?.cardBody}`}>
-                      "To be the premier global platform for physiotherapy professionals, recognized for our unparalleled commitment to delivering timely, evidence-based information, fostering innovation, and fostering a collaborative community dedicated to elevating standards and improving outcomes in physiotherapy practice."
+                      "Empowering physiotherapists through timely evidence, fostering a collaborative community for elevated standards."
                     </p>
                   </div>
                 </Col>
@@ -53,7 +56,7 @@ export default function Home () {
                     <h1 className={`${styles?.cardTitle}`}>Mission</h1>
                     <div className={`${styles?.line}`}></div>
                     <p className={`${styles?.cardBody}`}>
-                      "To empower physiotherapy professionals worldwide with cutting-edge knowledge, insights, and trends, enabling them to enhance patient care, advance their practice, and contribute to the evolution of the physiotherapy profession."
+                      "Connect physiotherapists globally with cutting-edge knowledge, building a stronger profession."
                     </p>
                   </div>
                 </Col>
@@ -131,8 +134,13 @@ export default function Home () {
           <h1 className={`sectionTitle`} data-heading='Our Latest' title="Our Latest Research Articles | PhysioTrends">Articles</h1>
 
           <HomePageArticles />
+
+          <div className={`text-center mt-4 ${styles?.viewMoreBtn}`}>
+            <span onClick={() => router.push('/articles')}>&lt;&lt; View More &gt;&gt;</span>
+          </div>
         </section>
       </main>
+      <ToastContainer stacked />
     </>
   );
 }

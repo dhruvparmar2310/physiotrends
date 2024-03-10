@@ -13,7 +13,6 @@ import { RiMenu3Fill } from "react-icons/ri";
 function Header () {
     const router = useRouter()
     const [isNavExpanded, setIsNavExpanded] = useState(false)
-    console.log('isNavExpanded :>> ', isNavExpanded);
 
     const handleClick = (e, path) => {
         e?.preventDefault()

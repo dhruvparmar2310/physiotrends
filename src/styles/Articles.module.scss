@@ -38,25 +38,33 @@
         }
 
         table {
-            &.articleIndex {
 
-                th,
-                td {
-                    text-align: center;
-                }
+            th,
+            td {
+                text-align: center;
+                text-wrap: nowrap;
+            }
 
-                th {
-                    &:nth-child(1) {
-                        width: 100px !important;
-                    }
-                }
-
-                td {
-                    &:nth-child(2) {
-                        text-align: left !important;
-                    }
+            th {
+                &:nth-child(1) {
+                    width: 100px !important;
+                    max-width: 100px !important;
                 }
             }
+
+            td {
+                &:nth-child(2) {
+                    text-align: left !important;
+                }
+            }
+        }
+
+        &::-webkit-scrollbar {
+            height: 3px !important;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            height: 3px !important;
         }
 
         .magazineContent {

@@ -189,4 +189,23 @@
             padding: 10px 40px;
         }
     }
+
+    .contactDetails {
+        p {
+            line-height: 25px !important;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .sectionTitle {
+        font-size: 1.6rem !important;
+    }
+
+    .contactDetails {
+        .cardIcon {
+            margin-bottom: 20px !important;
+        }
+    }
 }

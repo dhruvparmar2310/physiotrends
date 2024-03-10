@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useState } from 'react'
 import styles from '../../styles/Articles.module.scss'
 import Head from 'next/head'
 import BreadCrumb from '@/components/BreadCrumb'
@@ -6,8 +6,20 @@ import { Button, OverlayTrigger, Spinner, Table, Tooltip } from 'react-bootstrap
 import { withRouter } from 'next/router'
 import { articles } from '@/data/articles'
 import { MdContentCopy } from "react-icons/md"
+import copy from 'clipboard-copy'
 
 function Articles ({ data, router }) {
+    const [isCopied, setIsCopied] = useState(false)
+    const handleCopyLink = async (link) => {
+        try {
+            await copy(link)
+            setIsCopied(true)
+            console.log('Link copied to clipboard!')
+        } catch (err) {
+            setIsCopied(false)
+            console.error('Failed to copy link:', err)
+        }
+    }
     return (
         <>
             <Head>
@@ -43,7 +55,7 @@ function Articles ({ data, router }) {
                                         </React.Fragment>
                                     </>)
                                 })} */}
-                        <Table striped bordered className={`mt-4 ${styles?.articleIndex}`}>
+                        <Table striped bordered responsive className={`mt-4 ${styles?.articleIndex}`}>
                             <thead>
                                 <tr>
                                     <th style={{ width: '100px !important' }}>Sr. No.:</th>
@@ -75,16 +87,16 @@ function Articles ({ data, router }) {
                                                             placement='top'
                                                             overlay={
                                                                 <Tooltip id='copyLink'>
-                                                                    Copy
+                                                                    {isCopied ? 'Copied to ClipBoard' : 'Copy'}
                                                                 </Tooltip>
                                                             }
                                                         >
                                                             <Button
                                                                 variant='info'
                                                                 size='sm'
-                                                                onClick={() => router.push(`/articles/${article?._id}?sArticle=${article?.title}`)}
                                                                 title={`${article?.title} | PhysioTrends`}
                                                                 style={{ marginLeft: '5px' }}
+                                                                onClick={() => handleCopyLink(`${process.env.DEPLOY}/articles/${article?._id}?sArticle=${article?.title}`)}
                                                             >
                                                                 <MdContentCopy />
                                                             </Button>
