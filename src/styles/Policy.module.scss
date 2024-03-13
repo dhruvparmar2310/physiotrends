@@ -1,0 +1,41 @@
+.policy {
+    .policyContent {
+        .sectionTitle {
+            font-size: 1.8rem;
+            text-align: left;
+        }
+
+        .line {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--secondary-200);
+        }
+
+        .policyDetails,
+        .note,
+        ul>li,
+        ol>li {
+            text-align: justify;
+            font-family: 'Alice', serif;
+            letter-spacing: 0.8px;
+        }
+
+        ol {
+            li {
+                margin: 5px 0;
+            }
+        }
+
+        .subTitle {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+        }
+
+        .note {
+            font-style: italic;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+    }
+}

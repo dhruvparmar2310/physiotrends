@@ -82,7 +82,8 @@
     padding: 10px 0 10px 28px;
 }
 
-.nav_menu a {
+.nav_menu a,
+.nav_menu span {
     display: block;
     position: relative;
     color: #111;
@@ -138,12 +139,19 @@
     text-transform: none;
     color: #111;
     letter-spacing: 0.3mm;
+
+}
+
+.dropDownButton {
+    svg {
+        font-size: 13px;
+    }
 }
 
 .nav_menu .drop_down ul a:hover,
 .nav_menu .drop_down ul .active>a,
 .nav_menu .drop_down ul li:hover>a {
-    color: var(--theme);
+    color: var(--primary-color);
 }
 
 .nav_menu .drop_down .drop_down ul {

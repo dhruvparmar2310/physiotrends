@@ -44,6 +44,8 @@ const Footer = () => {
                                 <h4>Additional Links</h4>
                                 <ul>
                                     <li><i className="ri-arrow-right-s-line"></i> <Link href="/terms-and-conditions" title='Our Terms & Conditions | PhysioTrends'>Terms & Conditions</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/policy/privacyPolicy" title='Privacy Policy | PhysioTrends'>Privacy Policy</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/policy/editorialPolicy" title='Editorial Policy | PhysioTrends'>Editorial Policy</Link></li>
                                 </ul>
                             </div>
                         </div>

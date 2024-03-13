@@ -6,9 +6,7 @@ import TextLogo from '../../../public/assets/img/header-logo.png'
 import { Bebas_Neue, Teko } from 'next/font/google'
 import { useRouter } from 'next/router'
 import { RiMenu3Fill } from "react-icons/ri";
-
-// const Bebas_Neue_Font = Bebas_Neue({ subsets: ['latin'], weight: ['400'], style: ['normal'] })
-// const Teko_Font = Teko({ subsets: ['latin'], weight: ['300', '400', '500', '600'], style: ['normal'] })
+import { FaChevronDown } from "react-icons/fa"
 
 function Header () {
     const router = useRouter()
@@ -52,6 +50,24 @@ function Header () {
                             </li>
                             <li>
                                 <Link href={'/editorialMember'} title='Editorial Members | PhysioTrends' className={`${router?.route?.includes('/editorialMember') && styles?.active}`} onClick={(e) => handleClick(e, '/editorialMember')}>Editorial Members</Link>
+                            </li>
+                            <li className={`${styles.drop_down}`}>
+                                <span className={`${styles?.dropDownButton}`} title='Policies | PhysioTrends'>Policies <FaChevronDown /></span>
+                                <ul>
+                                    <li>
+                                        <Link href={'/terms-and-conditions'}>Terms & Conditions</Link>
+                                    </li>
+                                    <li>
+                                        <Link href={'/policy/disclaimerPolicy'}>Disclaimer Policy</Link>
+                                    </li>
+                                    <li>
+                                        <Link href={'/policy/privacyPolicy'}>Privacy Policy</Link>
+                                    </li>
+                                    <li>
+                                        <Link href={'/policy/plagiarismPolicy'}>Plagiarism Policy</Link>
+                                    </li>
+                                    <li><Link href={'/policy/editorialPolicy'}>Editorial Policy</Link></li>
+                                </ul>
                             </li>
                             <li>
                                 <Link href={'/contact'} title='Contact | PhysioTrends' onClick={(e) => handleClick(e, '/contact')}>Contact</Link>
