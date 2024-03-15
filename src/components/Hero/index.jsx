@@ -25,7 +25,7 @@ function Hero () {
             <section className={`${styles?.hero}`} id='hero'>
                 <div className={`${styles?.heroContent}`}>
                     <div className={`${styles?.adsContent}`}>
-                        <h1 data-heading='ISSN Number'>PhysioTrends</h1>
+                        <h1 data-heading='ISSN (Online)'>PhysioTrends</h1>
 
                         <p className={`${styles?.desc} mt-lg-5 mt-3`}>
                             Empowering Physiotherapists

@@ -8,7 +8,7 @@ export const members = [
         designation: 'Assistant Professor at K.D.Institute of Physiotherapy',
         role: ['Founder of PhysioTrends, ThePhysioBrothers, YogaSanskriti'],
         emailAddress: 'darshanparmar680@gmail.com',
-        address: 'Rajkot'
+        address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
     },
     {
         _id: '2',
@@ -19,7 +19,7 @@ export const members = [
         designation: '',
         role: ['Co-Founder of PhysioTrends, ThePhysioBrothers'],
         emailAddress: 'sujaymakwana@gmail.com',
-        address: 'Mumbai'
+        address: 'Suden Physiotherapy Clinic, Yogi Complex, Opp. Maharaja Hotel, Kalol, Gujarat - 382721'
     },
     {
         _id: '3',
@@ -31,7 +31,7 @@ export const members = [
         designation: 'Principal at K.D.Institute of Physiotherapy',
         role: '-',
         emailAddress: 'principal.phy@kdhospital.co.in',
-        address: 'Ahmedabad'
+        address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
     },
     {
         _id: '4',
@@ -43,7 +43,7 @@ export const members = [
         designation: 'Sr. Lecturer at Govt. Physiotherapy College, Jamnagar',
         role: '-',
         emailAddress: 'karishma.jagad@gptcjam.edu.in',
-        address: 'Jamnagar'
+        address: 'Govt. Physiotherapy College, Rameshwar-nagar, Jamnagar, Gujarat - 361008'
     },
     {
         _id: '5',
@@ -54,8 +54,8 @@ export const members = [
         education: 'MPT in CardioPulmonary Conditions',
         designation: 'Associate Professor at K.D.Institute of Physiotherapy',
         role: '-',
-        emailAddress: 'paritadave90@gmail.com',
-        address: 'Ahmedabad'
+        emailAddress: 'insitute.phy@kdhospital.co.in',
+        address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
     },
     {
         _id: '6',
@@ -66,7 +66,7 @@ export const members = [
         designation: 'Assistant Professor at School of Physiotherapy, R.K.University',
         role: ['Owner and Director of Maruti Physiotherapy Center, Samarpan Physiotherapy Center'],
         emailAddress: 'chirag.solanki@rku.ac.in',
-        address: 'Rajkot'
+        address: 'R.K.University, Bhavnagar Highway, Tramba, Rajkot, Gujarat - 360020'
     },
     {
         _id: '7',
@@ -76,8 +76,8 @@ export const members = [
         education: 'MPT in Orthopedics',
         designation: 'Assistant Professor at K.D.Institute of Physiotherapy',
         role: '-',
-        emailAddress: 'puru29596@gmail.com',
-        address: 'Ahmedabad'
+        emailAddress: 'insitute.phy@kdhospital.co.in',
+        address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
     },
     {
         _id: '8',
@@ -87,8 +87,8 @@ export const members = [
         education: 'MPT in Rehabilitation',
         designation: 'Assistant Professor at K.D.Institute of Physiotherapy',
         role: '-',
-        emailAddress: 'hetvidimothe@gmail.com',
-        address: 'Kakarapar, Tapi'
+        emailAddress: 'insitute.phy@kdhospital.co.in',
+        address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
     },
     {
         _id: '9',
@@ -99,7 +99,7 @@ export const members = [
         designation: 'Professor at Ahmedabad Institute of Medical Sciences',
         role: '-',
         emailAddress: 'neetavyassbb@gmail.com',
-        address: 'Ahmedabad'
+        address: 'Ahmedabad Institute of Medical Sciences, Nr. Lions Karnavati Eye Hospital, Lapkaman, Ahmedabad, Gujarat - 380060'
     },
     {
         _id: '10',
@@ -110,7 +110,7 @@ export const members = [
         designation: 'I/C Principal at Govt. Physiotherapy College Jamnagar',
         role: '-',
         emailAddress: 'principal@gptcjam.edu.in',
-        address: 'Jamnagar'
+        address: 'Govt. Physiotherapy College, Rameshwar-nagar, Jamnagar, Gujarat - 361008'
     },
     {
         _id: '11',
@@ -121,7 +121,7 @@ export const members = [
         designation: 'Principal & Professor at Faculty of Physiotherapy, Marwadi University',
         role: '-',
         emailAddress: 'ashishkakkad@marwadieducation.edu.in',
-        address: 'Rajkot'
+        address: 'Marwadi University, Rajkot - Morbi Highway, Rajkot, Gujarat - 360003'
     },
     {
         _id: '12',
@@ -131,8 +131,8 @@ export const members = [
         education: 'MPT in Rehabilitation',
         designation: 'Assistant Professor at K.D.Institute of Physiotherapy',
         role: '-',
-        emailAddress: 'dishamonsara62@gmail.com',
-        address: 'Surat'
+        emailAddress: 'insitute.phy@kdhospital.co.in',
+        address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
     },
     {
         _id: '13',
@@ -142,7 +142,7 @@ export const members = [
         education: 'MPT in Orthopedics',
         designation: 'Assistant Professor at K.D.Institute of Physiotherapy',
         role: '-',
-        emailAddress: 'bhaumidave@gmail.com',
-        address: 'Ahmedabad'
+        emailAddress: 'insitute.phy@kdhospital.co.in',
+        address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
     }
 ]

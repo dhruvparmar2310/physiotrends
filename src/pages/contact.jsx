@@ -39,33 +39,46 @@ const Contact = () => {
                     <div className={`${styles?.line}`}></div>
 
                     <p className={`${styles?.notes} mt-2`}>Note: One must read all the <Link href={'/terms-and-conditions'}>Terms & Conditions</Link> before submitting the Article.</p>
-                    <div className='mt-5'>
+                    <div className='mt-4'>
                         <Row className={styles?.contactDetails}>
-                            <Col lg={4} md={4}>
+                            <Col lg={6} md={6}>
                                 <div className={`${styles?.cardDetails}`}>
-                                    <div className={`${styles?.cardIcon}`}>
-                                        <FaLocationDot className={`${styles?.location}`} />
+                                    <div className={`${styles?.cardTitle}`}>
+                                        <h1>Publisher</h1>
+                                        <p className={`${styles.subTitle}`}>PhysioTrends</p>
                                     </div>
-                                    <p>Kuldevi Krupa, Sahkar Society,</p>
-                                    <p>Street No.3, Sahkar Main Road,</p>
-                                    <p>Bhaktinagar, Rajkot - 360002</p>
+
+                                    <div className={`${styles.cardBody}`}>
+                                        <p><strong>Dr. Darshan Parmar</strong>, Kuldevi Krupa,</p>
+                                        <p>Sahkar Society, Street No.3,</p>
+                                        <p>Sahkar Main Road, Bhaktinagar,</p>
+                                        <p> Rajkot, Gujarat - 360002</p>
+                                    </div>
+
+                                    <div className={`${styles.cardContact}`}>
+                                        <p>Email Address: physiotrendsmagazine@gmail.com</p>
+                                        <p>Phone No.: +91-7984377793</p>
+                                    </div>
                                 </div>
                             </Col>
-                            <Col lg={4} md={4}>
+                            <Col lg={6} md={6}>
                                 <div className={`${styles?.cardDetails}`}>
-                                    <div className={`${styles?.cardIcon}`}>
-                                        <IoCall className={`${styles?.phoneNo}`} />
+                                    <div className={`${styles?.cardTitle}`}>
+                                        <h1>Chief Editor</h1>
+                                        <p className={`${styles.subTitle}`}>Dr. Jaspreet Kaur Kang</p>
                                     </div>
-                                    <p>+91 7984-377-793</p>
-                                    <p>+91 9820-553-515</p>
-                                </div>
-                            </Col>
-                            <Col lg={4} md={4}>
-                                <div className={`${styles?.cardDetails}`}>
-                                    <div className={`${styles?.cardIcon}`}>
-                                        <MdEmail className={`${styles?.email}`} />
+
+                                    <div className={`${styles.cardBody}`}>
+                                        <p>Principal at K.D.Institute of Physiotherapy</p>
+                                        <p>Nr. SGVP Hospital, Vaishnavdevi circle,</p>
+                                        <p>Sarkhej - Gandhinagar Highway,</p>
+                                        <p>Ahmedabad, Gujarat - 382421</p>
                                     </div>
-                                    <p>physiothrendsmagazine@gmail.com</p>
+
+                                    <div className={`${styles.cardContact}`}>
+                                        <p>Email Address: principal.phy@kdhospital.co.in</p>
+                                        <p>Phone No.: +91-9429129409</p>
+                                    </div>
                                 </div>
                             </Col>
                         </Row>

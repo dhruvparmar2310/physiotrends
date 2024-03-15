@@ -34,7 +34,7 @@ const EditorialMember = ({ data }) => {
                     <div className={`accordion-item`}>
                         <h2 className={`accordion-header`} id={`flush-heading-1`} title='Founders of PhysioTrends | PhysioTrends'>
                             <button className={`accordion-button collapsed ${styles.accordionBtn}`} type="button" data-bs-toggle="collapse" data-bs-target={`#flush-collapse-1`} aria-expanded="true" aria-controls={`flush-collapse-1`}>
-                                Founders
+                                Founders / Patron
                             </button>
                         </h2>
                         <div id={`flush-collapse-1`} className={`accordion-collapse collapse show`} data-bs-parent="#main-accordion">
@@ -63,8 +63,8 @@ const EditorialMember = ({ data }) => {
                                                                         )
                                                                     })}
                                                                 </li>
-                                                                <li className={`${styles?.details} ${styles?.contact}`}>Email Address: {founder?.emailAddress}</li>
                                                                 <li className={`${styles?.details} ${styles?.contact}`}>Address: {founder?.address}</li>
+                                                                <li className={`${styles?.details} ${styles?.contact}`}>Email Address: {founder?.emailAddress}</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -106,8 +106,8 @@ const EditorialMember = ({ data }) => {
                                                             )
                                                         })}
                                                     </li>
-                                                    <li className={`${styles?.details} ${styles?.contact}`}>Email Address: {chiefEditor?.emailAddress}</li>
                                                     <li className={`${styles?.details} ${styles?.contact}`}>Address: {chiefEditor?.address}</li>
+                                                    <li className={`${styles?.details} ${styles?.contact}`}>Email Address: {chiefEditor?.emailAddress}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -149,8 +149,8 @@ const EditorialMember = ({ data }) => {
                                                                         )
                                                                     })}
                                                                 </li>
-                                                                <li className={`${styles?.details} ${styles?.contact}`}>Email Address: {editors?.emailAddress}</li>
                                                                 <li className={`${styles?.details} ${styles?.contact}`}>Address: {editors?.address}</li>
+                                                                <li className={`${styles?.details} ${styles?.contact}`}>Email Address: {editors?.emailAddress}</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -195,8 +195,8 @@ const EditorialMember = ({ data }) => {
                                                                         )
                                                                     })}
                                                                 </li>
-                                                                <li className={`${styles?.details} ${styles?.contact}`}>Email Address: {members?.emailAddress}</li>
                                                                 <li className={`${styles?.details} ${styles?.contact}`}>Address: {members?.address}</li>
+                                                                <li className={`${styles?.details} ${styles?.contact}`}>Email Address: {members?.emailAddress}</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -241,8 +241,8 @@ const EditorialMember = ({ data }) => {
                                                                         )
                                                                     })}
                                                                 </li>
-                                                                <li className={`${styles?.details} ${styles?.contact}`}>Email Address: {editors?.emailAddress}</li>
                                                                 <li className={`${styles?.details} ${styles?.contact}`}>Address: {editors?.address}</li>
+                                                                <li className={`${styles?.details} ${styles?.contact}`}>Email Address: {editors?.emailAddress}</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -287,8 +287,8 @@ const EditorialMember = ({ data }) => {
                                                                         )
                                                                     })}
                                                                 </li>
-                                                                <li className={`${styles?.details} ${styles?.contact}`}>Email Address: {reviewers?.emailAddress}</li>
                                                                 <li className={`${styles?.details} ${styles?.contact}`}>Address: {reviewers?.address}</li>
+                                                                <li className={`${styles?.details} ${styles?.contact}`}>Email Address: {reviewers?.emailAddress}</li>
                                                             </ul>
                                                         </div>
                                                     </div>

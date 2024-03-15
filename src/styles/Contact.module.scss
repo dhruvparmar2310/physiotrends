@@ -36,24 +36,33 @@
         .cardDetails {
             text-align: center;
 
-            .cardIcon {
-                margin-bottom: 30px;
+            .cardTitle {
+                h1 {
+                    color: var(--primary-dark);
+                    font-size: 2.2rem;
+                    text-transform: uppercase;
 
-                svg {
-                    font-size: 2rem;
-
-                    &.location {
-                        color: rgb(240, 54, 54);
-                    }
-
-                    &.phoneNo {
-                        color: var(--primary-color);
-                    }
-
-                    &.email {
-                        color: #878787;
+                    &::after {
+                        content: '';
+                        display: block;
+                        width: 60%;
+                        height: 2px;
+                        margin: 0 auto;
+                        background: gray;
                     }
                 }
+
+                .subTitle {
+                    color: #d93e3e;
+                    font-size: 1.5rem;
+                    margin-top: 20px;
+                }
+
+            }
+
+            .cardBody,
+            .cardContact {
+                margin-top: 25px;
             }
 
             p {

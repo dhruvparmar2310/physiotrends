@@ -122,7 +122,7 @@ export default function Home () {
                   </tr>
                   <tr>
                     <td>Address</td>
-                    <td className={`${styles?.dataValue}`} title='Contact Us | Address of PhysioTrends'>Kuldevi Krupa, Sahkar Society, Street No.3, Sahkar Main Road, Bhaktinagar, Rajkot - 360002</td>
+                    <td className={`${styles?.dataValue}`} title='Contact Us | Address of PhysioTrends'>PhysioTrends, Kuldevi Krupa, Sahkar Society, Street No.3, Sahkar Main Road, Bhaktinagar, Rajkot - 360002</td>
                   </tr>
                 </tbody>
               </Table>

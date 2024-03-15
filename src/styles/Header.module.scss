@@ -458,7 +458,9 @@
         }
 
         .nav_menu {
-            a {
+
+            a,
+            .dropDownButton {
                 font-size: 2rem;
             }
         }

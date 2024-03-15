@@ -43,7 +43,7 @@ function Header () {
                                 <Link href='/' title='Home | PhysioTrends' className={`${router?.route === '/' && styles?.active} `} onClick={(e) => handleClick(e, '/')}>Home</Link>
                             </li>
                             <li className={`${styles.drop_down}`}>
-                                <Link href={`/articles`} title='Articles | PhysioTrends' className={`${router?.route?.includes('/articles') && styles?.active}`} onClick={(e) => handleClick(e, '/articles')}>Articles</Link>
+                                <Link href={`/articles`} title='Archives | PhysioTrends' className={`${router?.route?.includes('/articles') && styles?.active}`} onClick={(e) => handleClick(e, '/articles')}>Archives</Link>
                             </li>
                             <li className={`${styles.drop_down}`}>
                                 <Link href='/advertise' title='Advertise | PhysioTrends' className={`${router?.route?.includes('/advertise') && styles?.active}`} onClick={(e) => handleClick(e, '/advertise')}>Advertise </Link>
