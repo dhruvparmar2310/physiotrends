@@ -1,9 +1,15 @@
 import BreadCrumb from '@/components/BreadCrumb'
 import Head from 'next/head'
 import { useRouter, withRouter } from 'next/router'
-import React, { useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import styles from '../../styles/Articles.module.scss'
 import { Button, Table } from 'react-bootstrap'
+import { saveAs } from 'file-saver'
+import { FaUserCircle, FaEye } from "react-icons/fa"
+import { FaDownload } from "react-icons/fa6"
+import { Document, Page, pdfjs } from 'react-pdf';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ArticleID ({ data }) {
     const router = useRouter()
@@ -11,6 +17,10 @@ function ArticleID ({ data }) {
     const [currentPage, setCurrentPage] = useState(1)
     const [currentArticle, setCurrentArticle] = useState('100')
     const pageSize = 10
+
+    const [pdfFile, setPdfFile] = useState(null)
+    const [numPages, setNumPages] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
 
     const paginate = (items, pageNumber, pageSize) => {
         const startIndex = (pageNumber - 1) * pageSize
@@ -21,6 +31,18 @@ function ArticleID ({ data }) {
 
     const onPageChange = (page) => {
         setCurrentPage(page);
+    }
+
+    useEffect(() => {
+        const fetchPdf = async () => {
+            const pdf = await import('../../../public/assets/pdfs/vol-1-issue-1/HAMSTRING TIGHTNESS AND LOW BACK PAIN.pdf');
+            setPdfFile(pdf.default);
+        };
+        fetchPdf();
+    }, []);
+
+    function onDocumentLoadSuccess ({ numPages }) {
+        setNumPages(numPages);
     }
     return (
         <>
@@ -41,44 +63,58 @@ function ArticleID ({ data }) {
             <BreadCrumb title={'Articles | PhysioTrends'} link={'Home'} current={`Articles - ${sArticle}`} />
             <section className={`${styles?.articles}`}>
                 <div className={`${styles?.articlesContent}`}>
-                    <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Table of Contents:</h1>
-                    <div className={`${styles?.line}`}></div>
+                    <h1 className={`sectionTitle ${styles?.sectionTitle}`}>{sArticle}:</h1>
+                    <div className={`${styles?.line} mb-3`}></div>
 
-                    <Table striped bordered responsive className={`mt-4`}>
-                        <thead>
-                            <tr>
-                                <td>Sr.</td>
-                                <td>Name</td>
-                                <td></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {data?.aMagazines?.map((magazine, index) => {
-                                return (
-                                    <>
-                                        <tr key={index}>
-                                            <td>{index + 1}</td>
-                                            <td title={`${magazine?.name} | PhysioTrends`}>{magazine?.name}</td>
-                                            <td>
-                                                <Button variant='dark' size='sm' onClick={() => setCurrentArticle(magazine?._id)}>Read</Button>
-                                            </td>
-                                        </tr>
-                                    </>
-                                )
-                            })}
-                        </tbody>
-                    </Table>
+                    {data?.aMagazines?.map((magazine, index) => {
+                        return (
+                            <>
+                                <Fragment key={index}>
+                                    <div className={`${styles?.magazineCard}`}>
+                                        <div className={`${styles?.magazineCardHeader}`}>
+                                            <span title={`${magazine?.sName} | PhysioTrends`} className={`${styles?.magazineCardTitle}`}>{magazine?.sName}</span>
+                                            <span className={`${styles?.pageNumber}`}>Page No.: {magazine?.sPageNo}</span>
+                                        </div>
+                                        <div className={`${styles?.authorContent}`}>
+                                            <span className={`${styles?.author}`} title={`${magazine?.sAuthor} | PhysioTrends`}><FaUserCircle /> {magazine?.sAuthor}</span>
+                                        </div>
+                                        <p className={`${styles?.number}`}>DOI: {magazine?.sDOINo}</p>
+                                        <div className={`${styles?.functionality}`}>
+                                            <Button variant='warning' size='sm' className='me-2' onClick={() => setCurrentArticle(magazine?._id)}><FaEye /> View</Button>
+                                            <Button variant='dark' size='sm' onClick={() => setCurrentArticle(magazine?._id)}><FaDownload /> Download</Button>
+                                        </div>
+                                    </div>
+                                </Fragment>
+                            </>
+                        )
+                    })}
+                </div>
 
-                    <div className='mt-3'>
-                        <>
-                            <div>
-                                <h1 className={`${styles?.magazineName}`} title={`${data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.name} | Article by ${data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.author} | PhysioTrends`}>{data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.name}</h1>
-                                <div className={`${styles?.line}`}></div>
-                                <p className={`${styles?.authorName}`}>{data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.author}</p>
-                                <div dangerouslySetInnerHTML={{ __html: data?.aMagazines?.find(magazine => (magazine?._id === currentArticle))?.magazine }} className={`mt-3 ${styles?.magazineContent}`}></div>
-                            </div>
-                        </>
-                    </div>
+                <div className={`${styles?.pdfView} mt-5`}>
+                    {/* <p>Page {pageNumber} of {numPages}</p> */}
+                    <Document
+                        file={pdfFile}
+                        onLoadSuccess={onDocumentLoadSuccess}
+                    >
+                        {Array.apply(null, Array(numPages)).map((x, i) => i + 1).map(page => {
+                            return (
+                                <Page
+                                    key={page}
+                                    pageNumber={page}
+                                    renderTextLayer={false}
+                                    renderAnnotationLayer={false}
+                                />
+                            )
+                        })}
+                    </Document>
+                    {/* <div className={`${styles?.buttons}`}>
+                        <button onClick={() => setPageNumber(pageNumber - 1)} disabled={pageNumber === 1}>
+                            Previous
+                        </button>
+                        <button onClick={() => setPageNumber(pageNumber + 1)} disabled={pageNumber === numPages}>
+                            Next
+                        </button>
+                    </div> */}
                 </div>
             </section >
         </>
@@ -89,7 +125,7 @@ export default withRouter(ArticleID)
 
 export const getServerSideProps = async ({ params }) => {
     const articleID = parseInt(params.articleID)
-    const res = await fetch(`${process.env.DEPLOY}/api/articles/${articleID}`)
+    const res = await fetch(`${process.env.LOCALHOST}/api/articles/${articleID}`)
     const data = await res.json()
     return { props: { data } }
 }
