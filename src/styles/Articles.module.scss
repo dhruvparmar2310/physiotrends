@@ -37,26 +37,60 @@
             color: var(--secondary-400);
         }
 
-        table {
+        .magazineCard {
+            border-bottom: 2px solid rgb(149, 149, 149);
 
-            th,
-            td {
-                text-align: center;
-                text-wrap: nowrap;
-            }
+            .magazineCardHeader {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
 
-            th {
-                &:nth-child(1) {
-                    width: 100px !important;
-                    max-width: 100px !important;
+                .magazineCardTitle {
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    color: var(--primary-dark);
+                }
+
+                .pageNumber {
+                    font-size: 1rem;
+                    font-weight: 600;
                 }
             }
 
-            td {
-                &:nth-child(2) {
-                    text-align: left !important;
+            .functionality {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                margin-bottom: 10px;
+
+                button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 }
             }
+
+            .number {
+                margin: 0;
+                color: rgb(2, 139, 219);
+            }
+
+            .authorContent {
+                svg {
+                    font-size: 1.4rem;
+                    color: rgb(149, 149, 149);
+                    margin-right: 5px;
+                }
+
+                .author {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    ;
+                }
+            }
+
         }
 
         &::-webkit-scrollbar {
@@ -160,6 +194,78 @@
                 }
             }
         }
+    }
+
+    .pdfView {
+        width: 50%;
+        box-sizing: border-box;
+        overflow: hidden;
+        overflow-y: auto;
+        max-height: 500px;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.279);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .react-pdf__Document {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .react-pdf__Page {
+            margin: 0 auto;
+        }
+
+        .react-pdf__PageCanvas {
+            border-radius: 4px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+
+            button {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                padding: 8px 16px;
+                font-family: 'Roboto', sans-serif;
+                font-size: 14px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: #0056b3;
+                }
+
+                &:disabled {
+                    background-color: #ccc;
+                    cursor: not-allowed;
+                }
+
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    canvas.react-pdf__Page__canvas {
+        margin-bottom: 50px;
     }
 }
 
