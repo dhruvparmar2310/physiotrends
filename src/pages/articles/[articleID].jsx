@@ -120,6 +120,8 @@ function ArticleID ({ data }) {
                             <Page
                                 key={`page_${index + 1}`}
                                 pageNumber={index + 1}
+                                renderTextLayer={false}
+                                renderAnnotationLayer={false}
                             />
                         ))}
                     </Document>
