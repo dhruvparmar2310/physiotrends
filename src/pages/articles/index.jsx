@@ -121,7 +121,7 @@ function Articles ({ data, router }) {
 export default withRouter(Articles)
 
 export const getServerSideProps = async () => {
-    const res = await fetch(`${process.env.LOCALHOST}/api/articles`)
+    const res = await fetch(`${process.env.DEPLOY}/api/articles`)
     const data = await res.json()
     return { props: { data } }
 }
