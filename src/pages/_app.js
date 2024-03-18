@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function App({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(false)
@@ -36,6 +38,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       {isLoading && <LoadingScreen className={isLoading ? "logoLoading" : ""} />}
+      <ToastContainer stacked />
       <Header />
       <Component {...pageProps} />
       <Footer />

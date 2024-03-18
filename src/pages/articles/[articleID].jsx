@@ -83,10 +83,10 @@ function ArticleID ({ data }) {
                                     <div className={`${styles?.magazineCard}`}>
                                         <div className={`${styles?.magazineCardHeader}`}>
                                             <span title={`${magazine?.sName} | PhysioTrends`} className={`${styles?.magazineCardTitle}`}>{magazine?.sName}</span>
-                                            <span className={`${styles?.pageNumber}`}>Page No.: {magazine?.sPageNo}</span>
                                         </div>
                                         <div className={`${styles?.authorContent}`}>
                                             <span className={`${styles?.author}`} title={`${magazine?.sAuthor} | PhysioTrends`}><FaUserCircle /> {magazine?.sAuthor}</span>
+                                            <span className={`${styles?.pageNumber}`}>Page No.: {magazine?.sPageNo}</span>
                                         </div>
                                         <p className={`${styles?.number}`}>DOI: {magazine?.sDOINo}</p>
                                         <div className={`${styles?.functionality}`}>

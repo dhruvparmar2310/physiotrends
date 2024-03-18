@@ -7,6 +7,14 @@
         font-weight: 600;
         letter-spacing: 0.8px;
 
+        table {
+
+            th,
+            td {
+                text-wrap: nowrap;
+            }
+        }
+
         .notes {
             display: block;
             text-align: start;
@@ -41,12 +49,8 @@
             border-bottom: 2px solid rgb(149, 149, 149);
 
             .magazineCardHeader {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
                 .magazineCardTitle {
-                    font-size: 1.4rem;
+                    font-size: 1.45rem;
                     font-weight: 500;
                     color: var(--primary-dark);
                 }
@@ -78,6 +82,10 @@
             }
 
             .authorContent {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
                 svg {
                     font-size: 1.4rem;
                     color: rgb(149, 149, 149);
@@ -197,39 +205,60 @@
     }
 
     .pdfView {
-        width: 50%;
-        box-sizing: border-box;
+        width: 100% !important;
+        max-width: 600px !important;
+        max-height: 800px;
         overflow: hidden;
         overflow-y: auto;
-        max-height: 500px;
         margin: 0 auto;
-        background-color: #f5f5f5;
-        border-radius: 8px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.279);
-        padding: 20px;
+        background-color: #cbcbcb;
+        border-radius: 0px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.204);
+        // padding: 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        p {
-            font-family: 'Roboto', sans-serif;
-            font-size: 14px;
-            color: #777;
-            margin-bottom: 10px;
-        }
-
         .react-pdf__Document {
-            border-radius: 4px;
+            border-radius: 0px;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
         .react-pdf__Page {
-            margin: 0 auto;
+            margin: 10px auto;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100px !important;
+            height: 100px !important;
+            overflow: hidden !important;
+
+        }
+
+        canvas {
+            width: 600px !important;
+            height: 800px !important;
         }
 
         .react-pdf__PageCanvas {
             border-radius: 4px;
+            transition: transform 0.3s ease;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain !important;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+
+        .pageInfo {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
         }
 
         .buttons {
@@ -263,10 +292,6 @@
             }
         }
     }
-
-    canvas.react-pdf__Page__canvas {
-        margin-bottom: 50px;
-    }
 }
 
 #copyLink {
@@ -281,22 +306,162 @@
             letter-spacing: 0.1px;
         }
 
+        .pdfView {
+            width: 100% !important;
+            max-width: 400px !important;
+            max-height: 600px;
+
+            canvas {
+                width: 400px !important;
+                height: 600px !important;
+            }
+        }
+
         .articlesContent {
-            table {
-                tbody {
-                    td {
-                        font-size: 15px;
+            .magazineCard {
+                border-bottom: 2px solid rgb(149, 149, 149);
+
+                .magazineCardHeader {
+                    margin-top: 10px;
+
+                    .magazineCardTitle {
+                        font-size: 20px;
+                    }
+
+                    .pageNumber {
+                        font-size: 20px !important;
+                        font-weight: 600;
+                    }
+                }
+
+                .functionality {
+                    button {
+                        gap: 5px;
+                        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    }
+                }
+
+                .number {
+                    margin: 0;
+                    color: rgb(2, 139, 219);
+                }
+
+                .authorContent {
+                    margin-top: 5px;
+
+                    svg {
+                        font-size: 22px;
+                        color: rgb(149, 149, 149);
+                        margin-right: 2px;
+                    }
+
+                    .author {
+                        font-size: 18px;
+                    }
+                }
+
+            }
+
+            &::-webkit-scrollbar {
+                height: 3px !important;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                height: 3px !important;
+            }
+
+            .magazineContent {
+                h3 {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    color: var(--primary-color);
+                    margin: 0;
+                }
+
+                hr {
+                    margin: 0;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    font-family: 'Alice', serif;
+                    letter-spacing: 0.8px;
+                    font-size: 1rem;
+
+                }
+
+                ol {
+                    list-style: none;
+                    padding: 0;
+
+                    li {
+                        margin-bottom: 10px;
+
+                        p {
+                            color: var(--primary-dark);
+                            margin: 0;
+                        }
+
+                        ul {
+                            p {
+                                color: var(--black-color);
+                            }
+                        }
                     }
                 }
             }
 
             .magazineName {
-                font-size: 20px !important;
+                font-size: 1.5rem;
+                font-family: 'Alice', serif;
+                letter-spacing: 0.8px;
+                font-weight: 600;
+                text-align: center;
+                color: var(--primary-dark);
             }
 
-            .authorName {
-                margin: 5px 0;
-                font-size: 13px;
+            .magazine {
+                display: flex;
+
+                .magazineCard {
+                    cursor: pointer;
+                    display: block;
+                    width: 300px;
+                    height: 400px;
+                    background: #002e33;
+                    background: linear-gradient(45deg, #002e33 0%, var(--primary-dark) 50%, var(--primary-color) 100%);
+                    margin-top: 50px;
+                    box-shadow: 0 0 15px 1px #000;
+                    overflow: hidden;
+                    transition: 0.5s;
+
+                    .magazineImg {
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            height: 360px;
+                            transition: 0.5s;
+                        }
+                    }
+
+                    &:hover {
+                        transform: translateY(-10px);
+
+                        img {
+                            transform: scale(1.03);
+                        }
+                    }
+
+                    .cardTitle {
+                        padding: 5px 10px;
+                        text-align: center;
+                        color: var(--white-color);
+                        // z-index: 20 !important;
+                        font-weight: 600;
+                        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    }
+                }
             }
         }
     }

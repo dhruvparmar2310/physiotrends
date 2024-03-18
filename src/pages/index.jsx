@@ -140,7 +140,6 @@ export default function Home () {
           </div>
         </section>
       </main>
-      <ToastContainer stacked />
     </>
   );
 }
