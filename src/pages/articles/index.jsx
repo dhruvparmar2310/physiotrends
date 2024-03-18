@@ -7,6 +7,7 @@ import { withRouter } from 'next/router'
 import { articles } from '@/data/articles'
 import { MdContentCopy } from "react-icons/md"
 import copy from 'clipboard-copy'
+import { Bounce, toast } from 'react-toastify'
 
 function Articles ({ data, router }) {
     const [isCopied, setIsCopied] = useState(false)
@@ -14,10 +15,32 @@ function Articles ({ data, router }) {
         try {
             await copy(link)
             setIsCopied(true)
-            console.log('Link copied to clipboard!')
+            toast.success('Copied to clipboard', {
+                position: 'top-right',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+                toastId: 'copied'
+            })
         } catch (err) {
             setIsCopied(false)
-            console.error('Failed to copy link:', err)
+            toast.error('Failed to copy link', {
+                position: 'top-right',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+                toastId: 'copied'
+            })
         }
     }
     return (
@@ -83,24 +106,15 @@ function Articles ({ data, router }) {
                                                             Read
                                                         </Button>
 
-                                                        <OverlayTrigger
-                                                            placement='top'
-                                                            overlay={
-                                                                <Tooltip id='copyLink'>
-                                                                    {isCopied ? 'Copied to ClipBoard' : 'Copy'}
-                                                                </Tooltip>
-                                                            }
+                                                        <Button
+                                                            variant='info'
+                                                            size='sm'
+                                                            title={`${article?.title} | PhysioTrends`}
+                                                            style={{ marginLeft: '5px' }}
+                                                            onClick={() => handleCopyLink(`${process.env.DEPLOY}/articles/${article?._id}?sArticle=${article?.title}`)}
                                                         >
-                                                            <Button
-                                                                variant='info'
-                                                                size='sm'
-                                                                title={`${article?.title} | PhysioTrends`}
-                                                                style={{ marginLeft: '5px' }}
-                                                                onClick={() => handleCopyLink(`${process.env.DEPLOY}/articles/${article?._id}?sArticle=${article?.title}`)}
-                                                            >
-                                                                <MdContentCopy />
-                                                            </Button>
-                                                        </OverlayTrigger>
+                                                            <MdContentCopy />
+                                                        </Button>
                                                     </>
                                                 }
                                             </td>

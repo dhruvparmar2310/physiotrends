@@ -11,6 +11,7 @@ import { FaChevronDown } from "react-icons/fa"
 function Header () {
     const router = useRouter()
     const [isNavExpanded, setIsNavExpanded] = useState(false)
+    const [dropdownOpen, setDropDownOpen] = useState(false)
 
     const handleClick = (e, path) => {
         e?.preventDefault()
@@ -52,21 +53,21 @@ function Header () {
                                 <Link href={'/editorialMember'} title='Editorial Members | PhysioTrends' className={`${router?.route?.includes('/editorialMember') && styles?.active}`} onClick={(e) => handleClick(e, '/editorialMember')}>Editorial Members</Link>
                             </li>
                             <li className={`${styles.drop_down}`}>
-                                <span className={`${styles?.dropDownButton}`} title='Policies | PhysioTrends'>Policies <FaChevronDown /></span>
-                                <ul>
+                                <span className={`${styles?.dropDownButton}`} title='Policies | PhysioTrends' onClick={() => setDropDownOpen(!dropdownOpen)}>Policies <FaChevronDown /></span>
+                                <ul style={dropdownOpen ? { display: 'flex' } : { display: 'none' }}>
                                     <li>
-                                        <Link href={'/terms-and-conditions'}>Terms & Conditions</Link>
+                                        <Link href={'/terms-and-conditions'} title='Terms & Conditions | PhysioTrends' className={`${router?.route?.includes('/terms-and-conditions') && styles?.active}`} onClick={(e) => handleClick(e, '/terms-and-conditions')}>Terms & Conditions</Link>
                                     </li>
                                     <li>
-                                        <Link href={'/policy/disclaimerPolicy'}>Disclaimer Policy</Link>
+                                        <Link href={'/policy/disclaimerPolicy'} title='Disclaimer Policy | PhysioTrends' className={`${router?.route?.includes('/policy/disclaimerPolicy') && styles?.active}`} onClick={(e) => handleClick(e, '/policy/disclaimerPolicy')}>Disclaimer Policy</Link>
                                     </li>
                                     <li>
-                                        <Link href={'/policy/privacyPolicy'}>Privacy Policy</Link>
+                                        <Link href={'/policy/privacyPolicy'} title='Privacy Policy | PhysioTrends' className={`${router?.route?.includes('/policy/privacyPolicy') && styles?.active}`} onClick={(e) => handleClick(e, '/policy/privacyPolicy')}>Privacy Policy</Link>
                                     </li>
                                     <li>
-                                        <Link href={'/policy/plagiarismPolicy'}>Plagiarism Policy</Link>
+                                        <Link href={'/policy/plagiarismPolicy'} title='Plagiarism Policy | PhysioTrends' className={`${router?.route?.includes('/policy/plagiarismPolicy') && styles?.active}`} onClick={(e) => handleClick(e, '/policy/plagiarismPolicy')}>Plagiarism Policy</Link>
                                     </li>
-                                    <li><Link href={'/policy/editorialPolicy'}>Editorial Policy</Link></li>
+                                    <li><Link href={'/policy/editorialPolicy'}  title='Editorial Policy | PhysioTrends' className={`${router?.route?.includes('/policy/editorialPolicy') && styles?.active}`} onClick={(e) => handleClick(e, '/policy/editorialPolicy')}>Editorial Policy</Link></li>
                                 </ul>
                             </li>
                             <li>
