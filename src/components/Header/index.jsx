@@ -43,10 +43,10 @@ function Header () {
                             <li className="active">
                                 <Link href='/' title='Home | PhysioTrends' className={`${router?.route === '/' && styles?.active} `} onClick={(e) => handleClick(e, '/')}>Home</Link>
                             </li>
-                            <li className={`${styles.drop_down}`}>
+                            <li>
                                 <Link href={`/articles`} title='Archives | PhysioTrends' className={`${router?.route?.includes('/articles') && styles?.active}`} onClick={(e) => handleClick(e, '/articles')}>Archives</Link>
                             </li>
-                            <li className={`${styles.drop_down}`}>
+                            <li>
                                 <Link href='/advertise' title='Advertise | PhysioTrends' className={`${router?.route?.includes('/advertise') && styles?.active}`} onClick={(e) => handleClick(e, '/advertise')}>Advertise </Link>
                             </li>
                             <li>
@@ -54,7 +54,7 @@ function Header () {
                             </li>
                             <li className={`${styles.drop_down}`}>
                                 <span className={`${styles?.dropDownButton}`} title='Policies | PhysioTrends' onClick={() => setDropDownOpen(!dropdownOpen)}>Policies <FaChevronDown /></span>
-                                <ul style={dropdownOpen ? { display: 'flex' } : { display: 'none' }}>
+                                <ul style={dropdownOpen ? { display: 'block' } : { display: 'none' }}>
                                     <li>
                                         <Link href={'/terms-and-conditions'} title='Terms & Conditions | PhysioTrends' className={`${router?.route?.includes('/terms-and-conditions') && styles?.active}`} onClick={(e) => handleClick(e, '/terms-and-conditions')}>Terms & Conditions</Link>
                                     </li>
@@ -67,7 +67,7 @@ function Header () {
                                     <li>
                                         <Link href={'/policy/plagiarismPolicy'} title='Plagiarism Policy | PhysioTrends' className={`${router?.route?.includes('/policy/plagiarismPolicy') && styles?.active}`} onClick={(e) => handleClick(e, '/policy/plagiarismPolicy')}>Plagiarism Policy</Link>
                                     </li>
-                                    <li><Link href={'/policy/editorialPolicy'}  title='Editorial Policy | PhysioTrends' className={`${router?.route?.includes('/policy/editorialPolicy') && styles?.active}`} onClick={(e) => handleClick(e, '/policy/editorialPolicy')}>Editorial Policy</Link></li>
+                                    <li><Link href={'/policy/editorialPolicy'} title='Editorial Policy | PhysioTrends' className={`${router?.route?.includes('/policy/editorialPolicy') && styles?.active}`} onClick={(e) => handleClick(e, '/policy/editorialPolicy')}>Editorial Policy</Link></li>
                                 </ul>
                             </li>
                             <li>

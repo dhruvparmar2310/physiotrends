@@ -36,6 +36,17 @@ export const members = [
     {
         _id: '4',
         type: 'AssociateEditors',
+        name: 'Dr. Megha Sheth',
+        profile: 'assets/img/Members/DrMeghaSheth.jpg',
+        education: 'MPT in Rehabilitation',
+        designation: 'Lecturer at SBB College of Physiotherapy',
+        role: '-',
+        emailAddress: 'msheth2969@gmail.com',
+        address: 'SBB College of Physiotherapy, V.S.Hopital Campus, Ellisbridge, Ahmedabad, Gujarat - 380006'
+    },
+    {
+        _id: '5',
+        type: 'AssociateEditors',
         name: 'Dr. Karishma Jagad',
         occupation: '',
         profile: 'assets/img/Members/DrKrishmaJagad.jpg',
@@ -46,52 +57,18 @@ export const members = [
         address: 'Govt. Physiotherapy College, Rameshwar-nagar, Jamnagar, Gujarat - 361008'
     },
     {
-        _id: '5',
-        type: 'AssociateEditors',
-        name: 'Dr. Parita Dave',
-        occupation: '',
-        profile: 'assets/img/Members/DrParitaDave.jpg',
-        education: 'MPT in CardioPulmonary Conditions',
-        designation: 'Associate Professor at K.D.Institute of Physiotherapy',
-        role: '-',
-        emailAddress: 'insitute.phy@kdhospital.co.in',
-        address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
-    },
-    {
         _id: '6',
-        type: 'Editors',
-        name: 'Dr. Chirag Solanki',
-        profile: 'assets/img/Members/Dr.ChiragSolanki.jpg',
-        education: 'MPT in Neurological Conditions',
-        designation: 'Assistant Professor at School of Physiotherapy, R.K.University',
-        role: ['Owner and Director of Maruti Physiotherapy Center, Samarpan Physiotherapy Center'],
-        emailAddress: 'chirag.solanki@rku.ac.in',
-        address: 'R.K.University, Bhavnagar Highway, Tramba, Rajkot, Gujarat - 360020'
+        type: 'AssociateEditors',
+        name: 'Dr. Mihirdev Jhala',
+        profile: 'assets/img/Members/DrMihirdevJhala.jpg',
+        education: 'PhD, MPT in Neurological Conditions',
+        designation: 'Principal, JG College of Physiotherapy Ahmedabad',
+        role: '-',
+        emailAddress: 'prin.jgphysio@jgcolleges.org',
+        address: 'JG College of Physiotherapy, Opp. Gulab Tower, Off. Sola Road, Ahmedabad, Gujarat - 380061'
     },
     {
         _id: '7',
-        type: 'Editors',
-        name: 'Dr. Poorvin Shah',
-        profile: 'assets/img/Members/DrPoorvinShah.jpg',
-        education: 'MPT in Orthopedics',
-        designation: 'Assistant Professor at K.D.Institute of Physiotherapy',
-        role: '-',
-        emailAddress: 'insitute.phy@kdhospital.co.in',
-        address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
-    },
-    {
-        _id: '8',
-        type: 'Editors',
-        name: 'Dr. Hetvi Dimothe',
-        profile: 'assets/img/Members/DrHetviDimothe.jpg',
-        education: 'MPT in Rehabilitation',
-        designation: 'Assistant Professor at K.D.Institute of Physiotherapy',
-        role: '-',
-        emailAddress: 'insitute.phy@kdhospital.co.in',
-        address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
-    },
-    {
-        _id: '9',
         type: 'AdvisoryMembers',
         name: 'Dr. Neeta Vyas',
         profile: 'assets/img/Members/DrNeetaVyas.jpeg',
@@ -102,7 +79,7 @@ export const members = [
         address: 'Ahmedabad Institute of Medical Sciences, Nr. Lions Karnavati Eye Hospital, Lapkaman, Ahmedabad, Gujarat - 380060'
     },
     {
-        _id: '10',
+        _id: '8',
         type: 'AdvisoryMembers',
         name: 'Dr. Dinesh Sorani',
         profile: 'assets/img/Members/DrDineshSorani.png',
@@ -113,7 +90,7 @@ export const members = [
         address: 'Govt. Physiotherapy College, Rameshwar-nagar, Jamnagar, Gujarat - 361008'
     },
     {
-        _id: '11',
+        _id: '9',
         type: 'AdvisoryMembers',
         name: 'Dr. Ashish Kakkad',
         profile: 'assets/img/Members/DrAshishKakkad.png',
@@ -124,7 +101,41 @@ export const members = [
         address: 'Marwadi University, Rajkot - Morbi Highway, Rajkot, Gujarat - 360003'
     },
     {
+        _id: '10',
+        type: 'Editors',
+        name: 'Dr. Parita Dave',
+        occupation: '',
+        profile: 'assets/img/Members/DrParitaDave.jpg',
+        education: 'MPT in CardioPulmonary Conditions',
+        designation: 'Associate Professor at K.D.Institute of Physiotherapy',
+        role: '-',
+        emailAddress: 'insitute.phy@kdhospital.co.in',
+        address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
+    },
+    {
+        _id: '11',
+        type: 'Editors',
+        name: 'Dr. Chirag Solanki',
+        profile: 'assets/img/Members/Dr.ChiragSolanki.jpg',
+        education: 'MPT in Neurological Conditions',
+        designation: 'Assistant Professor at School of Physiotherapy, R.K.University',
+        role: ['Owner and Director of Maruti Physiotherapy Center, Samarpan Physiotherapy Center'],
+        emailAddress: 'chirag.solanki@rku.ac.in',
+        address: 'R.K.University, Bhavnagar Highway, Tramba, Rajkot, Gujarat - 360020'
+    },
+    {
         _id: '12',
+        type: 'Reviewers',
+        name: 'Dr. Patel Pooja Girishchndra',
+        profile: 'assets/img/Members/DrPatelPoojaGirishchndra.jpg',
+        education: 'MPT in CardioPulmonary Conditions',
+        designation: 'Assistant Professor at Ananya College of Physiotherapy',
+        role: '-',
+        emailAddress: 'poojapatel180198@gmail.com',
+        address: 'Ananya College of Physiotherapy, KIRC Campus, Ahmedabad-Mehsana Highway, Kalol, Gujarat - 382721'
+    },
+    {
+        _id: '13',
         type: 'Reviewers',
         name: 'Dr. Disha Monsara',
         profile: 'assets/img/Members/DrDishaMonsara.jpg',
@@ -135,7 +146,51 @@ export const members = [
         address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
     },
     {
-        _id: '13',
+        _id: '14',
+        type: 'Reviewers',
+        name: 'Dr. Poorvin Shah',
+        profile: 'assets/img/Members/DrPoorvinShah.jpg',
+        education: 'MPT in Orthopedics',
+        designation: 'Assistant Professor at K.D.Institute of Physiotherapy',
+        role: '-',
+        emailAddress: 'insitute.phy@kdhospital.co.in',
+        address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
+    },
+    {
+        _id: '15',
+        type: 'Reviewers',
+        name: 'Dr. Sujit Vasava',
+        profile: 'assets/img/Members/DrSujitVasava.jpg',
+        education: 'MPT in Musculoskeletal and Sports',
+        designation: 'Assistant professor at Shrimad Rajchandra College of Physiotherapy Uka tarsadia University',
+        role: '-',
+        emailAddress: 'sujit.vasava@utu.ac.in',
+        address: 'Shrimad Rajchandra College of Physiotherapy, Maliba Campus, Gopal Vidyanagar, Bardoli Mahuva Road, Tarsadi, Surat, Gujarat - 394350'
+    },
+    {
+        _id: '16',
+        type: 'Reviewers',
+        name: 'Dr. Nehansi Chauhan',
+        profile: 'assets/img/Members/DrNehansiChauhan.jpg',
+        education: 'MPT in Neurological Conditions',
+        designation: 'Assistant Professor at Venus Institute of Physiotherapy',
+        role: '-',
+        emailAddress: 'nehansichauhan@gmail.com',
+        address: 'Venus Institute of Physiotherapy, At Bhoyan Rathod, Opp. IFFCO, Near ONGC(WSS), Adalaj-Sertha Road, Gandhinagar, Gujarat - 382420'
+    },
+    {
+        _id: '17',
+        type: 'Reviewers',
+        name: 'Dr. Hetvi Dimothe',
+        profile: 'assets/img/Members/DrHetviDimothe.jpg',
+        education: 'MPT in Rehabilitation',
+        designation: 'Assistant Professor at K.D.Institute of Physiotherapy',
+        role: '-',
+        emailAddress: 'insitute.phy@kdhospital.co.in',
+        address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
+    },
+    {
+        _id: '18',
         type: 'Reviewers',
         name: 'Dr. Bhaumi Dave',
         profile: 'assets/img/Members/DrBhaumiDave.jpg',
@@ -144,5 +199,5 @@ export const members = [
         role: '-',
         emailAddress: 'insitute.phy@kdhospital.co.in',
         address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
-    }
+    }    
 ]
