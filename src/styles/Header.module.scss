@@ -239,7 +239,7 @@
 .mobile-nav a:hover,
 .mobile-nav .active>a,
 .mobile-nav li:hover>a {
-    color: var(--theme);
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -324,9 +324,7 @@
 
 @media screen and (max-width: 967px) {
     .header .menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: block;
     }
 
     .nav_menu ul {
