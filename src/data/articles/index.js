@@ -3,7 +3,7 @@ export const articles = [
         _id: '1',
         title: 'Volume - 1 | Issue - 1',
         nMonth: 'March, 2024',
-        img: 'assets/img/magazines/vol1_issue1.JPG',
+        img: 'assets/img/magazines/Vol-1-Issue-1.jpeg',
         aMagazines: [
             {
                 _id: '101',

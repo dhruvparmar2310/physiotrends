@@ -72,7 +72,7 @@
 
         .contactForm {
             background: #002e33;
-            background: linear-gradient(150deg, #002e33 0%, var(--primary-dark) 80%, var(--primary-color) 100%);
+            background: linear-gradient(150deg, #002e33 0%, var(--primary-color) 80%, var(--primary-light) 100%);
             padding: 30px;
             border-radius: 25px;
             margin-top: 2rem;
@@ -110,14 +110,14 @@
                     }
 
                     button {
-                        background: var(--primary-dark);
+                        background: black;
                         border: none;
+                        color: var(--white-color);
                         border-radius: 50px;
                         padding: 10px 20px;
-                        box-shadow: 0 0 15px #0000006a, 0 0 20px #00000031;
-                        font-family: 'Alice', serif;
+                        font-family: 'Alice', sans-serif;
                         word-spacing: 2px;
-                        font-weight: 600;
+                        font-weight: 500;
                         transition: 0.5s;
                         margin-top: 10px;
 
