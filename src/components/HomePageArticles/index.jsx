@@ -1,7 +1,7 @@
 import { articles } from '@/data/articles';
 import Image from 'next/image';
 import React, { useEffect } from 'react'
-import articleImg from '../../../public/assets/img/magazines/vol1_issue1.jpg'
+import articleImg from '../../../public/assets/img/magazines/Vol-1-Issue-1.jpeg'
 import styles from '../../styles/HomePageArticles.module.scss'
 
 const HomePageArticles = ({ allArticles }) => {

@@ -29,7 +29,7 @@ export default function Home () {
         <meta property="og:type" content="website" />
         <link rel="icon" href="assets/img/favicon.jpg" />
       </Head>
-      <main>
+      <main className={`${styles.mainLayout}`}>
         <Hero />
 
         <section id="about" className={`${styles?.about}`}>
@@ -64,7 +64,7 @@ export default function Home () {
             </div>
 
             <div className={`${styles?.aboutUsDetails} mt-3`}>
-              <Table hover responsive>
+              <Table hover responsive borderless>
                 <thead>
                   <tr>
                     <th>Name</th>
