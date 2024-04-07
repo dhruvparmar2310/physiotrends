@@ -4,10 +4,12 @@ import Head from 'next/head'
 import BreadCrumb from '@/components/BreadCrumb'
 import { Button, OverlayTrigger, Spinner, Table, Tooltip } from 'react-bootstrap'
 import { withRouter } from 'next/router'
-import { articles } from '@/data/articles'
+// import { articles } from '@/data/articles'
 import { MdContentCopy } from "react-icons/md"
 import copy from 'clipboard-copy'
 import { Bounce, toast } from 'react-toastify'
+import { FaDownload } from 'react-icons/fa6'
+import { saveAs } from 'file-saver'
 
 function Articles ({ data, router }) {
     const [isCopied, setIsCopied] = useState(false)
@@ -88,7 +90,7 @@ function Articles ({ data, router }) {
                                 </tr>
                             </thead>
                             <tbody>
-                                {articles?.map(article => {
+                                {data?.articles?.map(article => {
                                     return (<>
                                         <tr key={article?._id}>
                                             <td><span>{article?._id}</span></td>
@@ -101,7 +103,7 @@ function Articles ({ data, router }) {
                                                             variant='dark'
                                                             size='sm'
                                                             onClick={() => router.push(`/articles/${article?._id}?sArticle=${article?.title}`)}
-                                                            title={`${article?.title} | PhysioTrends`}
+                                                            title={`Read ${article?.title} | PhysioTrends`}
                                                         >
                                                             Read
                                                         </Button>
@@ -114,6 +116,16 @@ function Articles ({ data, router }) {
                                                             onClick={() => handleCopyLink(`${process.env.DEPLOY}/articles/${article?._id}?sArticle=${article?.title}`)}
                                                         >
                                                             <MdContentCopy />
+                                                        </Button>
+
+                                                        <Button
+                                                            variant='warning'
+                                                            size='sm'
+                                                            title={`Download ${article?.title} | PhysioTrends`}
+                                                            style={{ marginLeft: '5px' }}
+                                                            onClick={() => saveAs(`${article?.eBook}`, `PhysioTrends_Vol-1_Issue-1`)}
+                                                        >
+                                                            <FaDownload />
                                                         </Button>
                                                     </>
                                                 }

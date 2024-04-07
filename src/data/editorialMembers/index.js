@@ -125,6 +125,17 @@ export const members = [
     },
     {
         _id: '12',
+        type: 'Editors',
+        name: 'Dr. Mansi Shingala',
+        profile: 'assets/img/Members/DrMansiShingala.jpg',
+        education: 'MPT in Sports',
+        designation: 'Tutor cum Physiotherapist at Govt. Physiotheraphy College, Jamnagar',
+        role: '-',
+        emailAddress: 'mansishingala91@gmail.com',
+        address: 'Govt. Physiotherapy College, Rameshwar-nagar, Jamnagar, Gujarat - 361008.'
+    },
+    {
+        _id: '13',
         type: 'Reviewers',
         name: 'Dr. Patel Pooja Girishchndra',
         profile: 'assets/img/Members/DrPatelPoojaGirishchndra.jpg',
@@ -135,7 +146,7 @@ export const members = [
         address: 'Ananya College of Physiotherapy, KIRC Campus, Ahmedabad-Mehsana Highway, Kalol, Gujarat - 382721'
     },
     {
-        _id: '13',
+        _id: '14',
         type: 'Reviewers',
         name: 'Dr. Disha Monsara',
         profile: 'assets/img/Members/DrDishaMonsara.jpg',
@@ -146,7 +157,7 @@ export const members = [
         address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
     },
     {
-        _id: '14',
+        _id: '15',
         type: 'Reviewers',
         name: 'Dr. Poorvin Shah',
         profile: 'assets/img/Members/DrPoorvinShah.jpg',
@@ -157,7 +168,7 @@ export const members = [
         address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
     },
     {
-        _id: '15',
+        _id: '16',
         type: 'Reviewers',
         name: 'Dr. Sujit Vasava',
         profile: 'assets/img/Members/DrSujitVasava.jpg',
@@ -168,7 +179,7 @@ export const members = [
         address: 'Shrimad Rajchandra College of Physiotherapy, Maliba Campus, Gopal Vidyanagar, Bardoli Mahuva Road, Tarsadi, Surat, Gujarat - 394350'
     },
     {
-        _id: '16',
+        _id: '17',
         type: 'Reviewers',
         name: 'Dr. Nehansi Chauhan',
         profile: 'assets/img/Members/DrNehansiChauhan.jpg',
@@ -179,7 +190,7 @@ export const members = [
         address: 'Venus Institute of Physiotherapy, At Bhoyan Rathod, Opp. IFFCO, Near ONGC(WSS), Adalaj-Sertha Road, Gandhinagar, Gujarat - 382420'
     },
     {
-        _id: '17',
+        _id: '18',
         type: 'Reviewers',
         name: 'Dr. Hetvi Dimothe',
         profile: 'assets/img/Members/DrHetviDimothe.jpg',
@@ -190,7 +201,7 @@ export const members = [
         address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
     },
     {
-        _id: '18',
+        _id: '19',
         type: 'Reviewers',
         name: 'Dr. Bhaumi Dave',
         profile: 'assets/img/Members/DrBhaumiDave.jpg',
@@ -199,5 +210,16 @@ export const members = [
         role: '-',
         emailAddress: 'insitute.phy@kdhospital.co.in',
         address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
+    },  
+    {
+        _id: '20',
+        type: 'Reviewers',
+        name: 'Dr. Aarsh Bhatt',
+        profile: 'assets/img/Members/DrAarshBhatt.jpg',
+        education: 'MPT in CardioPulmonary Conditions',
+        designation: 'Assistant Professor at Silver Oak University',
+        role: '-',
+        emailAddress: 'aarshbhatt28@gmail.com',
+        address: 'Silver Oak University, 352/353, Silver Oak University, 370/371, near Bhavik Publication, Gota Gam, Gota, Ahmedabad, Gujarat - 382481'
     }    
 ]

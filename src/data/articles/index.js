@@ -4,6 +4,7 @@ export const articles = [
         title: 'Volume - 1 | Issue - 1',
         nMonth: 'March, 2024',
         img: 'assets/img/magazines/Vol-1-Issue-1.jpeg',
+        eBook: 'assets/pdfs/vol-1-issue-1/Physiotrends Vol 1, Issue 1.pdf',
         aMagazines: [
             {
                 _id: '101',
