@@ -10,7 +10,7 @@ const DisclaimerPolicy = () => {
                 <title>Disclaimer Policy | Policy | PhysioTrends</title>
                 <meta charset="utf-8"></meta>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name='keywords' content='PhysioTrends, Physiotherapy, Advertise of PhysioTrends, PhysioTrends Ads, Physio Magazine, Physio Article, ThePhysioBrothers' />
+                <meta name='keywords' content='PhysioTrends, Physiotherapy, Advertise of PhysioTrends, PhysioTrends Ads, Physio Magazine, Physio Article, ThePhysioBrothers, Magazine for Physiotherapy, Physiotherapy Magazine, Magazine for Physiotherapy India, Indian Physiotherapy Magazine' />
                 <meta name="description" content="Read the Disclaimer Policy, Terms & Conditions apply." />
                 <meta property="og:title" content="Disclaimer Policy | Read the Disclaimer Policy, Terms & Conditions apply." />
                 <meta property="og:description" content="Read the Disclaimer Policy, Terms & Conditions apply." />
@@ -21,7 +21,7 @@ const DisclaimerPolicy = () => {
             </Head>
 
             <BreadCrumb title={'Home | PhysioTrends'} link={'Home'} current={'Policy - Disclaimer Policy'} />
-            <section className={`${styles?.policy}`}>
+            <section className={`${styles?.policy} container`}>
                 <div className={`${styles?.policyContent}`}>
                     <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Disclaimer Policy</h1>
                     <div className={`${styles?.line}`}></div>

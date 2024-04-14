@@ -60,7 +60,7 @@ function ArticleID ({ data }) {
                 <title>Articles - {sArticle} | PhysioTrends</title>
                 <meta charset="utf-8"></meta>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name='keywords' content={`PhysioTrends, Physiotrends, Physio trends, Physiotherapy, Physio Magazine, Physio Article, ThePhysioBrothers, ${sArticle} of PhysioTrends`} />
+                <meta name='keywords' content={`PhysioTrends, Physiotrends, Physio trends, Physiotherapy, Physio Magazine, Physio Article, ThePhysioBrothers, ${sArticle} of PhysioTrends, Magazine for Physiotherapy, Physiotherapy Magazine, Magazine for Physiotherapy India, Indian Physiotherapy Magazine`} />
                 <meta name="description" content="PHYSIOTRENDS is India’s fastest growing ISSN Certified E-Magazine for Physical Therapist, your ultimate resource for all things related to physical therapy and rehabilitation. Explore expert articles, in-depth interviews with leading professionals, latest research findings, innovative techniques, and practical tips to enhance your understanding and practice in the field of physiotherapy. Whether you're a seasoned practitioner or just starting your journey, our E-Magazine is your go-to destination for staying updated, informed, and inspired in the world of physiotherapy." />
                 <meta property="og:title" content="PhysioTrends: India's #1 PT E-Magazine Empowering You with Expert Articles & Latest Research" />
                 <meta property="og:description" content="PhysioTrends: Explore all the expert articles and latest research on Physiotherapy here." />
@@ -71,7 +71,7 @@ function ArticleID ({ data }) {
             </Head>
 
             <BreadCrumb title={'Articles | PhysioTrends'} link={'Home'} current={`Articles - ${sArticle}`} />
-            <section className={`${styles?.articles}`}>
+            <section className={`${styles?.articles} container`}>
                 <div className={`${styles?.articlesContent}`}>
                     <h1 className={`sectionTitle ${styles?.sectionTitle}`}>{sArticle}:</h1>
                     <div className={`${styles?.line} mb-3`}></div>

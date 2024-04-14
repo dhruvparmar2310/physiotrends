@@ -37,6 +37,8 @@ const Footer = () => {
                                 <ul>
                                     <li><i className="ri-arrow-right-s-line"></i> <Link href="/articles" title='All Articles | PhysioTrends'>All Articles</Link></li>
                                     <li><i className="ri-arrow-right-s-line"></i> <Link href="/advertise" title='Advertise with Us | PhysioTrends'>Advertisement</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/joinAsEditor" title='Join as Editor | PhysioTrends'>Join as Editor</Link></li>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/eventPartner" title='Event Partner | PhysioTrends'>Event Partner</Link></li>
                                 </ul>
                             </div>
 

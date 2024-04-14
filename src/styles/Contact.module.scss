@@ -71,8 +71,9 @@
         }
 
         .contactForm {
-            background: #002e33;
-            background: linear-gradient(150deg, #002e33 0%, var(--primary-color) 80%, var(--primary-light) 100%);
+            // background: #002e33;
+            background: rgb(203, 203, 203);
+            // background: linear-gradient(150deg, #002e33 0%, var(--primary-color) 80%, var(--primary-light) 100%);
             padding: 30px;
             border-radius: 25px;
             margin-top: 2rem;
@@ -93,7 +94,7 @@
 
                 form {
                     label {
-                        color: var(--white-color);
+                        color: black;
                         margin-bottom: 3px;
                     }
 
@@ -124,7 +125,6 @@
                         &:hover {
                             background: var(--white-color);
                             color: var(--primary-dark);
-                            font-weight: 600;
                             transform: translateY(-5px);
                         }
                     }

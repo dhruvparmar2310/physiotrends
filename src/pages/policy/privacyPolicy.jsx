@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
                 <title>Privacy Policy | Policy | PhysioTrends</title>
                 <meta charset="utf-8"></meta>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name='keywords' content='PhysioTrends, Physiotherapy, Advertise of PhysioTrends, PhysioTrends Ads, Physio Magazine, Physio Article, ThePhysioBrothers' />
+                <meta name='keywords' content='PhysioTrends, Physiotherapy, Advertise of PhysioTrends, PhysioTrends Ads, Physio Magazine, Physio Article, ThePhysioBrothers, Magazine for Physiotherapy, Physiotherapy Magazine, Magazine for Physiotherapy India, Indian Physiotherapy Magazine' />
                 <meta name="description" content="Read the Privacy Policy carefully." />
                 <meta property="og:title" content="Privacy Policy | Read the Privacy Policy carefully." />
                 <meta property="og:description" content="Read the Privacy Policy carefully." />
@@ -21,7 +21,7 @@ const PrivacyPolicy = () => {
             </Head>
 
             <BreadCrumb title={'Home | PhysioTrends'} link={'Home'} current={'Policy - Privacy Policy'} />
-            <section className={`${styles?.policy}`}>
+            <section className={`${styles?.policy} container`}>
                 <div className={`${styles?.policyContent}`}>
                     <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Privacy Policy</h1>
                     <div className={`${styles?.line}`}></div>

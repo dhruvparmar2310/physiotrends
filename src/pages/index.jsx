@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
@@ -9,28 +10,94 @@ import articleImg from '../../public/assets/img/magazines/vol1_issue1.jpg'
 import { Button, Col, Row, Table } from "react-bootstrap";
 import { useRouter } from "next/router";
 import { ToastContainer } from "react-toastify";
+import googleLogo from '../../public/assets/img/webAvailability/Google-Logo.png'
+import magzterLogo from '../../public/assets/img/webAvailability/magzter_logo.png'
+import doiLogo from '../../public/assets/img/webAvailability/DOI_logo.png'
+import zenodoLogo from '../../public/assets/img/webAvailability/zenodo.png'
+import openAccessLogo from '../../public/assets/img/webAvailability/Open_Access_logo.png'
+import openAireLogo from '../../public/assets/img/webAvailability/OpenAire_Logo.jpg'
+import { members } from "@/data/editorialMembers";
+import GoogleReviews from "@/components/GoogleReviews";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home () {
   const router = useRouter()
+
+  const [network, setNetwork] = useState(0)
+  const [cityCount, setCityCount] = useState(0);
+  const [teamCount, setTeamCount] = useState(0);
+
+  useEffect(() => {
+    let networkInterval = null;
+    let cityInterval = null;
+    let teamInterval = null;
+
+    networkInterval = setInterval(() => {
+      if (network < 5000) {
+        setNetwork((prevCount) => prevCount + 1);
+      } else {
+        clearInterval(networkInterval);
+      }
+    }, 10);
+
+    cityInterval = setInterval(() => {
+      if (cityCount < 27) {
+        setCityCount((prevCount) => prevCount + 1);
+      } else {
+        clearInterval(cityInterval);
+      }
+    }, 10);
+
+    teamInterval = setInterval(() => {
+      if (teamCount < members?.length) {
+        setTeamCount((prevCount) => prevCount + 1);
+      } else {
+        clearInterval(teamCount);
+      }
+    }, 10);
+
+    return () => {
+      clearInterval(networkInterval);
+      clearInterval(cityInterval);
+      clearInterval(teamInterval);
+    };
+  }, [network, cityCount, teamCount]);
+
   return (
     <>
       <Head>
         <title>PhysioTrends</title>
         <meta charset="utf-8"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name='keywords' content='PhysioTrends, Physiotherapy, Physio Magazine, Physio Article, ThePhysioBrothers' />
+        <meta name='keywords' content='PhysioTrends, Physiotherapy, Physio Magazine, Physio Article, ThePhysioBrothers, Magazine for Physiotherapy, Physiotherapy Magazine, Magazine for Physiotherapy India, Indian Physiotherapy Magazine' />
         <meta name="description" content="PHYSIOTRENDS is India’s fastest growing ISSN Certified E-Magazine for Physical Therapist, your ultimate resource for all things related to physical therapy and rehabilitation. Explore expert articles, in-depth interviews with leading professionals, latest research findings, innovative techniques, and practical tips to enhance your understanding and practice in the field of physiotherapy. Whether you're a seasoned practitioner or just starting your journey, our E-Magazine is your go-to destination for staying updated, informed, and inspired in the world of physiotherapy." />
         <meta property="og:title" content="PhysioTrends: India's #1 PT E-Magazine Empowering You with Expert Articles & Latest Research" />
         <meta property="og:description" content="PHYSIOTRENDS is India’s fastest growing ISSN Certified E-Magazine for Physical Therapist, your ultimate resource for all things related to physical therapy and rehabilitation." />
         <meta property="og:url" content="https://physiotrends.vercel.app/" />
-        <meta property="og:image" content="assets/img/favicon.jpg" />
+        <meta property="og:image" content="assets/img/favicon.png" />
         <meta property="og:type" content="website" />
-        <link rel="icon" href="assets/img/favicon.jpg" />
+        <link rel="icon" href="assets/img/favicon.png" />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
-      <main className={`${styles.mainLayout}`}>
+      <main className={`${styles.mainLayout} container`}>
         <Hero />
+        <section className={`${styles?.counter}`}>
+          <div className={`${styles?.innerContent}`}>
+            <div className={`${styles?.counterCard}`}>
+              <div className={`${styles?.dataValue}`}>{network}+</div>
+              <div className={`${styles?.dataLabel}`}>Network</div>
+            </div>
+            <div className={`${styles?.counterCard}`}>
+              <div className={`${styles?.dataValue}`}>{cityCount}+</div>
+              <div className={`${styles?.dataLabel}`}>City</div>
+            </div>
+            <div className={`${styles?.counterCard}`}>
+              <div className={`${styles?.dataValue}`}>{teamCount}</div>
+              <div className={`${styles?.dataLabel}`}>Editorial Team</div>
+            </div>
+          </div>
+        </section>
 
         <section id="about" className={`${styles?.about}`}>
           <h1 className={`sectionTitle`} data-heading='About' title='About Us | PhysioTrends'>PhysioTrends</h1>
@@ -110,7 +177,7 @@ export default function Home () {
                   </tr>
                   <tr>
                     <td>Email Address</td>
-                    <td className={`${styles?.dataValue}`} title="Contact Us | Email Address of PhysioTrends">physiothrendsmagazine@gmail.com</td>
+                    <td className={`${styles?.dataValue}`} title="Contact Us | Email Address of PhysioTrends">physiotrendsmagazine@gmail.com</td>
                   </tr>
                   <tr>
                     <td>Phone No.</td>
@@ -137,6 +204,55 @@ export default function Home () {
 
           <div className={`text-center mt-4 ${styles?.viewMoreBtn}`}>
             <span onClick={() => router.push('/articles')}>&lt;&lt; View More &gt;&gt;</span>
+          </div>
+        </section>
+
+        <section id="webAvailable" className={`${styles?.webAvailable} container`}>
+          <h1 className={`sectionTitle`} data-heading='Major Index' title="Major Index | PhysioTrends"></h1>
+
+          <div className={`${styles?.innerContent} mt-4`}>
+            <div className={`${styles?.logoContent}`}>
+              <Image
+                src={googleLogo}
+                alt=""
+                quality={100}
+              />
+            </div>
+            <div className={`${styles?.logoContent}`}>
+              <Image
+                src={magzterLogo}
+                alt=""
+                quality={100}
+              />
+            </div>
+            <div className={`${styles?.logoContent}`}>
+              <Image
+                src={doiLogo}
+                alt=""
+                quality={100}
+              />
+            </div>
+            <div className={`${styles?.logoContent}`}>
+              <Image
+                src={zenodoLogo}
+                alt=""
+                quality={100}
+              />
+            </div>
+            <div className={`${styles?.logoContent}`}>
+              <Image
+                src={openAccessLogo}
+                alt=""
+                quality={100}
+              />
+            </div>
+            <div className={`${styles?.logoContent}`}>
+              <Image
+                src={openAireLogo}
+                alt=""
+                quality={100}
+              />
+            </div>
           </div>
         </section>
       </main>

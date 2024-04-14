@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Character from '../../../public/assets/img/char-1.png'
 import { Button, Modal } from 'react-bootstrap'
 import { useRouter } from 'next/router'
+import textLogo from '../../../public/assets/img/main-logo-2.png'
 
 // const Bebas_Neue_Font = Bebas_Neue({ subsets: ['latin'], weight: ['400'], style: ['normal'] })
 // const Teko_Font = Teko({ subsets: ['latin'], weight: ['300', '400', '500', '600'], style: ['normal'] })
@@ -25,11 +26,15 @@ function Hero () {
             <section className={`${styles?.hero}`} id='hero'>
                 <div className={`${styles?.heroContent}`}>
                     <div className={`${styles?.adsContent}`}>
-                        <h1 data-heading='ISSN (Online)'>PhysioTrends</h1>
+                        <h1 data-heading='ISSN (Online)'></h1>
+                        <div className={`styles?.mainLogo`}>
+                            <Image
+                                src={textLogo}
+                                alt='PhysioTreends Logo'
+                                quality={100}
+                            />
+                        </div>
 
-                        <p className={`${styles?.desc} mt-lg-5 mt-3`}>
-                            Empowering Physiotherapists
-                        </p>
                         <p className={`${styles?.desc} mt-3`}>
                             Read the latest research and empower your physiotherapy journey.
                         </p>

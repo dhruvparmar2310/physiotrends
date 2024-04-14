@@ -128,7 +128,7 @@ export const members = [
         type: 'Editors',
         name: 'Dr. Mansi Shingala',
         profile: 'assets/img/Members/DrMansiShingala.jpg',
-        education: 'MPT in Sports',
+        education: 'Ph.D., MPT in Sports',
         designation: 'Tutor cum Physiotherapist at Govt. Physiotheraphy College, Jamnagar',
         role: '-',
         emailAddress: 'mansishingala91@gmail.com',
