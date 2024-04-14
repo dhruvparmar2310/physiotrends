@@ -10,13 +10,13 @@ const TermsAndConditions = () => {
                 <title>Terms & Conditions | PhysioTrends</title>
                 <meta charset="utf-8"></meta>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name='keywords' content='PhysioTrends, Physiotherapy, Physio Magazine, Physio Article, ThePhysioBrothers' />
+                <meta name='keywords' content='PhysioTrends, Physiotherapy, Physio Magazine, Physio Article, ThePhysioBrothers, Magazine for Physiotherapy, Physiotherapy Magazine, Magazine for Physiotherapy India, Indian Physiotherapy Magazine' />
                 <meta name="description" content="PHYSIOTRENDS is India’s fastest growing E-Magazine for Physical Therapist, your ultimate resource for all things related to physical therapy and rehabilitation. Explore expert articles, in-depth interviews with leading professionals, latest research findings, innovative techniques, and practical tips to enhance your understanding and practice in the field of physiotherapy. Whether you're a seasoned practitioner or just starting your journey, our E-Magazine is your go-to destination for staying updated, informed, and inspired in the world of physiotherapy." />
                 <link rel="icon" href="assets/img/favicon.jpg" />
             </Head>
 
             <BreadCrumb title={'Home | PhysioTrends'} link={'Home'} current={'Terms & Conditions'} />
-            <section className={`${styles?.termsAndConditions}`}>
+            <section className={`${styles?.termsAndConditions} container`}>
                 <div className={`${styles?.innerContent}`}>
                     <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Terms & Conditions</h1>
                     <div className={`${styles?.line}`}></div>

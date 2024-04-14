@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from '../../styles/Header.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
-import TextLogo from '../../../public/assets/img/header-logo.png'
+import TextLogo from '../../../public/assets/img/main-logo.png'
 import { Bebas_Neue, Teko } from 'next/font/google'
 import { useRouter } from 'next/router'
 import { RiMenu3Fill } from "react-icons/ri";
@@ -69,6 +69,9 @@ function Header () {
                                     </li>
                                     <li><Link href={'/policy/editorialPolicy'} title='Editorial Policy | PhysioTrends' className={`${router?.route?.includes('/policy/editorialPolicy') && styles?.active}`} onClick={(e) => handleClick(e, '/policy/editorialPolicy')}>Editorial Policy</Link></li>
                                 </ul>
+                            </li>
+                            <li>
+                                <Link href={'/supportUs'} title='Support Us | PhysioTrends' className={`${router?.route?.includes('/supportUs') && styles?.active}`} onClick={(e) => handleClick(e, '/supportUs')}>Support Us</Link>
                             </li>
                             <li>
                                 <Link href={'/contact'} title='Contact | PhysioTrends' onClick={(e) => handleClick(e, '/contact')}>Contact</Link>

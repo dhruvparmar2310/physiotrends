@@ -1,10 +1,47 @@
 main {
   &.mainLayout {
-    background-image: linear-gradient(180deg, var(--primary-color) 30%, var(--primary-light) 50%);
+    // background-image: linear-gradient(180deg, var(--primary-color) 30%, var(--primary-light) 50%);
+    position: relative;
+  }
+
+  .counter {
+    padding: 0;
+    margin-top: 10px;
+
+    .innerContent {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+
+      .counterCard {
+        background: rgb(231, 229, 229);
+        border-radius: 20px;
+        padding: 20px 15px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        .dataValue {
+          font-size: 40px;
+          font-weight: 800;
+        }
+
+        .dataLabel {
+          font-size: 20px;
+          font-weight: 700;
+          font-family: 'Alice', sans-serif;
+          letter-spacing: 0.5px;
+          color: var(--primary-color);
+        }
+      }
+    }
   }
 
   .about {
     // background-color: var(--white-color);
+    width: 100%;
 
     .innerContent {
       .desc {
@@ -84,7 +121,8 @@ main {
   }
 
   .articles {
-    // background: var(--primary-light);
+    background: var(--primary-light);
+    border-radius: 20px;
 
     .viewMoreBtn {
       span {
@@ -110,6 +148,22 @@ main {
         height: 200px;
         background: var(--primary-color);
         padding: 20px;
+      }
+    }
+  }
+
+  .webAvailable {
+    .innerContent {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .logoContent {
+        img {
+          width: auto;
+          height: 70px;
+          // aspect-ratio: 9/3;
+        }
       }
     }
   }
