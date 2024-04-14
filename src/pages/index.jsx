@@ -84,18 +84,26 @@ export default function Home () {
         <Hero />
         <section className={`${styles?.counter}`}>
           <div className={`${styles?.innerContent}`}>
-            <div className={`${styles?.counterCard}`}>
-              <div className={`${styles?.dataValue}`}>{network}+</div>
-              <div className={`${styles?.dataLabel}`}>Network</div>
-            </div>
-            <div className={`${styles?.counterCard}`}>
-              <div className={`${styles?.dataValue}`}>{cityCount}+</div>
-              <div className={`${styles?.dataLabel}`}>City</div>
-            </div>
-            <div className={`${styles?.counterCard}`}>
-              <div className={`${styles?.dataValue}`}>{teamCount}</div>
-              <div className={`${styles?.dataLabel}`}>Editorial Team</div>
-            </div>
+            <Row>
+              <Col lg={4} md={6}>
+                <div className={`${styles?.counterCard}`}>
+                  <div className={`${styles?.dataValue}`}>{network}+</div>
+                  <div className={`${styles?.dataLabel}`}>Network</div>
+                </div>
+              </Col>
+              <Col lg={4} md={6} className="mt-md-0 mt-3">
+                <div className={`${styles?.counterCard}`}>
+                  <div className={`${styles?.dataValue}`}>{cityCount}+</div>
+                  <div className={`${styles?.dataLabel}`}>City</div>
+                </div>
+              </Col>
+              <Col lg={4} md={6} className="mt-lg-0 mt-3">
+                <div className={`${styles?.counterCard}`}>
+                  <div className={`${styles?.dataValue}`}>{teamCount}</div>
+                  <div className={`${styles?.dataLabel}`}>Editorial Team</div>
+                </div>
+              </Col>
+            </Row>
           </div>
         </section>
 
@@ -207,7 +215,7 @@ export default function Home () {
           </div>
         </section>
 
-        <section id="webAvailable" className={`${styles?.webAvailable} container`}>
+        <section id="webAvailable" className={`${styles?.webAvailable}`}>
           <h1 className={`sectionTitle`} data-heading='Major Index' title="Major Index | PhysioTrends"></h1>
 
           <div className={`${styles?.innerContent} mt-4`}>
