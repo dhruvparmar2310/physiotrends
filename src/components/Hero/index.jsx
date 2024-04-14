@@ -32,6 +32,7 @@ function Hero () {
                                 src={textLogo}
                                 alt='PhysioTreends Logo'
                                 quality={100}
+                                className='img-fluid'
                             />
                         </div>
 
