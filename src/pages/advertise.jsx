@@ -11,8 +11,8 @@ import ThePhysioBrothers from '../../public/assets/img/Clients/physiobrothers.pn
 import YogaSanskriti from '../../public/assets/img/Clients/header-logo.png'
 import PricePlan from '../../public/assets/PricePlan'
 import AdsImg from '../../public/assets/img/adsSpec.png'
-import ReactApexChart from 'react-apexcharts'
 import { Abril_Fatface, Comfortaa } from 'next/font/google'
+import DynamicChart from '@/components/DynamicChart'
 
 const abrilFatface = Abril_Fatface({ subsets: ['latin'], weight: ['400'], style: ['normal'] })
 const comfortaa = Comfortaa({ subsets: ['latin'], weight: ['400'], style: ['normal'] })
@@ -97,7 +97,8 @@ const Advertise = () => {
                     <div className={`${styles?.analytics}`}>
                         <Row>
                             <Col sm={6}>
-                                <ReactApexChart options={chartOptions.options} series={chartOptions.series} type="radialBar" height={390} />
+                                {/* <ReactApexChart options={chartOptions.options} series={chartOptions.series} type="radialBar" height={390} /> */}
+                                <DynamicChart options={chartOptions.options} series={chartOptions.series} type="radialBar" height={390} />
                             </Col>
                             <Col sm={6}>
                                 <div className={`${styles?.totalAudience}`}>
