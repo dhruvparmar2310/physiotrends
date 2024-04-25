@@ -42,7 +42,7 @@ function Hero () {
 
                         <div className={`${styles?.btnContent} mt-3`}>
                             <span>
-                                <Button className={`${styles?.readMoreBtn}`} onClick={() => setModal(true)}>
+                                <Button className={`${styles?.readMoreBtn}`} onClick={() => router.push('/submit-your-article')}>
                                     Submit Your Article Now!
                                 </Button>
                             </span>
@@ -83,7 +83,7 @@ function Hero () {
                     </p>
 
                     <div className={`${styles.submitBtn}`}>
-                        <a href='mailto:physiothrendsmagazine@gmail.com' target='_blank'>Submit Now</a>
+                        <a href='mailto:physiotrendsmagazine@gmail.com' target='_blank'>Submit Now</a>
                     </div>
                 </Modal.Body>
             </Modal>

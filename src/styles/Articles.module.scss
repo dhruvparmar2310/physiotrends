@@ -466,3 +466,48 @@
         }
     }
 }
+
+@media (min-width: 1400px) and (max-width: 1950px) {
+    .sectionTitle {
+        font-size: 3.5rem !important;
+    }
+
+    .line {
+        margin-top: 20px;
+    }
+
+    .articlesContent {
+        font-size: 2rem !important;
+        height: 100 !important;
+        box-sizing: border-box;
+
+        table {
+
+            th,
+            td {
+                font-size: 1.5rem !important;
+                text-align: left;
+
+                &:last-child {
+                    text-align: end;
+                }
+            }
+        }
+
+        .magazineCard {
+            .authorContent {
+                .author {
+                    font-size: 1.5rem !important;
+                }
+            }
+        }
+
+        .pageNumber {
+            font-size: 1.5rem !important;
+        }
+
+        .number {
+            font-size: 1.5rem !important;
+        }
+    }
+}

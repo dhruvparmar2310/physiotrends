@@ -301,11 +301,11 @@
 
             h4,
             p {
-                font-size: 1.8rem !important;
+                font-size: 1.5rem !important;
             }
 
             p {
-                line-height: 3rem !important;
+                line-height: 2.3rem !important;
             }
         }
 
@@ -317,6 +317,14 @@
                 h4,
                 a {
                     font-size: 1.8rem !important;
+                }
+
+                ul {
+                    li {
+                        a {
+                            font-size: 1.5rem !important;
+                        }
+                    }
                 }
             }
         }

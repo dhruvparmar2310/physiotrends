@@ -1,6 +1,6 @@
+import React, { useState } from 'react'
 import BreadCrumb from '@/components/BreadCrumb'
 import Head from 'next/head'
-import React from 'react'
 import styles from '../styles/Advertise.module.scss'
 import { Col, Row, Table } from 'react-bootstrap'
 import { MdNoiseAware } from "react-icons/md"
@@ -10,8 +10,65 @@ import Image from 'next/image'
 import ThePhysioBrothers from '../../public/assets/img/Clients/physiobrothers.png'
 import YogaSanskriti from '../../public/assets/img/Clients/header-logo.png'
 import PricePlan from '../../public/assets/PricePlan'
+import AdsImg from '../../public/assets/img/adsSpec.png'
+import { Abril_Fatface, Comfortaa } from 'next/font/google'
+import DynamicChart from '@/components/DynamicChart'
 
+const abrilFatface = Abril_Fatface({ subsets: ['latin'], weight: ['400'], style: ['normal'] })
+const comfortaa = Comfortaa({ subsets: ['latin'], weight: ['400'], style: ['normal'] })
 const Advertise = () => {
+    const [chartOptions, setChartOptions] = useState({
+        series: [10000, 4640, 3176, 1500],
+        options: {
+            chart: {
+                height: 390,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    offsetY: 0,
+                    startAngle: 0,
+                    endAngle: 270,
+                    hollow: {
+                        margin: 5,
+                        size: '30%',
+                        background: 'transparent',
+                        image: undefined,
+                    },
+                    dataLabels: {
+                        name: {
+                            show: false,
+                        },
+                        value: {
+                            show: false,
+                        }
+                    },
+                    barLabels: {
+                        enabled: true,
+                        useSeriesColors: true,
+                        margin: 8,
+                        fontSize: '16px',
+                        formatter: function (seriesName, opts) {
+                            return seriesName + ": " + opts.w.globals.series[opts.seriesIndex];
+                        },
+                    },
+                },
+            },
+            colors: ['#38aaf1', '#f58529', '#0A66C2', '#25D366'],
+            labels: ['Total Magazine Reader', 'Instagram Followers', 'LinkedIn Network', 'Whatsapp Network'],
+            responsive: [
+                {
+                    breakpoint: 480,
+                    options: {
+                        legend: {
+                            show: false
+                        }
+                    }
+                }
+            ]
+        },
+    });
+
     return (
         <>
             <Head>
@@ -36,6 +93,21 @@ const Advertise = () => {
                     <p className={`${styles?.advertiseDesc} mt-4`}>
                         PHYSIOTRENDS is one of the fastest growing ISSN Certified E-magazine for the Physiotherapist. Articles from the great Innovators, Thinkers, Researchers and Creators in the field of physiotherapy can be found in the PhysioTrends E-Magazine. Additionally, PhysioTrends has an advertisement section where users can promote their products or services in order to target consumers.
                     </p>
+
+                    <div className={`${styles?.analytics}`}>
+                        <Row>
+                            <Col sm={6}>
+                                {/* <ReactApexChart options={chartOptions.options} series={chartOptions.series} type="radialBar" height={390} /> */}
+                                <DynamicChart options={chartOptions.options} series={chartOptions.series} type="radialBar" height={390} />
+                            </Col>
+                            <Col sm={6}>
+                                <div className={`${styles?.totalAudience}`}>
+                                    <h1 className={`${styles?.totalCount} ${abrilFatface?.className}`}>19,316+</h1>
+                                    <h1 className={`${styles?.audienceTitle} ${comfortaa?.className}`}>Total Audience</h1>
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
 
                     <div className={`${styles?.whyUs}`}>
                         <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Why Us?</h1>
@@ -91,22 +163,37 @@ const Advertise = () => {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Full Page</td>
-                                            <td className={`${styles?.price}`}>2000/-</td>
-                                        </tr>
-                                        <tr>
                                             <td>Double Pages</td>
                                             <td className={`${styles?.price}`}>3000/-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Single Page</td>
+                                            <td className={`${styles?.price}`}>2000/-</td>
                                         </tr>
                                         <tr>
                                             <td>Half Page</td>
                                             <td className={`${styles?.price}`}>1,500/-</td>
                                         </tr>
+                                        <tr>
+                                            <td>1/4 Page</td>
+                                            <td className={`${styles?.price}`}>1,000/-</td>
+                                        </tr>
                                     </tbody>
                                 </Table>
                                 <span className={`${styles?.notes}`}>Note: 100% payment is mandatory for the Advertisement</span>
                             </Col>
+
+                            <Col sm={12}>
+                                <div className={`${styles.adsImg}`}>
+                                    <Image
+                                        src={AdsImg}
+                                        alt=''
+                                        quality={100}
+                                    />
+                                </div>
+                            </Col>
                         </Row>
+
                     </div>
 
                     <div className={`${styles?.clientContent} mt-4`}>
