@@ -17,7 +17,7 @@ const Footer = () => {
                             <h4 style={{ padding: '0', margin: '0' }}>Get in touch :</h4>
                             <p style={{ fontSize: '16px' }} className='mt-2'>
                                 <span className=''>Phone:<Link href="tel:7984377793"> +91 7984-377-793</Link></span><br />
-                                <span>Email:<Link href="mailto:physiothrendsmagazine@gmail.com" title='physiothrendsmagazine@gmail.com'> physiothrendsmagazine@gmail.com</Link></span><br />
+                                <span>Email:<Link href="mailto:physiotrendsmagazine@gmail.com" title='physiotrendsmagazine@gmail.com'> physiotrendsmagazine@gmail.com</Link></span><br />
                             </p>
                         </div>
 
@@ -45,6 +45,7 @@ const Footer = () => {
                             <div className={`${styles.footer_links}`}>
                                 <h4>Additional Links</h4>
                                 <ul>
+                                    <li><i className="ri-arrow-right-s-line"></i> <Link href="/submit-your-article" title='Submit Article | PhysioTrends'>Submit Article</Link></li>
                                     <li><i className="ri-arrow-right-s-line"></i> <Link href="/terms-and-conditions" title='Our Terms & Conditions | PhysioTrends'>Terms & Conditions</Link></li>
                                     <li><i className="ri-arrow-right-s-line"></i> <Link href="/policy/privacyPolicy" title='Privacy Policy | PhysioTrends'>Privacy Policy</Link></li>
                                     <li><i className="ri-arrow-right-s-line"></i> <Link href="/policy/editorialPolicy" title='Editorial Policy | PhysioTrends'>Editorial Policy</Link></li>

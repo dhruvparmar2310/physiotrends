@@ -124,6 +124,10 @@
 
 // very large display
 @media (min-width: 1400px) and (max-width: 1950px) {
+    .editorialMember {
+        max-width: 1720px;
+    }
+
     .memberContent {
         row-gap: 20px !important;
 

@@ -21,6 +21,27 @@
             background: var(--secondary-200);
         }
 
+        .analytics {
+            .totalAudience {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+
+                .totalCount {
+                    letter-spacing: 5px;
+                    font-size: 4rem;
+                }
+
+                .audienceTitle {
+                    letter-spacing: 0.1px;
+                    font-size: 2rem;
+                }
+            }
+        }
+
         .priceSection {
             .adsImg {
                 width: 90%;
@@ -58,6 +79,25 @@
                     color: #d93e3e;
                     font-size: 15px;
                     font-family: 'Alice', serif;
+                }
+            }
+
+            .adsImg {
+                width: 100%;
+                height: 100%;
+                max-height: 300px;
+                overflow: hidden;
+                position: relative;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 55%;
+                    height: 100%;
+                    object-fit: contain;
+                    position: relative;
                 }
             }
         }
@@ -151,6 +191,7 @@
 @media (min-width: 1400px) and (max-width: 1950px) {
     .sectionTitle {
         font-size: 3.5rem !important;
+        margin-top: 2.5rem !important;
     }
 
     .line {
@@ -165,8 +206,8 @@
         }
 
         .detailCardContent {
-            display: grid !important;
             grid-template-columns: 1fr 1fr 1fr !important;
+            margin-bottom: 3rem !important;
 
             .detailCard {
                 max-width: 550px !important;

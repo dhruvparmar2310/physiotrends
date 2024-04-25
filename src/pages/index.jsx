@@ -24,7 +24,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home () {
   const router = useRouter()
 
-  const [network, setNetwork] = useState(0)
+  const [network, setNetwork] = useState(19317)
   const [cityCount, setCityCount] = useState(0);
   const [teamCount, setTeamCount] = useState(0);
 
@@ -33,16 +33,16 @@ export default function Home () {
     let cityInterval = null;
     let teamInterval = null;
 
-    networkInterval = setInterval(() => {
-      if (network < 5000) {
-        setNetwork((prevCount) => prevCount + 1);
-      } else {
-        clearInterval(networkInterval);
-      }
-    }, 10);
+    // networkInterval = setInterval(() => {
+    //   if (network < 19, 317) {
+    //     setNetwork((prevCount) => prevCount + 1);
+    //   } else {
+    //     clearInterval(networkInterval);
+    //   }
+    // }, 1);
 
     cityInterval = setInterval(() => {
-      if (cityCount < 27) {
+      if (cityCount < 101) {
         setCityCount((prevCount) => prevCount + 1);
       } else {
         clearInterval(cityInterval);
@@ -55,7 +55,7 @@ export default function Home () {
       } else {
         clearInterval(teamCount);
       }
-    }, 10);
+    }, 5);
 
     return () => {
       clearInterval(networkInterval);
