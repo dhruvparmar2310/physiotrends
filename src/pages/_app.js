@@ -39,9 +39,6 @@ export default function App({ Component, pageProps }) {
     <>
       {isLoading && <LoadingScreen className={isLoading ? "logoLoading" : ""} />}
       <ToastContainer stacked />
-        {/* <div className={`feedBack`}>
-          <button className={`btn btn-link feedBackBtn`}>Give Us FeedBack!</button>
-        </div> */}
       <Header />
       <Component {...pageProps} />
       <Footer />

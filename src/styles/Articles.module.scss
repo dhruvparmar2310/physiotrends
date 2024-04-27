@@ -3,15 +3,71 @@
 
     .articlesContent {
         text-align: justify;
-        font-family: 'Alice', serif;
+        // font-family: 'Alice', serif;
         font-weight: 600;
-        letter-spacing: 0.8px;
+        letter-spacing: 0px;
 
-        table {
+        .goBackBtn {
+            button {
+                padding: 0 !important;
+                color: var(--primary-dark);
+                font-weight: 600;
+                text-decoration: none;
 
-            th,
-            td {
-                text-wrap: nowrap;
+                &:hover {
+                    color: var(--primary-color);
+                }
+            }
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            border-top: 1px solid var(--secondary-200);
+            border-bottom: 1px solid var(--secondary-200);
+            padding: 5px 10px;
+
+            span {
+                margin: 0 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                span {
+                    margin: 0;
+                    cursor: pointer;
+
+                    &.logo {
+                        background-color: rgb(224, 0, 0);
+                        border-radius: 99px;
+                        overflow: hidden;
+                        display: flex;
+                        justify-content: center;
+                        margin-right: 5px;
+                        padding: 5px;
+
+                        &::after {
+                            display: none !important;
+                        }
+
+                        svg {
+                            color: white;
+                        }
+                    }
+
+                }
+
+                &:not(:last-child):after {
+                    content: "";
+                    width: 1.5px;
+                    position: relative;
+                    height: 100%;
+                    background-color: var(--secondary-200);
+                    display: block;
+                    margin-left: 10px;
+                    color: var(--secondary-200);
+                }
             }
         }
 
@@ -28,11 +84,77 @@
             font-size: 2.5rem;
         }
 
+        .magazineTitle {
+            text-align: left;
+            font-size: 1.5rem;
+        }
+
         .line {
             display: block;
             width: 100%;
             height: 2px;
             background: var(--secondary-200);
+        }
+
+        .contentHeader {
+            margin-top: 2rem;
+            border: 2px solid var(--secondary-200);
+            padding: 5px 10px;
+            border-radius: 10px;
+
+            .contentHeading {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .contentBody {
+            margin-top: 1rem;
+
+            .accordion {
+                border-radius: 10px;
+                overflow: hidden;
+                border: 2px solid var(--secondary-200);
+
+                .accordionBtn {
+                    height: 100% !important;
+                    min-height: 50px !important;
+                    padding: 0;
+                    padding: 5px 10px;
+                    background-color: rgb(222, 222, 222) !important;
+
+                    &::after {
+                        // display: none !important;
+                        flex-shrink: 0;
+                        width: var(--bs-accordion-btn-icon-width);
+                        height: var(--bs-accordion-btn-icon-width);
+                        margin-left: auto;
+                        content: "";
+                        background-image: var(--bs-accordion-btn-icon);
+                        background-repeat: no-repeat;
+                        background-size: var(--bs-accordion-btn-icon-width);
+                        transition: var(--bs-accordion-btn-icon-transition);
+                    }
+
+                    .bodyHeader {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .accordionBody {
+                background-color: white;
+            }
+
+            .accordionBtn:not(.collapsed) {
+                color: none;
+                background-color: transparent;
+                box-shadow: none;
+            }
         }
 
         .authorName {
@@ -46,11 +168,20 @@
         }
 
         .magazineCard {
+            margin-top: 10px;
             border-bottom: 2px solid rgb(149, 149, 149);
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
 
             .magazineCardHeader {
                 .magazineCardTitle {
-                    font-size: 1.45rem;
+                    font-size: 1.4rem;
                     font-weight: 500;
                     color: var(--primary-dark);
                 }
@@ -300,6 +431,9 @@
 
 @media (max-width: 576px) {
     .articles {
+        padding: 10px 15px;
+        margin-top: 4.5rem !important;
+
         .sectionTitle {
             font-size: 1.6rem !important;
             margin-bottom: 5px;
@@ -318,6 +452,44 @@
         }
 
         .articlesContent {
+            .contentBody {
+                .accordion {
+                    .accordionBtn {
+                        .bodyHeader {
+                            flex-wrap: wrap;
+                            row-gap: 10px;
+                        }
+                    }
+
+                    .accordionBody {
+                        padding: 10px;
+
+                        .magazineCard {
+                            .magazineCardHeader {
+                                .magazineCardTitle {
+                                    text-align: left !important;
+                                    font-size: 15px !important;
+                                    font-weight: 600 !important;
+                                }
+                            }
+
+                            .authorContent {
+                                flex-wrap: wrap !important;
+                                gap: 10px;
+
+                                .author {
+                                    font-size: 15px;
+                                }
+                            }
+
+                            .functionality {
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
             .magazineCard {
                 border-bottom: 2px solid rgb(149, 149, 149);
 
@@ -360,6 +532,35 @@
                     }
                 }
 
+            }
+
+            .magazineTitle {
+                font-size: 20px;
+                line-height: 1.6rem;
+            }
+
+            .magazineHTML {
+                font-size: 15px;
+            }
+
+            .actions {
+                box-sizing: border-box;
+                overflow-x: auto;
+                justify-content: start;
+                margin-top: 15px;
+
+                span {
+                    text-wrap: nowrap;
+                    font-size: 13px;
+                }
+
+                &::-webkit-scrollbar {
+                    height: 3px !important;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    height: 3px !important;
+                }
             }
 
             &::-webkit-scrollbar {
@@ -476,23 +677,46 @@
         margin-top: 20px;
     }
 
+    .articles {
+        margin-top: 10rem !important;
+    }
+
+    .magazineTitle {
+        font-size: 3rem !important;
+    }
+
+    .actions {
+        box-sizing: border-box;
+        overflow-x: auto;
+        justify-content: start !important;
+        margin-top: 30px;
+        padding: 20px !important;
+        border-color: var(--secondary-400) !important;
+
+        span {
+            text-wrap: nowrap;
+            font-size: 25px;
+        }
+
+        &::-webkit-scrollbar {
+            height: 3px !important;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            height: 3px !important;
+        }
+    }
+
+    .goBackBtn {
+        button {
+            font-size: 2rem;
+        }
+    }
+
     .articlesContent {
         font-size: 2rem !important;
         height: 100 !important;
         box-sizing: border-box;
-
-        table {
-
-            th,
-            td {
-                font-size: 1.5rem !important;
-                text-align: left;
-
-                &:last-child {
-                    text-align: end;
-                }
-            }
-        }
 
         .magazineCard {
             .authorContent {
