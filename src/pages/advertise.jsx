@@ -58,13 +58,36 @@ const Advertise = () => {
             labels: ['Total Magazine Reader', 'Instagram Followers', 'LinkedIn Network', 'Whatsapp Network'],
             responsive: [
                 {
-                    breakpoint: 480,
+                    breakpoint: 1400,
                     options: {
+                        chart: {
+                            height: 450,
+                        },
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    options: {
+                        chart: {
+                            height: 230,
+                        },
                         legend: {
                             show: false
-                        }
+                        },
+                        plotOptions: {
+                            radialBar: {
+                                dataLabels: {
+                                    style: {
+                                        fontSize: '10px' // Adjust the font size for phone view
+                                    }
+                                },
+                                barLabels: {
+                                    fontSize: '9px',
+                                }
+                            }
+                        },
                     }
-                }
+                },
             ]
         },
     });

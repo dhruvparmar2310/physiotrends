@@ -7,52 +7,25 @@ import { Button, Table } from 'react-bootstrap'
 import { saveAs } from 'file-saver'
 import { FaUserCircle, FaEye } from "react-icons/fa"
 import { FaDownload } from "react-icons/fa6"
-import { Document, Page, pdfjs } from 'react-pdf';
+import { articles } from '@/data/articles'
+import { Ubuntu } from 'next/font/google'
+import { GrFormPrevious, GrPrevious } from "react-icons/gr"
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-
+const ubuntu = Ubuntu({ subsets: ['latin'], weight: ['400'], style: ['normal'] })
 function ArticleID ({ data }) {
     const router = useRouter()
+    console.log('router :>> ', router);
     const pdfViewRef = useRef(null)
-    const { articleID, sArticle } = router.query
-    const [currentPage, setCurrentPage] = useState(1)
-    const [currentArticle, setCurrentArticle] = useState('100')
-    const pageSize = 10
 
-    const [pdfFile, setPdfFile] = useState(null)
-    const [numPages, setNumPages] = useState(null);
-    const [pageNumber, setPageNumber] = useState(1);
-
-    const paginate = (items, pageNumber, pageSize) => {
-        const startIndex = (pageNumber - 1) * pageSize
-        return items?.content?.slice(startIndex, startIndex + pageSize);
-    }
-
-    const paginatedArticle = paginate(data, currentPage, pageSize)
-
-    const onPageChange = (page) => {
-        setCurrentPage(page);
-    }
+    const { articleID, sArticle, issueId, sIssueName } = router.query
+    const [articleData, setArticleData] = useState([])
 
     useEffect(() => {
-        const fetchPdf = async () => {
-            const pdf = await data?.aMagazines?.map(item => item?.sDownLoadUrl);
-            console.log('pdf :>> ', pdf?.[0]);
-            setCurrentArticle(pdf?.[0]);
-        };
-        fetchPdf();
-    }, [data]);
-
-    function onDocumentLoadSuccess ({ numPages }) {
-        setNumPages(numPages);
-    }
-
-    const handleView = (e, url) => {
-        e.preventDefault();
-
-        setCurrentArticle(url)
-        pdfViewRef.current.scrollIntoView({ behavior: 'smooth' })
-    }
+        const data = articles?.find(item => item?._id === issueId)?.aMagazines?.find(magazine => magazine?._id === articleID)
+        console.log('data :>> ', data, articles);
+        setArticleData(data)
+    }, [articleID])
+    console.log('articleData :>> ', articleData);
 
     return (
         <>
@@ -70,69 +43,30 @@ function ArticleID ({ data }) {
                 <link rel="icon" href="assets/img/favicon.jpg" />
             </Head>
 
-            <BreadCrumb title={'Articles | PhysioTrends'} link={'Home'} current={`Articles - ${sArticle}`} />
-            <section className={`${styles?.articles} container`}>
+            {/* <BreadCrumb title={'Articles | PhysioTrends'} link={'Home'} current={`Articles - ${sArticle}`} /> */}
+            <section className={`${styles?.articles} container`} style={{ marginTop: '6rem' }}>
                 <div className={`${styles?.articlesContent}`}>
-                    <h1 className={`sectionTitle ${styles?.sectionTitle}`}>{sArticle}:</h1>
-                    <div className={`${styles?.line} mb-3`}></div>
+                    <h1 className={`sectionTitle ${styles?.magazineTitle}`}>{sArticle}:</h1>
+                    {/* <div className={`${styles?.line} mb-3`}></div> */}
 
-                    {data?.aMagazines?.map((magazine, index) => {
-                        return (
-                            <>
-                                <Fragment key={index}>
-                                    <div className={`${styles?.magazineCard}`}>
-                                        <div className={`${styles?.magazineCardHeader}`}>
-                                            <span title={`${magazine?.sName} | PhysioTrends`} className={`${styles?.magazineCardTitle}`}>{magazine?.sName}</span>
-                                        </div>
-                                        <div className={`${styles?.authorContent}`}>
-                                            <span className={`${styles?.author}`} title={`${magazine?.sAuthor} | PhysioTrends`}><FaUserCircle /> {magazine?.sAuthor}</span>
-                                            <span className={`${styles?.pageNumber}`}>Page No.: {magazine?.sPageNo}</span>
-                                        </div>
-                                        <p className={`${styles?.number}`}>DOI: {magazine?.sDOINo}</p>
-                                        <div className={`${styles?.functionality}`}>
-                                            <Button variant='warning' size='sm' className='me-2' onClick={(e) => handleView(e, magazine?.sDownLoadUrl)}><FaEye /> View</Button>
-                                            <Button variant='dark' size='sm' onClick={() => saveAs(`${magazine?.sDownLoadUrl}`, `${magazine?.sName}`)}><FaDownload /> Download</Button>
-                                        </div>
-                                    </div>
-                                </Fragment>
-                            </>
-                        )
-                    })}
-                </div>
+                    <div className={`${styles?.actions} ${ubuntu?.className}`}>
+                        <span><strong>{articleData?.sAuthor}</strong></span>
+                        <span>DOI: <span style={{ color: 'var(--primary-color)', marginLeft: '5px', cursor: 'auto' }}>{articleData?.sDOINo}</span></span>
+                        <span variant='dark' size='sm' onClick={() => saveAs(`${articleData?.sDownLoadUrl}`, `${articleData?.sName}`)}>
+                            <span className={`${styles?.logo}`}><FaDownload /></span> <span>Download PDF</span>
+                        </span>
+                        <span>{sIssueName}</span>
+                        <span>Page No.: {articleData?.sPageNo}</span>
+                        {/* <span>Share</span> */}
+                    </div>
 
-                <div className={`${styles?.pdfView} mt-5`} ref={pdfViewRef}>
-                    {/* <p>Page {pageNumber} of {numPages}</p> */}
-                    <Document
-                        file={currentArticle}
-                        onLoadSuccess={onDocumentLoadSuccess}
-                    >
-                        {/* {Array.apply(null, Array(numPages)).map((x, i) => i + 1).map(page => {
-                            return (
-                                <Page
-                                    key={page}
-                                    pageNumber={page}
-                                    renderTextLayer={false}
-                                    renderAnnotationLayer={false}
-                                />
-                            )
-                        })} */}
-                        {Array.from(new Array(numPages), (el, index) => (
-                            <Page
-                                key={`page_${index + 1}`}
-                                pageNumber={index + 1}
-                                renderTextLayer={false}
-                                renderAnnotationLayer={false}
-                            />
-                        ))}
-                    </Document>
-                    {/* <div className={`${styles?.buttons}`}>
-                        <button onClick={() => setPageNumber(pageNumber - 1)} disabled={pageNumber === 1}>
-                            Previous
-                        </button>
-                        <button onClick={() => setPageNumber(pageNumber + 1)} disabled={pageNumber === numPages}>
-                            Next
-                        </button>
-                    </div> */}
+                    <div dangerouslySetInnerHTML={{ __html: articleData?.sContent }} className={`${ubuntu?.className} mt-4 ${styles.magazineHTML}`} />
+
+                    <div className={`${styles.goBackBtn}`}>
+                        <Button variant='link' className={`${ubuntu?.className}`} onClick={() => router.push('/articles')}>
+                            <span>&lt;&lt;</span> <span>Previous Page</span>
+                        </Button>
+                    </div>
                 </div>
             </section >
         </>
@@ -141,9 +75,11 @@ function ArticleID ({ data }) {
 
 export default withRouter(ArticleID)
 
-export const getServerSideProps = async ({ params }) => {
-    const articleID = parseInt(params.articleID)
-    const res = await fetch(`${process.env.DEPLOY}/api/articles/${articleID}`)
-    const data = await res.json()
-    return { props: { data } }
-}
+// export const getServerSideProps = async ({ params }) => {
+//     console.log('articleID :>> ', params);
+//     // const articleID = parseInt(params.articleID)
+//     // const res = await fetch(`${process.env.LOCALHOST}/api/articles/${articleID}`)
+//     // const data = await res.json()
+//     const data = { name: 'a' }
+//     return { props: { data } }
+// }

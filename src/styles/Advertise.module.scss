@@ -169,6 +169,25 @@
             }
         }
 
+        .totalAudience {
+            .totalCount {
+                font-size: 3rem !important;
+                letter-spacing: 1.5px !important;
+            }
+
+            h1 {
+                font-size: 1.4rem !important;
+            }
+        }
+
+        .adsImg {
+            margin: 10px 0 !important;
+
+            img {
+                width: 100% !important;
+            }
+        }
+
         .contentTitle {
             font-size: 1.6rem !important;
             font-weight: 500 !important;
@@ -224,6 +243,14 @@
                 &:last-child {
                     text-align: end;
                 }
+            }
+        }
+
+        .adsImg {
+            margin: 20px 0 !important;
+
+            img {
+                width: 70% !important;
             }
         }
 

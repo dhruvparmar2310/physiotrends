@@ -7,7 +7,7 @@ export const members = [
         education: 'MPT in Neurological Conditions',
         designation: 'Assistant Professor at K.D.Institute of Physiotherapy',
         role: ['Founder of PhysioTrends, ThePhysioBrothers, YogaSanskriti'],
-        emailAddress: 'darshanparmar680@gmail.com',
+        emailAddress: 'insitute.phy@kdhospital.co.in',
         address: 'K.D.Institute of Physiotherapy, Nr. SGVP Hospital, Vaishnavdevi circle, Sarkhej - Gandhinagar Highway, Ahmedabad, Gujarat - 382421'
     },
     {
@@ -18,7 +18,7 @@ export const members = [
         education: 'MPT in Neurological Conditions',
         designation: '',
         role: ['Co-Founder of PhysioTrends, ThePhysioBrothers'],
-        emailAddress: 'sujaymakwana@gmail.com',
+        emailAddress: 'insitute.phy@kdhospital.co.in',
         address: 'Suden Physiotherapy Clinic, Yogi Complex, Opp. Maharaja Hotel, Kalol, Gujarat - 382721'
     },
     {
@@ -41,7 +41,7 @@ export const members = [
         education: 'MPT in Rehabilitation',
         designation: 'Lecturer at SBB College of Physiotherapy',
         role: '-',
-        emailAddress: 'msheth2969@gmail.com',
+        emailAddress: 'insitute.phy@kdhospital.co.in, msheth2969@gmail.com',
         address: 'SBB College of Physiotherapy, V.S.Hopital Campus, Ellisbridge, Ahmedabad, Gujarat - 380006'
     },
     {
@@ -75,7 +75,7 @@ export const members = [
         education: 'Ph.D.- Indian Board of Alternative Medicines',
         designation: 'Professor at Ahmedabad Institute of Medical Sciences',
         role: '-',
-        emailAddress: 'neetavyassbb@gmail.com',
+        emailAddress: 'insitute.phy@kdhospital.co.in, neetavyassbb@gmail.com',
         address: 'Ahmedabad Institute of Medical Sciences, Nr. Lions Karnavati Eye Hospital, Lapkaman, Ahmedabad, Gujarat - 380060'
     },
     {
@@ -131,7 +131,7 @@ export const members = [
         education: 'Ph.D., MPT in Sports',
         designation: 'Tutor cum Physiotherapist at Govt. Physiotheraphy College, Jamnagar',
         role: '-',
-        emailAddress: 'mansishingala91@gmail.com',
+        emailAddress: 'mansishingala@gptcjam.edu.in',
         address: 'Govt. Physiotherapy College, Rameshwar-nagar, Jamnagar, Gujarat - 361008.'
     },
     {
@@ -142,7 +142,7 @@ export const members = [
         education: 'MPT in CardioPulmonary Conditions',
         designation: 'Assistant Professor at Ananya College of Physiotherapy',
         role: '-',
-        emailAddress: 'poojapatel180198@gmail.com',
+        emailAddress: 'pooja.patel@kirc.ac.in',
         address: 'Ananya College of Physiotherapy, KIRC Campus, Ahmedabad-Mehsana Highway, Kalol, Gujarat - 382721'
     },
     {
@@ -186,7 +186,7 @@ export const members = [
         education: 'MPT in Neurological Conditions',
         designation: 'Assistant Professor at Venus Institute of Physiotherapy',
         role: '-',
-        emailAddress: 'nehansichauhan@gmail.com',
+        emailAddress: 'nehansi.physio@swarrnim.edu.in',
         address: 'Venus Institute of Physiotherapy, At Bhoyan Rathod, Opp. IFFCO, Near ONGC(WSS), Adalaj-Sertha Road, Gandhinagar, Gujarat - 382420'
     },
     {
@@ -219,7 +219,7 @@ export const members = [
         education: 'MPT in CardioPulmonary Conditions',
         designation: 'Assistant Professor at Silver Oak University',
         role: '-',
-        emailAddress: 'aarshbhatt28@gmail.com',
+        emailAddress: 'aarshbhatt.phy@silveroakuni.ac.in',
         address: 'Silver Oak University, 352/353, Silver Oak University, 370/371, near Bhavik Publication, Gota Gam, Gota, Ahmedabad, Gujarat - 382481'
     }    
 ]
