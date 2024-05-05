@@ -180,3 +180,21 @@
         }
     }
 }
+
+@media (min-width: 1400px) and (max-width: 1950px) {
+    .sectionTitle {
+        font-size: 3.5rem !important;
+    }
+
+    .line {
+        margin-top: 20px;
+    }
+
+    .joinAsEditor {
+        margin-top: 1rem !important;
+    }
+
+    .innerContent {
+        font-size: 1.5rem !important;
+    }
+}

@@ -177,46 +177,20 @@ const SubmitYourArticle = () => {
                   <h1 className={`sectionTitle`} data-heading='Major Index' title="Major Index | PhysioTrends"></h1>
                   <div className={`${styles?.innerContent} mt-4`}>
                      <div className={`${styles?.logoContent}`}>
-                        <Image
-                           src={googleLogo}
-                           alt=""
-                           quality={100}
-                        />
+                        <Image src={googleLogo} alt="" quality={100} />
+                        <Image src={magzterLogo} alt="" quality={100} />
+                        <Image src={doiLogo} alt="" quality={100} />
+                        <Image src={zenodoLogo} alt="" quality={100} />
+                        <Image src={openAccessLogo} alt="" quality={100} />
+                        <Image src={openAireLogo} alt="" quality={100} />
                      </div>
                      <div className={`${styles?.logoContent}`}>
-                        <Image
-                           src={magzterLogo}
-                           alt=""
-                           quality={100}
-                        />
-                     </div>
-                     <div className={`${styles?.logoContent}`}>
-                        <Image
-                           src={doiLogo}
-                           alt=""
-                           quality={100}
-                        />
-                     </div>
-                     <div className={`${styles?.logoContent}`}>
-                        <Image
-                           src={zenodoLogo}
-                           alt=""
-                           quality={100}
-                        />
-                     </div>
-                     <div className={`${styles?.logoContent}`}>
-                        <Image
-                           src={openAccessLogo}
-                           alt=""
-                           quality={100}
-                        />
-                     </div>
-                     <div className={`${styles?.logoContent}`}>
-                        <Image
-                           src={openAireLogo}
-                           alt=""
-                           quality={100}
-                        />
+                        <Image src={googleLogo} alt="" quality={100} />
+                        <Image src={magzterLogo} alt="" quality={100} />
+                        <Image src={doiLogo} alt="" quality={100} />
+                        <Image src={zenodoLogo} alt="" quality={100} />
+                        <Image src={openAccessLogo} alt="" quality={100} />
+                        <Image src={openAireLogo} alt="" quality={100} />
                      </div>
                   </div>
                </div>
