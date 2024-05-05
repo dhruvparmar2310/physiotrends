@@ -678,6 +678,10 @@
     }
 
     .articles {
+        margin-top: 1rem !important;
+    }
+
+    .readArticlePage {
         margin-top: 10rem !important;
     }
 
@@ -709,12 +713,12 @@
 
     .goBackBtn {
         button {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
     }
 
     .articlesContent {
-        font-size: 2rem !important;
+        font-size: 1.5rem !important;
         height: 100 !important;
         box-sizing: border-box;
 

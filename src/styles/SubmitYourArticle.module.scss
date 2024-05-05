@@ -66,13 +66,105 @@
     }
 
     .webAvailable {
+        width: 100%;
+
         .innerContent {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+
+            &::after,
+            &::before {
+                position: absolute;
+                top: 0;
+                width: 250px;
+                height: 250px;
+                content: '';
+                z-index: 2;
+            }
+
+            &::before {
+                left: 0;
+                background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+            }
+
+            &::after {
+                right: 0;
+                background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+            }
+
+            &:hover {
+                .logoContent {
+                    animation-play-state: paused !important;
+                }
+            }
 
             .logoContent {
-                text-align: center;
+                display: inline-block;
+                animation: 30s slide infinite linear;
 
+                img {
+                    width: 150px;
+                    height: 65px;
+                    object-fit: contain;
+                    aspect-ratio: 1/1;
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+
+    @keyframes slide {
+        from {
+            transform: translateX(0%);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+}
+
+// small (mobile or Tablet)
+@media (min-width: 576px) and (max-width: 768px) {
+    .webAvailable {
+        padding: 0;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .submitYourArticle {
+        padding: 20px !important;
+        padding-top: 0 !important;
+
+        .sectionTitle {
+            font-size: 1.6rem !important;
+        }
+
+        h3 {
+            font-size: 1.2rem !important;
+            font-weight: 600;
+        }
+
+        .pointsContent {
+
+            ol,
+            ul {
+                padding-left: 1rem;
+            }
+        }
+    }
+
+    .webAvailable {
+        .innerContent {
+
+            &::after,
+            &::before {
+                width: 50px !important;
+            }
+
+            .logoContent {
                 img {
                     width: 150px;
                     height: 65px;

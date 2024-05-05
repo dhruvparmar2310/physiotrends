@@ -154,19 +154,58 @@ main {
     width: 100%;
 
     .innerContent {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+
+      &::after,
+      &::before {
+        position: absolute;
+        top: 0;
+        width: 250px;
+        height: 250px;
+        content: '';
+        z-index: 2;
+      }
+
+      &::before {
+        left: 0;
+        background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+      }
+
+      &::after {
+        right: 0;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+      }
+
+      &:hover {
+        .logoContent {
+          animation-play-state: paused !important;
+        }
+      }
 
       .logoContent {
-        text-align: center;
+        display: inline-block;
+        animation: 30s slide infinite linear;
 
         img {
           width: 150px;
           height: 65px;
           object-fit: contain;
           aspect-ratio: 1/1;
+          margin: 0 5px;
         }
       }
+    }
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(0%);
+    }
+
+    to {
+      transform: translateX(-100%);
     }
   }
 }
@@ -204,13 +243,13 @@ main {
 
   .webAvailable {
     .innerContent {
-      display: grid;
-      grid-template-columns: 1fr 1fr !important;
-      gap: 10px;
+
+      &::after,
+      &::before {
+        width: 50px !important;
+      }
 
       .logoContent {
-        text-align: center;
-
         img {
           width: 150px;
           height: 65px;
@@ -227,15 +266,15 @@ main {
   .about {
     .innerContent {
       .desc {
-        font-size: 2rem !important;
-        line-height: 3rem !important;
+        font-size: 1.5rem !important;
+        line-height: 2.5rem !important;
       }
 
       table {
 
         th,
         td {
-          font-size: 2rem;
+          font-size: 1.5rem !important;
           text-align: left;
 
           &:last-child {
@@ -259,7 +298,7 @@ main {
 
           .cardBody {
             padding: 15px 0;
-            font-size: 2rem !important;
+            font-size: 1.5rem !important;
           }
         }
       }

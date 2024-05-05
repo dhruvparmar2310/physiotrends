@@ -44,7 +44,7 @@ function ArticleID ({ data }) {
             </Head>
 
             {/* <BreadCrumb title={'Articles | PhysioTrends'} link={'Home'} current={`Articles - ${sArticle}`} /> */}
-            <section className={`${styles?.articles} container`} style={{ marginTop: '6rem' }}>
+            <section className={`${styles?.articles} ${styles?.readArticlePage} container`} style={{ marginTop: '6rem' }}>
                 <div className={`${styles?.articlesContent}`}>
                     <h1 className={`sectionTitle ${styles?.magazineTitle}`}>{sArticle}:</h1>
                     {/* <div className={`${styles?.line} mb-3`}></div> */}
