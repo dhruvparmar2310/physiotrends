@@ -88,6 +88,58 @@ const SupportUs = () => {
                             To learn more about how you can support PhysioTrends, please visit "<span>PhysioTrends</span>" or contact us directly. We appreciate your support and look forward to working with you.
                         </p>
                     </div>
+
+                    <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Benefits You Get:</h1>
+                    <div className={`${styles?.line}`}></div>
+
+                    <div className='mt-3'>
+                        <ul>
+                            <li>
+                                <span>
+                                    <strong>Visibility and Brand Exposure</strong>: By sponsoring Physiotrends, your brand gains exposure to a targeted audience of physiotherapists and healthcare professionals. This can increase brand recognition and awareness within the industry.
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <strong>Credibility and Authority</strong>: Aligning your brand with a reputable publication like Physiotrends can enhance your credibility and position your company as an authority in the field of physiotherapy.
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <strong>Networking Opportunities</strong>: Supporting Physiotrends can provide opportunities for networking with professionals in the physiotherapy community, potentially leading to collaborations, partnerships, or business opportunities.
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <strong>Access to Content and Research</strong>: As a sponsor, you may gain access to exclusive content, research findings, or industry insights published by Physiotrends, which can inform your business strategies and product development efforts.
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <strong>Community Engagement</strong>: Demonstrating your support for the physiotherapy community by sponsoring a valuable resource like Physiotrends can enhance your brand's reputation and foster goodwill among professionals in the field.
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <strong> Marketing and Promotion</strong>: Sponsoring Physiotrends may come with opportunities for marketing and promotion, such as featuring your brand in newsletters, social media posts, or promotional materials associated with the magazine.
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <strong>Recruitment and Talent Acquisition</strong>: Engaging with the physiotherapy community through sponsorship can help attract top talent to your organization, as professionals may perceive your company as supportive and invested in their field.
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <strong>Corporate Social Responsibility (CSR)</strong>: Supporting initiatives like Physiotrends demonstrates your commitment to CSR by contributing to the advancement of knowledge and resources in the physiotherapy field.
+                                </span>
+                            </li>
+                        </ul>
+
+                        <p>
+                            Overall, sponsoring Physiotrends can yield both tangible and intangible benefits for your company, ranging from increased brand visibility and credibility to access to valuable resources and networking opportunities within the physiotherapy community.
+                        </p>
+                    </div>
                 </div>
 
                 <div className={`${styles?.allSponsor}`}>
