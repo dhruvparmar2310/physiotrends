@@ -9,6 +9,7 @@ import { FaUsers } from "react-icons/fa"
 import Image from 'next/image'
 import ThePhysioBrothers from '../../public/assets/img/Clients/physiobrothers.png'
 import YogaSanskriti from '../../public/assets/img/Clients/header-logo.png'
+import PhysioGyan from '../../public/assets/img/Clients/physioGyan.jpeg'
 import PricePlan from '../../public/assets/PricePlan'
 import AdsImg from '../../public/assets/img/adsSpec.png'
 import { Abril_Fatface, Comfortaa } from 'next/font/google'
@@ -228,6 +229,9 @@ const Advertise = () => {
                             </div>
                             <div className={`${styles?.clientLogo}`}>
                                 <Image src={YogaSanskriti} className={'img-fluid'} alt='' quality={100} />
+                            </div>
+                            <div className={`${styles?.clientLogo}`}>
+                                <Image src={PhysioGyan} className={'img-fluid'} alt='' quality={100} />
                             </div>
                         </div>
                     </div>
