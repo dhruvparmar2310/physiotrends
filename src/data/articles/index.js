@@ -57,7 +57,7 @@ export const articles = [
         _id: '2',
         title: 'Volume - 1 | Issue - 2',
         nMonth: 'Coming Soon...',
-        img: 'assets/img/magazines/vol1_issue1.JPG',
+        img: 'assets/img/magazines/vol1_issue2.jpeg',
         aMagazines: []
     }
 ]

@@ -3,6 +3,7 @@ import BreadCrumb from '@/components/BreadCrumb'
 import Head from 'next/head'
 import styles from '../styles/SubmitYourArticle.module.scss'
 import googleLogo from '../../public/assets/img/webAvailability/Google-Logo.png'
+import googleScholarLogo from '../../public/assets/img/webAvailability/google-scholar.jpg'
 import magzterLogo from '../../public/assets/img/webAvailability/magzter_logo.png'
 import doiLogo from '../../public/assets/img/webAvailability/DOI_logo.png'
 import zenodoLogo from '../../public/assets/img/webAvailability/zenodo.png'
@@ -178,6 +179,7 @@ const SubmitYourArticle = () => {
                   <div className={`${styles?.innerContent} mt-4`}>
                      <div className={`${styles?.logoContent}`}>
                         <Image src={googleLogo} alt="" quality={100} />
+                        <Image src={googleScholarLogo} alt="" quality={100} />
                         <Image src={magzterLogo} alt="" quality={100} />
                         <Image src={doiLogo} alt="" quality={100} />
                         <Image src={zenodoLogo} alt="" quality={100} />
@@ -186,6 +188,7 @@ const SubmitYourArticle = () => {
                      </div>
                      <div className={`${styles?.logoContent}`}>
                         <Image src={googleLogo} alt="" quality={100} />
+                        <Image src={googleScholarLogo} alt="" quality={100} />
                         <Image src={magzterLogo} alt="" quality={100} />
                         <Image src={doiLogo} alt="" quality={100} />
                         <Image src={zenodoLogo} alt="" quality={100} />

@@ -14,6 +14,8 @@ import PricePlan from '../../public/assets/PricePlan'
 import AdsImg from '../../public/assets/img/adsSpec.png'
 import { Abril_Fatface, Comfortaa } from 'next/font/google'
 import DynamicChart from '@/components/DynamicChart'
+import physiothonline from '../../public/assets/img/associated/physioth-online.jpeg'
+import smartPT from '../../public/assets/img/associated/smart-pt.jpeg'
 
 const abrilFatface = Abril_Fatface({ subsets: ['latin'], weight: ['400'], style: ['normal'] })
 const comfortaa = Comfortaa({ subsets: ['latin'], weight: ['400'], style: ['normal'] })
@@ -232,6 +234,12 @@ const Advertise = () => {
                             </div>
                             <div className={`${styles?.clientLogo}`}>
                                 <Image src={PhysioGyan} className={'img-fluid'} alt='' quality={100} />
+                            </div>
+                            <div className={`${styles?.clientLogo}`}>
+                                <Image src={physiothonline} className={'img-fluid'} alt='' quality={100} />
+                            </div>
+                            <div className={`${styles?.clientLogo}`}>
+                                <Image src={smartPT} className={'img-fluid'} alt='' quality={100} />
                             </div>
                         </div>
                     </div>

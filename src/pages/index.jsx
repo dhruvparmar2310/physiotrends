@@ -11,6 +11,7 @@ import { Button, Col, Row, Table } from "react-bootstrap";
 import { useRouter } from "next/router";
 import { ToastContainer } from "react-toastify";
 import googleLogo from '../../public/assets/img/webAvailability/Google-Logo.png'
+import googleScholarLogo from '../../public/assets/img/webAvailability/google-scholar.jpg'
 import magzterLogo from '../../public/assets/img/webAvailability/magzter_logo.png'
 import doiLogo from '../../public/assets/img/webAvailability/DOI_logo.png'
 import zenodoLogo from '../../public/assets/img/webAvailability/zenodo.png'
@@ -18,6 +19,9 @@ import openAccessLogo from '../../public/assets/img/webAvailability/Open_Access_
 import openAireLogo from '../../public/assets/img/webAvailability/OpenAire_Logo.jpg'
 import { members } from "@/data/editorialMembers";
 import GoogleReviews from "@/components/GoogleReviews";
+import physiothonline from '../../public/assets/img/associated/physioth-online.jpeg'
+import smartPT from '../../public/assets/img/associated/smart-pt.jpeg'
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -221,6 +225,7 @@ export default function Home () {
           <div className={`${styles?.innerContent} mt-4`}>
             <div className={`${styles?.logoContent}`}>
               <Image src={googleLogo} alt="" quality={100} />
+              <Image src={googleScholarLogo} alt="" quality={100} />
               <Image src={magzterLogo} alt="" quality={100} />
               <Image src={doiLogo} alt="" quality={100} />
               <Image src={zenodoLogo} alt="" quality={100} />
@@ -229,11 +234,37 @@ export default function Home () {
             </div>
             <div className={`${styles?.logoContent}`}>
               <Image src={googleLogo} alt="" quality={100} />
+              <Image src={googleScholarLogo} alt="" quality={100} />
               <Image src={magzterLogo} alt="" quality={100} />
               <Image src={doiLogo} alt="" quality={100} />
               <Image src={zenodoLogo} alt="" quality={100} />
               <Image src={openAccessLogo} alt="" quality={100} />
               <Image src={openAireLogo} alt="" quality={100} />
+            </div>
+          </div>
+        </section>
+
+        <section id="associated" className={`${styles?.associated}`}>
+          <h1 className={`sectionTitle`} data-heading='Our International Association' title='Our International Association | PhysioTrends'></h1>
+
+          <div className={`${styles?.innerContent}`}>
+            <div className={`${styles?.leftSide}`}>
+              <Image
+                src={physiothonline}
+                alt="Physioth Online Logo"
+                quality={100}
+              />
+              <Image
+                src={smartPT}
+                alt="Smart PT Acedamy Logo"
+                quality={100}
+              />
+            </div>
+            <div className={`${styles?.desc}`}>
+              <p>
+                Smartpt Academy from United Kingdom (UK), delivers Continuing Education courses to Physiotherapists globally in collaboration with highly qualified international  lecturers with an outstanding career. We provide live webinars and self-paced webinars to facilitate learning at your convenience on your mobile devices.
+              </p>
+              <Link href={'https://smartptacademy.com/'} target="_blank">Visit Here</Link>
             </div>
           </div>
         </section>

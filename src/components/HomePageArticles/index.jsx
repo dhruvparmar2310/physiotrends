@@ -1,37 +1,40 @@
+import React, { useEffect } from 'react'
 import { articles } from '@/data/articles';
 import Image from 'next/image';
-import React, { useEffect } from 'react'
-import articleImg from '../../../public/assets/img/magazines/Vol-1-Issue-1.jpeg'
 import styles from '../../styles/HomePageArticles.module.scss'
 import { saveAs } from 'file-saver'
 import pdfFile from '../../../public/assets/pdfs/vol-1-issue-1/Physiotrends Vol 1, Issue 1.pdf'
+import { GrNext, GrPrevious } from 'react-icons/gr';
 
-const HomePageArticles = ({ allArticles }) => {
-    const singleArticle = articles[0]
+const HomePageArticles = () => {
     return (
         <>
             <div className={`${styles?.magazine}`}>
-                {/* {articles?.map(article => {
-                    return (<>
-                        <React.Fragment key={article?._id}> */}
-                <div className={`${styles?.magazineCard}`} onClick={() => saveAs(`${pdfFile}`, `PhysioTrends_Vol-1_Issue-1`)}>
-                    <div className={`${styles?.magazineImg}`}>
-                        <Image src={articleImg?.src} alt={singleArticle?.title} width={100} height={100} />
+                <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel" >
+                    <div className="carousel-inner">
+                        {articles.map((article, index) => (
+                            <div key={article._id} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                                <div className={`${styles.magazineCard}`} onClick={() => saveAs(`${pdfFile}`, `PhysioTrends_Vol-1_Issue-1`)}>
+                                    <div className={`${styles.magazineImg}`}>
+                                        <Image src={article.img} alt={article.title} width={100} height={100} />
+                                    </div>
+                                    <p className={`${styles.cardTitle}`}>{article.title}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                    <p className={`${styles?.cardTitle}`}>{singleArticle?.title}</p>
+                    <button className={`carousel-control-prev ${styles?.prevBtn}`} type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <GrPrevious />
+                        <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button className={`carousel-control-next ${styles?.nextBtn}`} type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <GrNext />
+                        <span className="visually-hidden">Next</span>
+                    </button>
                 </div>
-                {/* </React.Fragment>
-                    </>)
-                })} */}
             </div>
         </>
     )
 }
 
 export default HomePageArticles
-
-export const getServerSideProps = async () => {
-    const res = await fetch(`https://physiotrends.vercel.app/api/articles`)
-    const allArticles = await res.json()
-    return { props: { allArticles } }
-}
