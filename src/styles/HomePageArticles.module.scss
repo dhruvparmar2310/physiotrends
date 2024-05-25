@@ -77,6 +77,12 @@
 // very large display
 @media (min-width: 1400px) and (max-width: 1950px) {
     .magazine {
+        max-width: 500px;
+
+        .carousel {
+            width: 500px !important;
+        }
+
         .magazineCard {
             width: 500px !important;
             height: 650px;

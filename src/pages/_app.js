@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import ScrollToTop from "@/components/ScrollToTop";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function App({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(false)
@@ -41,6 +43,8 @@ export default function App({ Component, pageProps }) {
       <ToastContainer stacked />
       <Header />
       <Component {...pageProps} />
+      <ScrollToTop />
+      {/* <WhatsAppButton /> */}
       <Footer />
     </>
   )

@@ -244,11 +244,11 @@ export default function Home () {
           </div>
         </section>
 
-        <section id="associated" className={`${styles?.associated}`}>
+        <section id="associated" className={`${styles?.associated} py-0`}>
           <h1 className={`sectionTitle`} data-heading='Our International Association' title='Our International Association | PhysioTrends'></h1>
 
           <div className={`${styles?.innerContent}`}>
-            <div className={`${styles?.leftSide}`}>
+            <div className={`${styles?.leftSide} container`}>
               <Image
                 src={physiothonline}
                 alt="Physioth Online Logo"
@@ -258,13 +258,8 @@ export default function Home () {
                 src={smartPT}
                 alt="Smart PT Acedamy Logo"
                 quality={100}
+                onClick={() => router.push('https://smartptacademy.com/')}
               />
-            </div>
-            <div className={`${styles?.desc}`}>
-              <p>
-                Smartpt Academy from United Kingdom (UK), delivers Continuing Education courses to Physiotherapists globally in collaboration with highly qualified international  lecturers with an outstanding career. We provide live webinars and self-paced webinars to facilitate learning at your convenience on your mobile devices.
-              </p>
-              <Link href={'https://smartptacademy.com/'} target="_blank">Visit Here</Link>
             </div>
           </div>
         </section>
