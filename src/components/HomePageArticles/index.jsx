@@ -10,7 +10,7 @@ const HomePageArticles = () => {
     return (
         <>
             <div className={`${styles?.magazine}`}>
-                <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel" >
+                <div id="carouselExampleControls" className={`carousel slide ${styles.carousel}`} data-bs-ride="carousel" >
                     <div className="carousel-inner">
                         {articles.map((article, index) => (
                             <div key={article._id} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
