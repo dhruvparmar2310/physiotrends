@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../../styles/Footer.module.scss'
 import Link from 'next/link'
 import { FaLinkedinIn, FaWhatsapp, FaInstagram } from "react-icons/fa"
 import { Form } from 'react-bootstrap'
 import { Controller, useForm } from 'react-hook-form'
+import logo from '../../../public/assets/img/footer-logo.png'
+import Image from 'next/image'
 
 const Footer = () => {
     const { control, watch, handleSubmit, reset } = useForm({ mode: 'all' })
     const [userEmail, setUserEmail] = useState('');
+    const [isSmallDevice, setIsSmallDevice] = useState(false);
 
     const onSubscribe = () => {
         const subject = encodeURIComponent('Subscription to PhysioTrends eMagazine');
@@ -17,16 +20,22 @@ const Footer = () => {
         // Check if the user is logged in to Gmail
         const isLoggedIn = checkGmailLogin(userEmail);
 
-        if (isLoggedIn) {
-            // Open the Gmail compose window
-            reset()
+        if (isSmallDevice) {
             window.open(gmailLink, '_blank');
         } else {
-            // Navigate to the Gmail login screen
-            const loginLink = `https://accounts.google.com/AccountChooser?Email=${userEmail}&continue=${encodeURIComponent(gmailLink)}`;
+            if (isLoggedIn) {
+                // Open the Gmail compose window
+                reset()
+                const gmailPopup = window.open(gmailLink, '_blank', 'width=800,height=600');
+                setGmailWindow(gmailPopup);
+            } else {
+                // Navigate to the Gmail login screen
+                const loginLink = `https://accounts.google.com/AccountChooser?Email=${userEmail}&continue=${encodeURIComponent(gmailLink)}`;
 
-            reset()
-            window.open(loginLink, '_blank');
+                reset()
+                window.open(loginLink, '_blank');
+            }
+
         }
     };
 
@@ -47,6 +56,28 @@ const Footer = () => {
         };
         xhr.send();
     };
+
+    useEffect(() => {
+        const isSmallDevice = window.innerWidth <= 768; // Adjust the breakpoint as needed
+        setIsSmallDevice(isSmallDevice);
+
+        const handleResize = () => {
+            const isSmallDevice = window.innerWidth <= 768;
+            setIsSmallDevice(isSmallDevice);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    useEffect(() => {
+        reset({
+            emailAddress: ''
+        })
+    }, [])
     return (
         <>
             <footer id="footer" className={`${styles.footer}`}>
@@ -55,7 +86,13 @@ const Footer = () => {
                     <div className={`${styles?.footerContent}`}>
                         <div className={`${styles.footer_contact}`} style={{ width: '20rem' }}>
                             <h3 title='PhysioTrends'>
-                                <Link href="/">PHYSIO<span>TRENDS</span></Link>
+                                <Link href="/">
+                                    {/* PHYSIO<span>TRENDS</span> */}
+                                    <Image
+                                        src={logo}
+                                        quality={100}
+                                    />
+                                </Link>
                             </h3>
 
                             <div className={`${styles.line}`}></div>

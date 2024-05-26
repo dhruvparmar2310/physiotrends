@@ -96,7 +96,7 @@ function Articles ({ data, router }) {
                             onClick={() => handleAccordionClick(index)}
                           >
                             <div className={`${styles?.bodyHeader}`}>
-                              <div><span>{article?._id}</span></div>
+                              <div><span>{(article?._id) + '.'}</span></div>
                               <div style={{ textAlign: 'left !important' }}><span>{article?.title}</span></div>
                               <div><span>{article?.nMonth}</span></div>
                               <div className='me-2'>
