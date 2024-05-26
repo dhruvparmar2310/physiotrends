@@ -7,6 +7,7 @@ import pdfFile from '../../../public/assets/pdfs/vol-1-issue-1/Physiotrends Vol 
 import { GrNext, GrPrevious } from 'react-icons/gr';
 
 const HomePageArticles = () => {
+
     return (
         <>
             <div className={`${styles?.magazine}`}>

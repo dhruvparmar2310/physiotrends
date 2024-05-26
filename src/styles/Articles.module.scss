@@ -573,10 +573,8 @@
             .magazineHTML {
                 font-size: 15px;
 
-                div {
-                    img {
-                        width: 100%;
-                    }
+                div>img {
+                    width: 100%;
                 }
             }
 
