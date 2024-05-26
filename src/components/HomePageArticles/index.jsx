@@ -15,7 +15,6 @@ const HomePageArticles = () => {
                         {articles.map((article, index) => (
                             <div div key={article._id} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
                                 <div className={`${styles.magazineCard}`} onClick={() => saveAs(`${article?.eBook}`, `PhysioTrends_${article?.title}`)}>
-                                    {console.log('article :>> ', article)}
                                     <div className={`${styles.magazineImg}`}>
                                         <Image src={article.img} alt={article.title} width={100} height={100} />
                                     </div>
