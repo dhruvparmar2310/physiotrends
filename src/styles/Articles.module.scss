@@ -332,6 +332,36 @@
                     font-weight: 600;
                     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                 }
+
+                .magazineHTML {
+                    img {
+                        margin: 0 auto;
+                    }
+                }
+
+            }
+        }
+
+        .actions {
+            box-sizing: border-box;
+            overflow-x: auto;
+            justify-content: start;
+            margin-top: 15px;
+
+            &::-webkit-scrollbar {
+                height: 3px !important;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                height: 3px !important;
+            }
+
+            span {
+                text-wrap: nowrap;
+
+                strong {
+                    text-wrap: nowrap;
+                }
             }
         }
     }
