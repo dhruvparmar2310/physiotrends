@@ -7,14 +7,15 @@ import pdfFile from '../../../public/assets/pdfs/vol-1-issue-1/Physiotrends Vol 
 import { GrNext, GrPrevious } from 'react-icons/gr';
 
 const HomePageArticles = () => {
+
     return (
         <>
             <div className={`${styles?.magazine}`}>
                 <div id="carouselExampleControls" className={`carousel slide ${styles.carousel}`} data-bs-ride="carousel" >
                     <div className="carousel-inner">
                         {articles.map((article, index) => (
-                            <div key={article._id} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
-                                <div className={`${styles.magazineCard}`} onClick={() => saveAs(`${pdfFile}`, `PhysioTrends_Vol-1_Issue-1`)}>
+                            <div div key={article._id} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                                <div className={`${styles.magazineCard}`} onClick={() => saveAs(`${article?.eBook}`, `PhysioTrends_${article?.title}`)}>
                                     <div className={`${styles.magazineImg}`}>
                                         <Image src={article.img} alt={article.title} width={100} height={100} />
                                     </div>
@@ -32,7 +33,7 @@ const HomePageArticles = () => {
                         <span className="visually-hidden">Next</span>
                     </button>
                 </div>
-            </div>
+            </div >
         </>
     )
 }
