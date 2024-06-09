@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import BreadCrumb from '@/components/BreadCrumb'
 import Head from 'next/head'
 import styles from '../styles/Advertise.module.scss'
@@ -16,10 +16,19 @@ import { Abril_Fatface, Comfortaa } from 'next/font/google'
 import DynamicChart from '@/components/DynamicChart'
 import physiothonline from '../../public/assets/img/associated/physioth-online.jpeg'
 import smartPT from '../../public/assets/img/associated/smart-pt.jpeg'
+import { motion, useAnimation } from 'framer-motion'
+import useMediaQuery from '@/hooks/useMediaQuery'
+import { useInView } from 'react-intersection-observer'
 
 const abrilFatface = Abril_Fatface({ subsets: ['latin'], weight: ['400'], style: ['normal'] })
 const comfortaa = Comfortaa({ subsets: ['latin'], weight: ['400'], style: ['normal'] })
 const Advertise = () => {
+    const width = useMediaQuery('(max-width: 576px)')
+
+    const aboutSectionRef = useRef(null);
+    const controls = useAnimation();
+    const [ref, inView] = useInView({ triggerOnce: true, rootMargin: '-100px' });
+
     const [chartOptions, setChartOptions] = useState({
         series: [10000, 4640, 3176, 1500],
         options: {
@@ -95,6 +104,27 @@ const Advertise = () => {
         },
     });
 
+    const fadeLeftAnimation = {
+        hidden: { opacity: 0, x: 50 },
+        visible: { opacity: 1, x: 0 },
+    };
+
+    const fadeAnimation = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+    };
+
+    const fadeRightAnimation = {
+        hidden: { opacity: 0, x: -50 },
+        visible: { opacity: 1, x: 0 },
+    };
+
+    useEffect(() => {
+        if (inView) {
+            controls.start('visible');
+        }
+    }, [controls, inView]);
+
     return (
         <>
             <Head>
@@ -116,9 +146,14 @@ const Advertise = () => {
                 <div className={`${styles?.advertiseContent}`}>
                     <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Advertise With Us!</h1>
                     <div className={`${styles?.line}`}></div>
-                    <p className={`${styles?.advertiseDesc} mt-4`}>
+                    <motion.p
+                        className={`${styles?.advertiseDesc} mt-4`}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: width ? 0.3 : 0.8, duration: width ? 0.5 : 1, animate: 'easeInOut' }}
+                    >
                         PHYSIOTRENDS is one of the fastest growing ISSN Certified E-magazine for the Physiotherapist. Articles from the great Innovators, Thinkers, Researchers and Creators in the field of physiotherapy can be found in the PhysioTrends E-Magazine. Additionally, PhysioTrends has an advertisement section where users can promote their products or services in order to target consumers.
-                    </p>
+                    </motion.p>
 
                     <div className={`${styles?.analytics}`}>
                         <Row>
@@ -135,35 +170,68 @@ const Advertise = () => {
                         </Row>
                     </div>
 
-                    <div className={`${styles?.whyUs}`}>
+                    <div className={`${styles?.whyUs}`} ref={aboutSectionRef}>
                         <h1 className={`sectionTitle ${styles?.sectionTitle}`}>Why Us?</h1>
                         <div className={`${styles?.line}`}></div>
 
                         <div className={`${styles?.detailCardContent}`}>
                             <Row>
                                 <Col lg={4} md={6}>
-                                    <div className={`${styles?.detailCard}`}>
+                                    <motion.div
+                                        className={`${styles?.detailCard}`}
+                                        ref={ref}
+                                        variants={fadeRightAnimation}
+                                        initial={'hidden'}
+                                        animate={controls}
+                                        transition={{
+                                            delay: width ? 0 : 0.5, // delay the animation by 0.2 seconds
+                                            duration: width ? 0.5 : 1, // animation duration of 0.8 seconds
+                                            ease: 'easeInOut', // easing function for a smoother animation
+                                        }}
+                                    >
                                         <div className={`${styles?.detailCardIcon}`}>
                                             <MdNoiseAware />
                                         </div>
                                         <p className={`${styles?.detailCardBody}`}>Build Brand Awareness</p>
-                                    </div>
+                                    </motion.div>
                                 </Col>
                                 <Col lg={4} md={6} className='mt-md-0 mt-3'>
-                                    <div className={`${styles?.detailCard}`}>
+                                    <motion.div
+                                        className={`${styles?.detailCard}`}
+                                        ref={ref}
+                                        variants={fadeAnimation}
+                                        initial={'hidden'}
+                                        animate={controls}
+                                        transition={{
+                                            delay: width ? 0 : 0.5, // delay the animation by 0.2 seconds
+                                            duration: width ? 0.5 : 1, // animation duration of 0.8 seconds
+                                            ease: 'easeInOut', // easing function for a smoother animation
+                                        }}
+                                    >
                                         <div className={`${styles?.detailCardIcon}`}>
                                             <AiOutlineStock />
                                         </div>
                                         <p className={`${styles?.detailCardBody}`}>Increase Reach</p>
-                                    </div>
+                                    </motion.div>
                                 </Col>
                                 <Col lg={4} md={6} className='mt-lg-0 mt-md-3 mt-3'>
-                                    <div className={`${styles?.detailCard}`}>
+                                    <motion.div
+                                        className={`${styles?.detailCard}`}
+                                        ref={ref}
+                                        variants={fadeLeftAnimation}
+                                        initial={'hidden'}
+                                        animate={controls}
+                                        transition={{
+                                            delay: width ? 0 : 0.5, // delay the animation by 0.2 seconds
+                                            duration: width ? 0.5 : 1, // animation duration of 0.8 seconds
+                                            ease: 'easeInOut', // easing function for a smoother animation
+                                        }}
+                                    >
                                         <div className={`${styles?.detailCardIcon}`}>
                                             <FaUsers />
                                         </div>
                                         <p className={`${styles?.detailCardBody}`}>Get Targeted Audience</p>
-                                    </div>
+                                    </motion.div>
                                 </Col>
                             </Row>
                         </div>
@@ -215,6 +283,7 @@ const Advertise = () => {
                                         src={AdsImg}
                                         alt=''
                                         quality={100}
+                                        priority
                                     />
                                 </div>
                             </Col>
@@ -227,19 +296,19 @@ const Advertise = () => {
 
                         <div className='d-flex flex-wrap justify-content-center gap-2 mt-4'>
                             <div className={`${styles?.clientLogo}`}>
-                                <Image src={ThePhysioBrothers} className={'img-fluid'} alt='' quality={100} />
+                                <Image src={ThePhysioBrothers} className={'img-fluid'} alt='' quality={100} priority />
                             </div>
                             <div className={`${styles?.clientLogo}`}>
-                                <Image src={YogaSanskriti} className={'img-fluid'} alt='' quality={100} />
+                                <Image src={YogaSanskriti} className={'img-fluid'} alt='' quality={100} priority />
                             </div>
                             <div className={`${styles?.clientLogo}`}>
-                                <Image src={PhysioGyan} className={'img-fluid'} alt='' quality={100} />
+                                <Image src={PhysioGyan} className={'img-fluid'} alt='' quality={100} priority />
                             </div>
                             <div className={`${styles?.clientLogo}`}>
-                                <Image src={physiothonline} className={'img-fluid'} alt='' quality={100} />
+                                <Image src={physiothonline} className={'img-fluid'} alt='' quality={100} priority />
                             </div>
                             <div className={`${styles?.clientLogo}`}>
-                                <Image src={smartPT} className={'img-fluid'} alt='' quality={100} />
+                                <Image src={smartPT} className={'img-fluid'} alt='' quality={100} priority />
                             </div>
                         </div>
                     </div>

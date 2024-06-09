@@ -17,7 +17,7 @@ const HomePageArticles = () => {
                             <div div key={article._id} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
                                 <div className={`${styles.magazineCard}`} onClick={() => saveAs(`${article?.eBook}`, `PhysioTrends_${article?.title}`)}>
                                     <div className={`${styles.magazineImg}`}>
-                                        <Image src={article.img} alt={article.title} width={100} height={100} />
+                                        <Image src={article.img} alt={article.title} width={100} height={100} priority />
                                     </div>
                                     <p className={`${styles.cardTitle}`}>{article.title}</p>
                                 </div>

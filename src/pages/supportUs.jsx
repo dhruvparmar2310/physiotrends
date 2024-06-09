@@ -150,6 +150,7 @@ const SupportUs = () => {
                                 src={physioBrothersLogo}
                                 alt='PhysioBrothers Logo'
                                 quality={100}
+                                priority
                             />
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
@@ -17,16 +17,25 @@ import doiLogo from '../../public/assets/img/webAvailability/DOI_logo.png'
 import zenodoLogo from '../../public/assets/img/webAvailability/zenodo.png'
 import openAccessLogo from '../../public/assets/img/webAvailability/Open_Access_logo.png'
 import openAireLogo from '../../public/assets/img/webAvailability/OpenAire_Logo.jpg'
+import readwhereLogo from '../../public/assets/img/webAvailability/readwhere.jpg'
 import { members } from "@/data/editorialMembers";
 import GoogleReviews from "@/components/GoogleReviews";
 import physiothonline from '../../public/assets/img/associated/physioth-online.jpeg'
 import smartPT from '../../public/assets/img/associated/smart-pt.jpeg'
 import Link from "next/link";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home () {
   const router = useRouter()
+  const width = useMediaQuery('(max-width: 576px)')
+
+  const aboutSectionRef = useRef(null);
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, rootMargin: '300px', });
 
   const [network, setNetwork] = useState(19317)
   const [cityCount, setCityCount] = useState(0);
@@ -68,6 +77,17 @@ export default function Home () {
     };
   }, [network, cityCount, teamCount]);
 
+  const fadeUpAnimation = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
   return (
     <>
       <Head>
@@ -85,7 +105,7 @@ export default function Home () {
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <main className={`${styles.mainLayout} container`}>
-        <Hero />
+        <Hero width={width} />
         <section className={`${styles?.counter}`}>
           <div className={`${styles?.innerContent}`}>
             <Row>
@@ -111,33 +131,54 @@ export default function Home () {
           </div>
         </section>
 
-        <section id="about" className={`${styles?.about}`}>
+        <section id="about" className={`${styles?.about}`} ref={aboutSectionRef}>
           <h1 className={`sectionTitle`} data-heading='About' title='About Us | PhysioTrends'>PhysioTrends</h1>
 
           <div className={`${styles?.innerContent}`}>
-            <p className={`${styles?.desc} mt-5`}>
+            <motion.p
+              className={`${styles?.desc} mt-5`}
+              ref={ref}
+              variants={fadeUpAnimation}
+              initial="hidden"
+              animate={controls}
+              transition={{ duration: width ? 0.5 : 1, ease: 'easeInOut' }}
+            >
               PHYSIOTRENDS is India’s fastest growing E-Magazine for Physical Therapist, your ultimate resource for all things related to physical therapy and rehabilitation. Explore expert articles, in-depth interviews with leading professionals, latest research findings, innovative techniques, and practical tips to enhance your understanding and practice in the field of physiotherapy. Whether you're a seasoned practitioner or just starting your journey, our E-Magazine is your go-to destination for staying updated, informed, and inspired in the world of physiotherapy.
-            </p>
+            </motion.p>
 
             <div className={`${styles?.visionContent} mt-5`}>
               <Row>
                 <Col lg={6} md={12} sm={12}>
-                  <div className={`${styles?.card}`}>
+                  <motion.div
+                    className={`${styles?.card}`}
+                    ref={ref}
+                    variants={fadeUpAnimation}
+                    initial="hidden"
+                    animate={controls}
+                    transition={{ duration: 1, delay: 0.8, ease: 'linear' }}
+                  >
                     <h1 className={`${styles?.cardTitle}`}>Vision</h1>
                     <div className={`${styles?.line}`}></div>
                     <p className={`${styles?.cardBody}`}>
                       "Empowering physiotherapists through timely evidence, fostering a collaborative community for elevated standards."
                     </p>
-                  </div>
+                  </motion.div>
                 </Col>
                 <Col lg={6} md={12} sm={12} className="mt-lg-0 mt-3">
-                  <div className={`${styles?.card}`}>
+                  <motion.div
+                    className={`${styles?.card}`}
+                    ref={ref}
+                    variants={fadeUpAnimation}
+                    initial="hidden"
+                    animate={controls}
+                    transition={{ duration: 1, delay: 0.8, ease: 'linear' }}
+                  >
                     <h1 className={`${styles?.cardTitle}`}>Mission</h1>
                     <div className={`${styles?.line}`}></div>
                     <p className={`${styles?.cardBody}`}>
                       "Connect physiotherapists globally with cutting-edge knowledge, building a stronger profession."
                     </p>
-                  </div>
+                  </motion.div>
                 </Col>
               </Row>
             </div>
@@ -224,22 +265,24 @@ export default function Home () {
 
           <div className={`${styles?.innerContent} mt-4`}>
             <div className={`${styles?.logoContent}`}>
-              <Image src={googleLogo} alt="" quality={100} />
-              <Image src={googleScholarLogo} alt="" quality={100} />
-              <Image src={magzterLogo} alt="" quality={100} />
-              <Image src={doiLogo} alt="" quality={100} />
-              <Image src={zenodoLogo} alt="" quality={100} />
-              <Image src={openAccessLogo} alt="" quality={100} />
-              <Image src={openAireLogo} alt="" quality={100} />
+              <Image src={googleLogo} alt="" quality={100} priority />
+              <Image src={googleScholarLogo} alt="" quality={100} priority />
+              <Image src={magzterLogo} alt="" quality={100} priority />
+              <Image src={doiLogo} alt="" quality={100} priority />
+              <Image src={zenodoLogo} alt="" quality={100} priority />
+              <Image src={openAccessLogo} alt="" quality={100} priority />
+              <Image src={openAireLogo} alt="" quality={100} priority />
+              <Image src={readwhereLogo} alt="" quality={100} priority />
             </div>
             <div className={`${styles?.logoContent}`}>
-              <Image src={googleLogo} alt="" quality={100} />
-              <Image src={googleScholarLogo} alt="" quality={100} />
-              <Image src={magzterLogo} alt="" quality={100} />
-              <Image src={doiLogo} alt="" quality={100} />
-              <Image src={zenodoLogo} alt="" quality={100} />
-              <Image src={openAccessLogo} alt="" quality={100} />
-              <Image src={openAireLogo} alt="" quality={100} />
+              <Image src={googleLogo} alt="" quality={100} priority />
+              <Image src={googleScholarLogo} alt="" quality={100} priority />
+              <Image src={magzterLogo} alt="" quality={100} priority />
+              <Image src={doiLogo} alt="" quality={100} priority />
+              <Image src={zenodoLogo} alt="" quality={100} priority />
+              <Image src={openAccessLogo} alt="" quality={100} priority />
+              <Image src={openAireLogo} alt="" quality={100} priority />
+              <Image src={readwhereLogo} alt="" quality={100} priority />
             </div>
           </div>
         </section>
@@ -253,11 +296,13 @@ export default function Home () {
                 src={physiothonline}
                 alt="Physioth Online Logo"
                 quality={100}
+                priority
               />
               <Image
                 src={smartPT}
                 alt="Smart PT Acedamy Logo"
                 quality={100}
+                priority
                 onClick={() => router.push('https://smartptacademy.com/')}
               />
             </div>

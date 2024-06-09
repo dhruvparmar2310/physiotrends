@@ -6,11 +6,12 @@ import Character from '../../../public/assets/img/char-1.png'
 import { Button, Modal } from 'react-bootstrap'
 import { useRouter } from 'next/router'
 import textLogo from '../../../public/assets/img/main-logo-2.png'
+import { motion } from 'framer-motion'
 
 // const Bebas_Neue_Font = Bebas_Neue({ subsets: ['latin'], weight: ['400'], style: ['normal'] })
 // const Teko_Font = Teko({ subsets: ['latin'], weight: ['300', '400', '500', '600'], style: ['normal'] })
 
-function Hero () {
+function Hero ({ width }) {
     const router = useRouter()
     const [mobile, setMobile] = useState(null)
     const [modal, setModal] = useState(false)
@@ -27,31 +28,64 @@ function Hero () {
                 <div className={`${styles?.heroContent}`}>
                     <div className={`${styles?.adsContent}`}>
                         <h1 data-heading='ISSN (Online)'></h1>
-                        <div className={`styles?.mainLogo`}>
+                        <motion.div
+                            className={`styles?.mainLogo`}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{
+                                delay: width ? 0 : 0.5, // delay the animation by 0.2 seconds
+                                duration: width ? 0.3 : 0.8, // animation duration of 0.8 seconds
+                                ease: 'easeInOut', // easing function for a smoother animation
+                            }}
+                        >
                             <Image
                                 src={textLogo}
                                 alt='PhysioTreends Logo'
                                 quality={100}
                                 className='img-fluid'
+                                priority
                             />
-                        </div>
+                        </motion.div>
 
-                        <p className={`${styles?.desc} mt-3`}>
+                        <motion.p
+                            className={`${styles?.desc} mt-3`}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{
+                                delay: width ? 0 : 0.5, // delay the animation by 0.2 seconds
+                                duration: width ? 0.3 : 0.8, // animation duration of 0.8 seconds
+                                ease: 'easeInOut', // easing function for a smoother animation
+                            }}
+                        >
                             Read the latest research and empower your physiotherapy journey.
-                        </p>
+                        </motion.p>
 
-                        <div className={`${styles?.btnContent} mt-3`}>
+                        <motion.div
+                            className={`${styles?.btnContent} mt-3`}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{
+                                delay: width ? 0 : 0.5, // delay the animation by 0.2 seconds
+                                duration: width ? 0.3 : 0.8, // animation duration of 0.8 seconds
+                                ease: 'easeInOut', // easing function for a smoother animation
+                            }}
+                        >
                             <span>
                                 <Button className={`${styles?.readMoreBtn}`} onClick={() => router.push('/submit-your-article')}>
                                     Submit Your Article Now!
                                 </Button>
                             </span>
-                        </div>
+                        </motion.div>
                     </div>
 
-                    <div className={`${styles?.imgContent}`}>
-                        <Image src={Character} quality={100} width={100} height={100} className={`${styles?.phoneMockUp}`} />
-                    </div>
+                    <motion.div
+                        className={`${styles?.imgContent}`}
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: width ? 0.3 : 1, animate: 'easeInOut' }}
+                    >
+                        <Image src={Character} quality={100} width={100} priority height={100} className={`${styles?.phoneMockUp}`} />
+                    </motion.div>
                 </div >
 
             </section >

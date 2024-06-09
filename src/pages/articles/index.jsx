@@ -84,86 +84,88 @@ function Articles ({ data, router }) {
                 return (
                   <React.Fragment key={article?._id}>
                     <div className={`${styles?.accordion} accordion accordion-flush mt-2`} id='main-accordion'>
-                      <div className={`accordion-item`}>
-                        <h2 className={`accordion-header`} id={`flush-heading-${index}`} title='Founders of PhysioTrends | PhysioTrends'>
-                          <button
-                            className={`accordion-button collapsed ${styles.accordionBtn} ${ubuntu?.className}`}
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target={`#flush-collapse-${index}`}
-                            aria-expanded={index === openAccordionIndex ? "true" : "false"}
-                            aria-controls={`flush-collapse-${index}`}
-                            onClick={() => handleAccordionClick(index)}
-                          >
-                            <div className={`${styles?.bodyHeader}`}>
-                              <div><span>{(article?._id) + '.'}</span></div>
-                              <div style={{ textAlign: 'left !important' }}><span>{article?.title}</span></div>
-                              <div><span>{article?.nMonth}</span></div>
-                              <div className='me-2'>
-                                {article?.nMonth === 'Coming Soon...' ? '---' :
-                                  <>
-                                    <Button
-                                      variant='info'
-                                      size='sm'
-                                      title={`${article?.title} | PhysioTrends`}
-                                      style={{ marginLeft: '5px' }}
-                                      onClick={() => handleCopyLink(`${process.env.DEPLOY}/articles/${article?._id}?sArticle=${article?.title}`)}
-                                    >
-                                      <MdContentCopy />
-                                    </Button>
+                      <article>
+                        <div className={`accordion-item`}>
+                          <h2 className={`accordion-header`} id={`flush-heading-${index}`} title='Founders of PhysioTrends | PhysioTrends'>
+                            <button
+                              className={`accordion-button collapsed ${styles.accordionBtn} ${ubuntu?.className}`}
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target={`#flush-collapse-${index}`}
+                              aria-expanded={index === openAccordionIndex ? "true" : "false"}
+                              aria-controls={`flush-collapse-${index}`}
+                              onClick={() => handleAccordionClick(index)}
+                            >
+                              <div className={`${styles?.bodyHeader}`}>
+                                <div><span>{(article?._id) + '.'}</span></div>
+                                <div style={{ textAlign: 'left !important' }}><span>{article?.title}</span></div>
+                                <div><span>{article?.nMonth}</span></div>
+                                <div className='me-2'>
+                                  {article?.nMonth === 'Coming Soon...' ? '---' :
+                                    <>
+                                      <Button
+                                        variant='info'
+                                        size='sm'
+                                        title={`${article?.title} | PhysioTrends`}
+                                        style={{ marginLeft: '5px' }}
+                                        onClick={() => handleCopyLink(`${process.env.DEPLOY}/articles/${article?._id}?sArticle=${article?.title}`)}
+                                      >
+                                        <MdContentCopy />
+                                      </Button>
 
-                                    <Button
-                                      variant='warning'
-                                      size='sm'
-                                      title={`Download ${article?.title} | PhysioTrends`}
-                                      style={{ marginLeft: '5px' }}
-                                      onClick={() => saveAs(`${article?.eBook}`, `PhysioTrends_Vol-1_Issue-1`)}
-                                    >
-                                      <FaDownload />
-                                    </Button>
-                                  </>
-                                }
+                                      <Button
+                                        variant='warning'
+                                        size='sm'
+                                        title={`Download ${article?.title} | PhysioTrends`}
+                                        style={{ marginLeft: '5px' }}
+                                        onClick={() => saveAs(`${article?.eBook}`, `PhysioTrends_Vol-1_Issue-1`)}
+                                      >
+                                        <FaDownload />
+                                      </Button>
+                                    </>
+                                  }
+                                </div>
                               </div>
+                            </button>
+                          </h2>
+                          <div id={`flush-collapse-${index}`} className={`accordion-collapse collapse ${index === openAccordionIndex ? 'show' : ''}`} data-bs-parent="#main-accordion">
+                            <div className={`accordion-body ${styles.accordionBody}`}>
+                              <Row className={`${styles?.memberContent}`}>
+                                {article?.aMagazines?.length >= 1 ? article?.aMagazines?.map((magazine, index) => {
+                                  return (
+                                    <Fragment key={index}>
+                                      <div className={`${styles?.magazineCard}`}>
+                                        <div className={`${styles?.magazineCardHeader}`}>
+                                          <span title={`${magazine?.sName} | PhysioTrends`} className={`${styles?.magazineCardTitle} {ubuntu?.className}`}>{magazine?.sName}</span>
+                                        </div>
+                                        <div className={`${styles?.authorContent}`}>
+                                          <span className={`${styles?.author} {ubuntu?.className}`} title={`${magazine?.sAuthor} | PhysioTrends`}><FaUserCircle /> {magazine?.sAuthor}</span>
+                                          <span className={`${styles?.pageNumber} {ubuntu?.className}`}>Page No.: {magazine?.sPageNo}</span>
+                                        </div>
+                                        <p className={`${styles?.number} {ubuntu?.className}`}>DOI: {magazine?.sDOINo}</p>
+                                        <div className={`${styles?.functionality}`}>
+                                          <Button
+                                            variant='warning'
+                                            size='sm'
+                                            className='me-2'
+                                            onClick={(e) => router.push({
+                                              pathname: `/articles/${magazine._id}`,
+                                              query: { sArticle: magazine.sName, issueId: article._id, sIssueName: article?.title }
+                                            })}
+                                          >
+                                            <FaEye /> Read
+                                          </Button>
+                                          <Button variant='dark' size='sm' onClick={() => saveAs(`${magazine?.sDownLoadUrl}`, `${magazine?.sName}`)}><FaDownload /> Download</Button>
+                                        </div>
+                                      </div>
+                                    </Fragment>
+                                  )
+                                }) : <span className={`text-center ${ubuntu?.className}`}>Coming Soon (June 2024)</span>}
+                              </Row>
                             </div>
-                          </button>
-                        </h2>
-                        <div id={`flush-collapse-${index}`} className={`accordion-collapse collapse ${index === openAccordionIndex ? 'show' : ''}`} data-bs-parent="#main-accordion">
-                          <div className={`accordion-body ${styles.accordionBody}`}>
-                            <Row className={`${styles?.memberContent}`}>
-                              {article?.aMagazines?.length >= 1 ? article?.aMagazines?.map((magazine, index) => {
-                                return (
-                                  <Fragment key={index}>
-                                    <div className={`${styles?.magazineCard}`}>
-                                      <div className={`${styles?.magazineCardHeader}`}>
-                                        <span title={`${magazine?.sName} | PhysioTrends`} className={`${styles?.magazineCardTitle} {ubuntu?.className}`}>{magazine?.sName}</span>
-                                      </div>
-                                      <div className={`${styles?.authorContent}`}>
-                                        <span className={`${styles?.author} {ubuntu?.className}`} title={`${magazine?.sAuthor} | PhysioTrends`}><FaUserCircle /> {magazine?.sAuthor}</span>
-                                        <span className={`${styles?.pageNumber} {ubuntu?.className}`}>Page No.: {magazine?.sPageNo}</span>
-                                      </div>
-                                      <p className={`${styles?.number} {ubuntu?.className}`}>DOI: {magazine?.sDOINo}</p>
-                                      <div className={`${styles?.functionality}`}>
-                                        <Button
-                                          variant='warning'
-                                          size='sm'
-                                          className='me-2'
-                                          onClick={(e) => router.push({
-                                            pathname: `/articles/${magazine._id}`,
-                                            query: { sArticle: magazine.sName, issueId: article._id, sIssueName: article?.title }
-                                          })}
-                                        >
-                                          <FaEye /> Read
-                                        </Button>
-                                        <Button variant='dark' size='sm' onClick={() => saveAs(`${magazine?.sDownLoadUrl}`, `${magazine?.sName}`)}><FaDownload /> Download</Button>
-                                      </div>
-                                    </div>
-                                  </Fragment>
-                                )
-                              }) : <span className={`text-center ${ubuntu?.className}`}>Coming Soon (June 2024)</span>}
-                            </Row>
                           </div>
                         </div>
-                      </div>
+                      </article>
                     </div>
                   </React.Fragment>
                 );

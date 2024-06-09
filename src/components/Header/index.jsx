@@ -26,7 +26,7 @@ function Header () {
                     <div className={isNavExpanded ? `${styles.top_header}` : ``}>
                         <h1 className={`${styles.logo} mr-auto`} title={`PhysioTrends`}>
                             <Link href='/' style={{ fontWeight: '500' }} passHref>
-                                <Image src={TextLogo} alt='' quality={100} width={250} height={100} />
+                                <Image src={TextLogo} alt='' quality={100} width={250} height={100} priority />
                             </Link>
                         </h1>
                         <button className={`${styles.menu}`}
