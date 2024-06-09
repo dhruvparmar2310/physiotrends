@@ -9,6 +9,7 @@ import doiLogo from '../../public/assets/img/webAvailability/DOI_logo.png'
 import zenodoLogo from '../../public/assets/img/webAvailability/zenodo.png'
 import openAccessLogo from '../../public/assets/img/webAvailability/Open_Access_logo.png'
 import openAireLogo from '../../public/assets/img/webAvailability/OpenAire_Logo.jpg'
+import readwhereLogo from '../../public/assets/img/webAvailability/readwhere.jpg'
 import Image from 'next/image'
 
 const SubmitYourArticle = () => {
@@ -178,22 +179,24 @@ const SubmitYourArticle = () => {
                   <h1 className={`sectionTitle`} data-heading='Major Index' title="Major Index | PhysioTrends"></h1>
                   <div className={`${styles?.innerContent} mt-4`}>
                      <div className={`${styles?.logoContent}`}>
-                        <Image src={googleLogo} alt="" quality={100} />
-                        <Image src={googleScholarLogo} alt="" quality={100} />
-                        <Image src={magzterLogo} alt="" quality={100} />
-                        <Image src={doiLogo} alt="" quality={100} />
-                        <Image src={zenodoLogo} alt="" quality={100} />
-                        <Image src={openAccessLogo} alt="" quality={100} />
-                        <Image src={openAireLogo} alt="" quality={100} />
+                        <Image src={googleLogo} alt="" quality={100} priority />
+                        <Image src={googleScholarLogo} alt="" quality={100} priority />
+                        <Image src={magzterLogo} alt="" quality={100} priority />
+                        <Image src={doiLogo} alt="" quality={100} priority />
+                        <Image src={zenodoLogo} alt="" quality={100} priority />
+                        <Image src={openAccessLogo} alt="" quality={100} priority />
+                        <Image src={openAireLogo} alt="" quality={100} priority />
+                        <Image src={readwhereLogo} alt="" quality={100} priority />
                      </div>
                      <div className={`${styles?.logoContent}`}>
-                        <Image src={googleLogo} alt="" quality={100} />
-                        <Image src={googleScholarLogo} alt="" quality={100} />
-                        <Image src={magzterLogo} alt="" quality={100} />
-                        <Image src={doiLogo} alt="" quality={100} />
-                        <Image src={zenodoLogo} alt="" quality={100} />
-                        <Image src={openAccessLogo} alt="" quality={100} />
-                        <Image src={openAireLogo} alt="" quality={100} />
+                        <Image src={googleLogo} alt="" quality={100} priority />
+                        <Image src={googleScholarLogo} alt="" quality={100} priority />
+                        <Image src={magzterLogo} alt="" quality={100} priority />
+                        <Image src={doiLogo} alt="" quality={100} priority />
+                        <Image src={zenodoLogo} alt="" quality={100} priority />
+                        <Image src={openAccessLogo} alt="" quality={100} priority />
+                        <Image src={openAireLogo} alt="" quality={100} priority />
+                        <Image src={readwhereLogo} alt="" quality={100} priority />
                      </div>
                   </div>
                </div>

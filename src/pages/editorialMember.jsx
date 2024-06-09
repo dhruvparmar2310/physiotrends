@@ -46,7 +46,7 @@ const EditorialMember = ({ data }) => {
                                                 <Col xxl={6} xl={6} lg={6} md={12} sm={12}>
                                                     <div className={`${styles?.memberCard}`}>
                                                         <div className={`${styles?.memberProfile}`}>
-                                                            <Image src={founder?.profile} alt={founder?.name + 'profile'} quality={100} width={100} height={100} />
+                                                            <Image src={founder?.profile} alt={founder?.name + 'profile'} quality={100} width={100} height={100} priority />
                                                         </div>
                                                         <div className={`${styles?.memberCardBody}`}>
                                                             <h3 className={`${styles?.doctorName}`}>{founder?.name}</h3>
@@ -89,7 +89,7 @@ const EditorialMember = ({ data }) => {
                                     <Col xxl={6} xl={6} lg={6} md={12} sm={12}>
                                         <div className={`${styles?.memberCard}`}>
                                             <div className={`${styles?.memberProfile}`}>
-                                                <Image src={chiefEditor?.profile} alt={chiefEditor?.name + 'profile'} quality={100} width={100} height={100} />
+                                                <Image src={chiefEditor?.profile} alt={chiefEditor?.name + 'profile'} quality={100} width={100} height={100} priority />
                                             </div>
                                             <div className={`${styles?.memberCardBody}`}>
                                                 <h3 className={`${styles?.doctorName}`}>{chiefEditor?.name}</h3>
@@ -132,7 +132,7 @@ const EditorialMember = ({ data }) => {
                                                 <Col xxl={6} xl={6} lg={6} md={12} sm={12}>
                                                     <div className={`${styles?.memberCard}`}>
                                                         <div className={`${styles?.memberProfile}`}>
-                                                            <Image src={editors?.profile} alt={editors?.name + 'profile'} quality={100} width={100} height={100} />
+                                                            <Image src={editors?.profile} alt={editors?.name + 'profile'} quality={100} width={100} height={100} priority />
                                                         </div>
                                                         <div className={`${styles?.memberCardBody}`}>
                                                             <h3 className={`${styles?.doctorName}`}>{editors?.name}</h3>
@@ -178,7 +178,7 @@ const EditorialMember = ({ data }) => {
                                                 <Col xxl={6} xl={6} lg={6} md={12} sm={12}>
                                                     <div className={`${styles?.memberCard}`}>
                                                         <div className={`${styles?.memberProfile}`}>
-                                                            <Image src={members?.profile} alt={members?.name + 'profile'} quality={100} width={100} height={100} />
+                                                            <Image src={members?.profile} alt={members?.name + 'profile'} quality={100} width={100} height={100} priority />
                                                         </div>
                                                         <div className={`${styles?.memberCardBody}`}>
                                                             <h3 className={`${styles?.doctorName}`}>{members?.name}</h3>
@@ -224,7 +224,7 @@ const EditorialMember = ({ data }) => {
                                                 <Col xxl={6} xl={6} lg={6} md={12} sm={12}>
                                                     <div className={`${styles?.memberCard}`}>
                                                         <div className={`${styles?.memberProfile}`}>
-                                                            <Image src={editors?.profile} alt={editors?.name + 'profile'} quality={100} width={100} height={100} />
+                                                            <Image src={editors?.profile} alt={editors?.name + 'profile'} quality={100} width={100} height={100} priority />
                                                         </div>
                                                         <div className={`${styles?.memberCardBody}`}>
                                                             <h3 className={`${styles?.doctorName}`}>{editors?.name}</h3>
@@ -270,7 +270,7 @@ const EditorialMember = ({ data }) => {
                                                 <Col xxl={6} xl={6} lg={6} md={12} sm={12}>
                                                     <div className={`${styles?.memberCard}`}>
                                                         <div className={`${styles?.memberProfile}`}>
-                                                            <Image src={reviewers?.profile} alt={reviewers?.name + 'profile'} quality={100} width={100} height={100} />
+                                                            <Image src={reviewers?.profile} alt={reviewers?.name + 'profile'} quality={100} width={100} height={100} priority />
                                                         </div>
                                                         <div className={`${styles?.memberCardBody}`}>
                                                             <h3 className={`${styles?.doctorName}`}>{reviewers?.name}</h3>

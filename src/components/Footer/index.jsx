@@ -91,6 +91,7 @@ const Footer = () => {
                                     <Image
                                         src={logo}
                                         quality={100}
+                                        priority
                                     />
                                 </Link>
                             </h3>

@@ -100,12 +100,13 @@ main {
       .desc {
         font-family: 'Alice', serif;
         font-weight: 600;
-        letter-spacing: 0.5px;
+        letter-spacing: 0px;
         font-size: 1.2rem;
         text-align: justify;
         word-spacing: 10px;
         line-height: 1.8rem;
         color: var(--black-color);
+        text-align: center;
       }
 
       .visionContent {
