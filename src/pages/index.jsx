@@ -292,19 +292,23 @@ export default function Home () {
 
           <div className={`${styles?.innerContent}`}>
             <div className={`${styles?.leftSide} container`}>
-              <Image
-                src={physiothonline}
-                alt="Physioth Online Logo"
-                quality={100}
-                priority
-              />
-              <Image
-                src={smartPT}
-                alt="Smart PT Acedamy Logo"
-                quality={100}
-                priority
-                onClick={() => router.push('https://smartptacademy.com/')}
-              />
+              <div>
+                <Image
+                  src={physiothonline}
+                  alt="Physioth Online Logo"
+                  quality={100}
+                  priority
+                />
+              </div>
+              <div>
+                <Image
+                  src={smartPT}
+                  alt="Smart PT Acedamy Logo"
+                  quality={100}
+                  priority
+                  onClick={() => router.push('https://smartptacademy.com/')}
+                />
+              </div>
             </div>
           </div>
         </section>

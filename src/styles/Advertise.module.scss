@@ -137,6 +137,10 @@
         }
 
         .clientContent {
+            background-color: rgb(231, 229, 229);
+            border-radius: 30px;
+            padding: 20px;
+
             .contentTitle {
                 font-size: 1.8rem;
                 font-weight: 600;
@@ -146,11 +150,41 @@
             }
 
             .clientLogo {
-                text-align: center;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                padding: 25px;
+                border-radius: 30px;
+
+                div {
+                    background: rgb(255, 255, 255);
+                    box-shadow: 8px 8px 20px #454545d9;
+                    padding: 15px;
+                    border-radius: 0;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        box-shadow: 10px 10px 20px #262626d9;
+                    }
+                }
 
                 img {
                     width: 150px;
+                    height: 70px;
+                    max-height: 100px;
                     aspect-ratio: 10/4;
+                    object-fit: contain;
+                    mix-blend-mode: darken;
+                    opacity: 0.6;
+                    filter: grayscale(100%);
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        opacity: 1;
+                        filter: grayscale(0%);
+                    }
                 }
             }
         }

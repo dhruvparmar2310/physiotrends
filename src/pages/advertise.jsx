@@ -292,22 +292,22 @@ const Advertise = () => {
                     </div>
 
                     <div className={`${styles?.clientContent} mt-4`}>
-                        <h1 className={`${styles?.contentTitle}`}>A few of our many Satisfied Clients</h1>
+                        <h1 className={`sectionTitle`} data-heading='A few of our many Satisfied Clients'></h1>
 
-                        <div className='d-flex flex-wrap justify-content-center gap-2 mt-4'>
-                            <div className={`${styles?.clientLogo}`}>
+                        <div className={`mt-4 ${styles?.clientLogo}`}>
+                            <div>
                                 <Image src={ThePhysioBrothers} className={'img-fluid'} alt='' quality={100} priority />
                             </div>
-                            <div className={`${styles?.clientLogo}`}>
+                            <div>
                                 <Image src={YogaSanskriti} className={'img-fluid'} alt='' quality={100} priority />
                             </div>
-                            <div className={`${styles?.clientLogo}`}>
+                            <div>
                                 <Image src={PhysioGyan} className={'img-fluid'} alt='' quality={100} priority />
                             </div>
-                            <div className={`${styles?.clientLogo}`}>
+                            <div>
                                 <Image src={physiothonline} className={'img-fluid'} alt='' quality={100} priority />
                             </div>
-                            <div className={`${styles?.clientLogo}`}>
+                            <div>
                                 <Image src={smartPT} className={'img-fluid'} alt='' quality={100} priority />
                             </div>
                         </div>
